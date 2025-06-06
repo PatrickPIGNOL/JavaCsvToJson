@@ -14,12 +14,12 @@ public class CSVRow
         this.aData = Arrays.copyOf(pData, pData.length);
     }
 
-    public StringProperty getColumn(int pIndex) 
+    public String getColumn(int pIndex) 
     {
         if (pIndex >= 0 && pIndex < aData.length) 
         {
-            return new SimpleStringProperty(aData[pIndex]);
+            return this.aData[pIndex];
         }
-        return new SimpleStringProperty(""); // Retourne une chaîne vide si l'index est hors limites
+        return null; // Retourne une chaîne vide si l'index est hors limites
     }
 }

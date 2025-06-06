@@ -2,10 +2,14 @@ package JavaCsvToJson.JavaCsvToJson;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
+import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import com.opencsv.CSVParser;
@@ -18,66 +22,137 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.json.simple.JSONObject;
+
 
 public class JavaCsvToJson extends Application 
 {
 	private Stage aWindow; 
-	private TableView<CSVRow> aTableView = new TableView<>();
-    private Button aLoadFileButton = new Button("Charger le fichier CSV");
+    private Button aBookToCsvFileButton = new Button("Book => CSV");
+    private Button aCSVToBookFileButton = new Button("CSV => Book");
+    private Label aLinkLabel = new Label("Lien : ");
+    private TextField aLinkTextInput = new TextField();
+    private Button aConvertURLButton = new Button("Convertir une URL en Fichier de Book");
+    
 	@Override
 	public void start(Stage pWindow) throws Exception 
 	{
 		this.aWindow = pWindow;
 		
-		this.aLoadFileButton.setOnAction
+		this.aBookToCsvFileButton.setOnAction
 		(
 			event -> 
 			{
-				FileChooser fileChooser = new FileChooser();
-				fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers CSV", "*.csv"));
-				File selectedFile = fileChooser.showOpenDialog(this.aWindow);
-				if (selectedFile != null) 
+				List<Spell> vSpells = new ArrayList<>();
+				List<Monster> vMonsters = new ArrayList<>();
+				List<NPC> vNPCs = new ArrayList<>();
+				List<Object> vObjects = new ArrayList<>();
+				
+				FileChooser vFileChooser = new FileChooser();
+				vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers Book", "*.csv"));
+				File vOpenFile = vFileChooser.showOpenDialog(this.aWindow);
+				if (vOpenFile != null)
 				{
-	                this.aTableView.getColumns().clear();
-					List<String[]> vCsvData = this.mReadAllLines(selectedFile);
-					if (!vCsvData.isEmpty()) 
+					List<String[]> vCsvData = this.mReadAllLines(vOpenFile);
+					for(String[] vTable : vCsvData)
 					{
-					    this.mCreateTableColumns(vCsvData.get(0));
-					    this.mPopulateTable(vCsvData);
+						if(vTable[2].equalsIgnoreCase("spell"))
+						{
+							vSpells.add(Spell.mFromJson(vTable[1]));
+						}
+						else if(vTable[2] == "monster")
+						{
+							vMonsters.add(null);
+						}
+						else if(vTable[2] == "npc")
+						{
+							vNPCs.add(null);
+						}
+						else if(vTable[2] == "object")
+						{
+							vObjects.add(null);
+						}
 					}
 	            }
+				vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers CSV", "*.csv"));
+				vFileChooser.setInitialFileName("CSV-" + vOpenFile.getName());
+				File vSaveFile = vFileChooser.showSaveDialog(this.aWindow);
+				if(vSaveFile != null)
+				{
+					try(FileWriter vFileWriter = new FileWriter(vSaveFile))
+					{
+						vSpells.sort
+						(
+							(pSpell1, pSpell2) -> 
+							{
+								return ((Spell)pSpell1).mSpellName().mName().compareTo(((Spell)pSpell2).mSpellName().mName());
+							}
+						);
+						vFileWriter.write("Type, " + vSpells.get(0).mCSVHeaders() + "\n");
+						for(Spell vSpell : vSpells)
+						{
+							vFileWriter.write("spell, " + vSpell.mToCSV() + "\n");
+						}
+						vFileWriter.flush();
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+				}
+				for(Spell vSpell : vSpells)
+				{
+					vSpell.mSpellAttacks().clear();
+				}
+				vSpells.clear();
+				for(Monster vMonster : vMonsters)
+				{
+					
+				}
+				vMonsters.clear();
+				for(NPC vNPC : vNPCs)
+				{
+					
+				}
+				vNPCs.clear();
+				for(Object vObject : vObjects)
+				{
+					
+				}
+				vObjects.clear();
 	        }
 		);
-		VBox root = new VBox(10, this.aLoadFileButton, this.aTableView);
-	    Scene vScene = new Scene(root, 800, 600);
+		HBox vLink = new HBox();
+		vLink.getChildren().add(aLinkLabel);
+		vLink.getChildren().add(aLinkTextInput);
+		vLink.getChildren().add(this.aConvertURLButton);
+		
+		VBox vRoot = new VBox();
+		vRoot.getChildren().add(this.aBookToCsvFileButton);
+		vRoot.getChildren().add(this.aCSVToBookFileButton);
+		vRoot.getChildren().add(vLink);
+
+		this.aCSVToBookFileButton.setDisable(true);
+		
+		this.aLinkLabel.setDisable(true);
+		this.aLinkTextInput.setDisable(true);
+		this.aConvertURLButton.setDisable(true);
+		
+	    Scene vScene = new Scene(vRoot, 800, 600);
 	    this.aWindow.setScene(vScene);
 		this.aWindow.setTitle("Csv To Json");
 		this.aWindow.show();
 	}
-	
-	private void mCreateTableColumns(String[] pHeaders) 
-	{
-		for (int vIndex = 0; vIndex < pHeaders.length; vIndex++) 
-		{            
-            TableColumn<CSVRow, String> vColumn = new TableColumn<>(pHeaders[vIndex]);
-            final int vFinalIndex = vIndex;
-            vColumn.setCellValueFactory(pCellData -> pCellData.getValue().getColumn(vFinalIndex));
-            this.aTableView.getColumns().add(vColumn);
-        }
-    }
-	
-	private void mPopulateTable(List<String[]> pCsvData) {
-        ObservableList<CSVRow> vRows = FXCollections.observableArrayList();
-        for (int vIndex = 1; vIndex < pCsvData.size(); vIndex++) {
-        	vRows.add(new CSVRow(pCsvData.get(vIndex)));
-        }
-        this.aTableView.setItems(vRows);
-    }
 	
 	public List<String[]> mReadAllLines(File pFile)
 	{
