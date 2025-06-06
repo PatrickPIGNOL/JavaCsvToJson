@@ -28,7 +28,7 @@ public class Spell
 			SpellLevel vSpellLevel = SpellLevel.Cantrip;
 			for(SpellLevel vSpellLvl : SpellLevel.values())
 			{
-				if (vSpellLvl.mID() == vSpellLevelValue)
+				if (vSpellLvl.mID().equalsIgnoreCase(vSpellLevelValue))
 				{
 					vSpellLevel = vSpellLvl;
 				}
@@ -38,7 +38,7 @@ public class Spell
 			SpellSchool vSpellSchool = SpellSchool.Abjuration;
 			for(SpellSchool vSpellScl : SpellSchool.values())
 			{
-				if (vSpellScl.mID() == vSpellSchoolValue)
+				if (vSpellScl.mID().equalsIgnoreCase(vSpellSchoolValue))
 				{
 					vSpellSchool = vSpellScl;
 				}
