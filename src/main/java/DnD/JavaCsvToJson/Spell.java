@@ -68,7 +68,7 @@ public class Spell
 			SpellAttackType vSpellAttack = SpellAttackType.None;
 			for(SpellAttackType vType : SpellAttackType.values())
 			{
-				if(vType.mID() == vSpellAttackType)
+				if(vType.mID().equalsIgnoreCase(vSpellAttackType))
 				{
 					vSpellAttack = vType;
 				}
