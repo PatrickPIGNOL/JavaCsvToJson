@@ -7,11 +7,11 @@ public class Property<T>
 	private boolean aQuoted; 
 	private T aValue;
 	
-	public Property(String pName, String pNameJSON, boolean pQuoted, T pValue)
+	public Property(Enum<? extends IHeader> pHeader, T pValue)
 	{
-		this.aName = pName;
-		this.aNameJSON = pNameJSON;
-		this.aQuoted = pQuoted;
+		this.aName = ((IHeader)pHeader).mName();
+		this.aNameJSON = ((IHeader)pHeader).mJsonName();
+		this.aQuoted = ((IHeader)pHeader).mQuoted();
 		this.aValue = pValue;
 	}
 	
@@ -56,14 +56,10 @@ public class Property<T>
 	
 	public String mToCSV()
 	{
-		String vResult = "";
-		if(!this.aQuoted)
+		String vResult = null;
+		if(this.aValue != null)
 		{
-			vResult += this.aValue.toString(); 
-		}
-		else
-		{
-			vResult += "\"" + this.aValue.toString() + "\"";
+			vResult = this.aValue.toString();			
 		}
 		return vResult;
 	}

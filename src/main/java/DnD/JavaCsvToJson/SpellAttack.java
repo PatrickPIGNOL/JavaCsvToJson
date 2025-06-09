@@ -1,6 +1,9 @@
 package DnD.JavaCsvToJson;
 
-public class SpellAttack 
+import java.util.ArrayList;
+import java.util.List;
+
+public class SpellAttack implements IExportable 
 {
 	private Property<String> aSpellTime; 
 	private Property<String> aSpellRange;
@@ -13,7 +16,7 @@ public class SpellAttack
 	private Property<String> aSpellComponentDescription;
 	private Property<Boolean> aMaterialCost;
 	//private SpellAttackType aSpellAttackType;
-	private Property<SpellAttackType> aSaveThrow;
+	private Property<ESpellAttackType> aSaveThrow;
 	private Property<String> aSpellDamage;
 	//private SpellDamageType aSpellDamageType;
 	private Property<String> aSpellDescription;
@@ -30,7 +33,7 @@ public class SpellAttack
 		Property<Boolean> pSpellComponentM, 
 		Property<String> pSpellComponentDescription,
 		Property<Boolean> pMaterialCost,
-		Property<SpellAttackType> pSaveThrow, 
+		Property<ESpellAttackType> pSaveThrow, 
 		Property<String> pSpellDamage, 
 		Property<String> pSpellDescription
 	)
@@ -109,7 +112,7 @@ public class SpellAttack
 	}
 	*/
 	
-	public Property<SpellAttackType> mSaveThrow()
+	public Property<ESpellAttackType> mSaveThrow()
 	{
 		return this.aSaveThrow;
 	}
@@ -131,6 +134,7 @@ public class SpellAttack
 		return this.aSpellDescription;
 	}
 	
+	@Override
 	public String mToJSON()
 	{
 		return  this.aSpellTime.mToJSON() + 
@@ -148,35 +152,43 @@ public class SpellAttack
 				",\n " + this.aSpellDescription.mToJSON();
 	}
 	
-	public String mCSVHeaders()
+	@Override
+	public List<String> mCSVHeaders()
 	{
-		return this.aSpellTime.mName() +
-			", " + this.aSpellRange.mName() + 
-			", " + this.aSpellDuration.mName() + 
-			", " + this.aRitualCast.mName() + 
-			", " + this.aConcentration.mName() + 
-			", " + this.aSpellComponentV.mName() + 
-			", " + this.aSpellComponentS.mName() + 
-			", " + this.aSpellComponentM.mName() + 
-			", " + this.aSpellComponentDescription.mName() + 
-			", " + this.aSaveThrow.mName() + 
-			", " + this.aSpellDamage.mName() + 
-			", " + this.aSpellDescription.mName();
+		List<String> vResult = new ArrayList<>();
+
+		vResult.add(this.aSpellTime.mName());
+		vResult.add(this.aSpellRange.mName());
+		vResult.add(this.aSpellDuration.mName());
+		vResult.add(this.aRitualCast.mName());
+		vResult.add(this.aConcentration.mName());
+		vResult.add(this.aSpellComponentV.mName());
+		vResult.add(this.aSpellComponentS.mName());
+		vResult.add(this.aSpellComponentM.mName());
+		vResult.add(this.aSpellComponentDescription.mName());
+		vResult.add(this.aSaveThrow.mName());
+		vResult.add(this.aSpellDamage.mName());
+		vResult.add(this.aSpellDescription.mName());
+		
+		return vResult;
 	}
 	
-	public String mToCSV()
+	@Override
+	public List<String> mToCSV()
 	{
-		return	this.aSpellTime.mToCSV() + 
-				", " + this.aSpellRange.mToCSV() + 
-				", " + this.aSpellDuration.mToCSV() + 
-				", " + this.aRitualCast.mToCSV() + 
-				", " + this.aConcentration.mToCSV() + 
-				", " + this.aSpellComponentV.mToCSV() + 
-				", " + this.aSpellComponentS.mToCSV() + 
-				", " + this.aSpellComponentM.mToCSV() + 
-				", " + this.aSpellComponentDescription.mToCSV() + 
-				", " + this.aSaveThrow.mToCSV() + 
-				", " + this.aSpellDamage.mToCSV() + 
-				", " + this.aSpellDescription.mToCSV();
+		List<String> vResult = new ArrayList<>();
+		vResult.add(this.aSpellTime.mToCSV());
+		vResult.add(this.aSpellRange.mToCSV());
+		vResult.add(this.aSpellDuration.mToCSV()); 
+		vResult.add(this.aRitualCast.mToCSV());
+		vResult.add(this.aConcentration.mToCSV());
+		vResult.add(this.aSpellComponentV.mToCSV());
+		vResult.add(this.aSpellComponentS.mToCSV());
+		vResult.add(this.aSpellComponentM.mToCSV());
+		vResult.add(this.aSpellComponentDescription.mToCSV());
+		vResult.add(this.aSaveThrow.mToCSV());
+		vResult.add(this.aSpellDamage.mToCSV());
+		vResult.add(this.aSpellDescription.mToCSV());		
+		return vResult;
 	}
 }

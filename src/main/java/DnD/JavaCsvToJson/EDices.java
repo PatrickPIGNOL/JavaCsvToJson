@@ -1,6 +1,6 @@
 package DnD.JavaCsvToJson;
 
-public enum Dices 
+public enum EDices 
 {
 	D4,
 	D6,

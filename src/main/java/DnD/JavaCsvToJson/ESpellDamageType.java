@@ -1,6 +1,6 @@
 package DnD.JavaCsvToJson;
 
-public enum SpellDamageType 
+public enum ESpellDamageType 
 {
 
 }

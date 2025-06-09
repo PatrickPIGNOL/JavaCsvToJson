@@ -7,10 +7,17 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import com.opencsv.CSVWriterBuilder;
+import com.opencsv.ICSVParser;
+import com.opencsv.ICSVWriter;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -54,13 +61,27 @@ public class JavaCsvToJson extends Application
 					List<String[]> vCsvData = this.mReadAllLines(vOpenFile);
 					for(String[] vTable : vCsvData)
 					{
-						if(vTable[2].equalsIgnoreCase("spell"))
+						if(vTable[2].trim().equalsIgnoreCase("spell"))
 						{
-							vSpells.add(Spell.mFromJson(vTable[1]));
+							try
+							{
+								vSpells.add(Spell.mFromJson(vTable));
+							}
+							catch(Exception e)
+							{
+								e.printStackTrace();
+							}
 						}
-						else if(vTable[2] == "monster")
+						else if(vTable[2].trim().equalsIgnoreCase("monster"))
 						{
-							vMonsters.add(null);
+							try
+							{
+								vMonsters.add(Monster.mFromJson(vTable));
+							}
+							catch(Exception e)
+							{
+								e.printStackTrace();
+							}
 						}
 						else if(vTable[2] == "npc")
 						{
@@ -71,33 +92,76 @@ public class JavaCsvToJson extends Application
 							vObjects.add(null);
 						}
 					}
-	            }
-				vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers CSV", "*.csv"));
-				vFileChooser.setInitialFileName("CSV-" + vOpenFile.getName());
-				File vSaveFile = vFileChooser.showSaveDialog(this.aWindow);
-				if(vSaveFile != null)
-				{
-					try(FileWriter vFileWriter = new FileWriter(vSaveFile))
+					vFileChooser.getExtensionFilters().clear();
+					vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers CSV", "*.csv"));
+					vFileChooser.setInitialFileName("CSV-" + vOpenFile.getName());
+					File vSaveFile = vFileChooser.showSaveDialog(this.aWindow);
+					if(vSaveFile != null)
 					{
-						vSpells.sort
-						(
-							(pSpell1, pSpell2) -> 
-							{
-								return ((Spell)pSpell1).mSpellName().mName().compareTo(((Spell)pSpell2).mSpellName().mName());
-							}
-						);
-						vFileWriter.write("Type, " + vSpells.get(0).mCSVHeaders() + "\n");
-						for(Spell vSpell : vSpells)
+						try(FileWriter vFileWriter = new FileWriter(vSaveFile))
 						{
-							vFileWriter.write("spell, " + vSpell.mToCSV() + "\n");
+							ICSVWriter vCSVWriter = (ICSVWriter) new CSVWriterBuilder(vFileWriter)
+									.withEscapeChar(ICSVParser.DEFAULT_ESCAPE_CHARACTER)
+									.withLineEnd(ICSVWriter.DEFAULT_LINE_END)
+									.withQuoteChar(ICSVParser.DEFAULT_QUOTE_CHARACTER)
+									.withSeparator(ICSVParser.DEFAULT_SEPARATOR)
+									.build();
+							
+							vSpells.sort
+							(
+								(pSpell1, pSpell2) -> 
+								{
+									return ((Spell)pSpell1).mSpellName().mName().compareTo(((Spell)pSpell2).mSpellName().mName());
+								}
+							);
+							
+							ArrayList<String> vLine = new ArrayList<>();
+
+							vLine.add("Type");
+							vLine.addAll(vSpells.get(0).mCSVHeaders());		
+							vCSVWriter.writeNext(vLine.toArray(new String[0]));
+							
+							for(Spell vSpell : vSpells)
+							{
+								vLine.clear();								
+								vLine.add("spell");
+								vLine.addAll(vSpell.mToCSV());							
+								vCSVWriter.writeNext(vLine.toArray(new String[0]));
+							}
+							vCSVWriter.flush();
+							for(Monster vMonster : vMonsters)
+							{
+								vLine.clear();
+								vLine.add("Type");
+								vLine.addAll(vMonster.mCSVHeaders());
+								vCSVWriter.writeNext(vLine.toArray(new String[0]));
+								vLine.clear();								
+								vLine.add("monster");
+								vLine.addAll(vMonster.mToCSV());
+								vCSVWriter.writeNext(vLine.toArray(new String[0]));
+							}
+							vCSVWriter.flush();
+							
+							for(NPC vNPC : vNPCs)
+							{
+								vFileWriter.write("\"Type\", " + vNPCs.get(0).mCSVHeaders() + "\n");
+								vFileWriter.write("\"monster\", " + vNPC.mToCSV() + "\n");
+							}
+							vCSVWriter.flush();
+							vFileWriter.flush();
+							vFileWriter.write("\"Type\", " + vObjects.get(0).mCSVHeaders() + "\n");
+							for(Object vObject : vObjects)
+							{
+								vFileWriter.write("\"monster\", " + vObject.mToCSV() + "\n");
+							}
+							vFileWriter.flush();
 						}
-						vFileWriter.flush();
+						catch(Exception e)
+						{
+							e.printStackTrace();
+						}
 					}
-					catch(Exception e)
-					{
-						e.printStackTrace();
-					}
-				}
+	            }
 				for(Spell vSpell : vSpells)
 				{
 					vSpell.mSpellAttacks().clear();
@@ -119,6 +183,41 @@ public class JavaCsvToJson extends Application
 				}
 				vObjects.clear();
 	        }
+		);
+		
+		this.aCSVToBookFileButton.setOnAction
+		(
+			event -> 
+			{
+				List<Spell> vSpells = new ArrayList<>();
+				List<Monster> vMonsters = new ArrayList<>();
+				List<NPC> vNPCs = new ArrayList<>();
+				List<Object> vObjects = new ArrayList<>();
+				
+				FileChooser vFileChooser = new FileChooser();
+				vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers CSV", "*.csv"));
+				File vOpenFile = vFileChooser.showOpenDialog(this.aWindow);
+				if (vOpenFile != null)
+				{
+					List<String[]> vCsvData = this.mReadAllLines(vOpenFile);
+					String[] vHeaders = null;
+					for(String[] vTable : vCsvData)
+					{
+						if(vTable[0].trim().equalsIgnoreCase("Type"))
+						{
+							vHeaders = vTable;
+						}
+						else if(vTable[0].trim().equalsIgnoreCase("spell"))
+						{
+							vSpells.add(Spell.mFromCsv(vHeaders, vTable));
+						}
+						else if(vTable[0].trim().equalsIgnoreCase("monster"))
+						{
+							
+						}
+					}
+				}
+			}
 		);
 		HBox vLink = new HBox();
 		vLink.getChildren().add(aLinkLabel);
@@ -144,7 +243,7 @@ public class JavaCsvToJson extends Application
 	
 	public List<String[]> mReadAllLines(File pFile)
 	{
-		CSVParser vParser = new CSVParserBuilder()
+		CSVParser vParser = new CSVParserBuilder()				
 				.withSeparator(',')
 				.withIgnoreQuotations(false)
 				.build();			

@@ -7,107 +7,114 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class Spell 
+public class Spell implements IExportable
 {
 	private Property<String> aSpellName;	
-	private Property<SpellLevel> aSpellLevel;
-	private Property<SpellSchool> aSpellSchool;
+	private Property<ESpellLevel> aSpellLevel;
+	private Property<ESpellSchool> aSpellSchool;
 	private Property<Boolean> aAlwaysPrepared;	
 	private List<SpellAttack> aSpellAttacks;
 	
-
-	public static Spell mFromJson(String pJSON)
+	public static Spell mFromCsv(String[] pHeaders, String[] pCsv)
+	{
+		Spell vSpell = null;
+		return vSpell;		
+	}
+	
+	public static Spell mFromJson(String[] vTable) throws ParseException
 	{
 		Spell vResult = null;
-		try
+		
+		JSONObject vJSONObject = (JSONObject) new JSONParser().parse(vTable[1]);
+		
+		String vSpellName = (String) vJSONObject.getOrDefault(ESpellHeader.Name.mJsonName(), null);
+		if(vSpellName == null)
 		{
-			JSONObject vJSONObject = (JSONObject) new JSONParser().parse(pJSON);
-			String vSpellName = (String) vJSONObject.getOrDefault("spellName", "(Unamed Spell)");
-	
-			String vSpellLevelValue = (String) vJSONObject.getOrDefault("spellLevel", "1");
-			SpellLevel vSpellLevel = SpellLevel.Cantrip;
-			for(SpellLevel vSpellLvl : SpellLevel.values())
-			{
-				if (vSpellLvl.mID().equalsIgnoreCase(vSpellLevelValue))
-				{
-					vSpellLevel = vSpellLvl;
-				}
-			}
-			
-			String vSpellSchoolValue = (String) vJSONObject.getOrDefault("spellSchool", "abjuration");
-			SpellSchool vSpellSchool = SpellSchool.Abjuration;
-			for(SpellSchool vSpellScl : SpellSchool.values())
-			{
-				if (vSpellScl.mID().equalsIgnoreCase(vSpellSchoolValue))
-				{
-					vSpellSchool = vSpellScl;
-				}
-			}
-			
-			boolean vAlwaysPrepared = (boolean) vJSONObject.getOrDefault("alwaysPrepared", false);
-			
-			vResult = new Spell
-			(
-				new Property<String>("Name", "spellName", true, vSpellName), 
-				new Property<SpellLevel>("Level", "spellLevel", true, vSpellLevel),
-				new Property<SpellSchool>("School", "spellSchool", true, vSpellSchool),
-				new Property<Boolean>("Always Prepared", "alwaysPrepared", false, vAlwaysPrepared)
-			);
-			
-			String vSpellTime = (String) vJSONObject.getOrDefault("spellTime", "");
-			String vSpellRange = (String) vJSONObject.getOrDefault("spellRange", "");
-			String vSpellDuration = (String) vJSONObject.getOrDefault("spellDuration", "");
-			boolean vRitualCast = (boolean) vJSONObject.getOrDefault("ritualCast", false);
-			boolean vConcentration = (boolean) vJSONObject.getOrDefault("concentration", false);
-			boolean vSpellComponentV = (boolean) vJSONObject.getOrDefault("spellComponentV", false);
-			boolean vSpellComponentS = (boolean) vJSONObject.getOrDefault("spellComponentS", false);
-			boolean vSpellComponentM = (boolean) vJSONObject.getOrDefault("spellComponentM", false);
-			String vSpellComponenDescription = (String) vJSONObject.getOrDefault("spellComponentDescription", "");
-			boolean vMaterialCost = (boolean) vJSONObject.getOrDefault("materialCost", false);
-			String vSpellAttackType = (String) vJSONObject.getOrDefault("spellAttack", "");
-			SpellAttackType vSpellAttack = SpellAttackType.None;
-			for(SpellAttackType vType : SpellAttackType.values())
-			{
-				if(vType.mID().equalsIgnoreCase(vSpellAttackType))
-				{
-					vSpellAttack = vType;
-				}
-			}
-			String vSpellDamage = (String) vJSONObject.getOrDefault("spellDamage", "");
-			String vSpellDescription = (String) vJSONObject.getOrDefault("spellDescription", "");
-			
-			vResult.mSpellAttacks().add
-			(
-				new SpellAttack
-				(
-					new Property<String>("Time", "spellTime", true, vSpellTime),
-					new Property<String>("Range", "spellRange", true, vSpellRange),
-					new Property<String>("Duration", "spellDuration", true, vSpellDuration),
-					new Property<Boolean>("Ritual", "ritualCast", false, vRitualCast),
-					new Property<Boolean>("Concentration","concentration",false,vConcentration),
-					new Property<Boolean>("V","spellComponentV",false, vSpellComponentV),
-					new Property<Boolean>("S","spellComponentS",false, vSpellComponentS),
-					new Property<Boolean>("M","spellComponentM",false, vSpellComponentM),
-					new Property<String>("Component Description", "spellComponentDescription", true,vSpellComponenDescription),
-					new Property<Boolean>("Material Cost", "materialCost", true, vMaterialCost),
-					new Property<SpellAttackType>("Attack","spellAttack", true, vSpellAttack),
-					new Property<String>("Damage", "spellDamage", true, vSpellDamage),
-					new Property<String>("Description","spellDescription",true, vSpellDescription)
-				)
-			);
-		} 
-		catch (ParseException e) 
-		{
-			e.printStackTrace();
+			vSpellName = vTable[0];
 		}
+		
+		String vSpellLevelValue = (String) vJSONObject.getOrDefault(ESpellHeader.Level.mJsonName(), "1");
+		ESpellLevel vSpellLevel = ESpellLevel.Cantrip;
+		for(ESpellLevel vSpellLvl : ESpellLevel.values())
+		{
+			if (vSpellLevelValue.trim().equalsIgnoreCase(vSpellLvl.mID()))
+			{
+				vSpellLevel = vSpellLvl;
+				break;
+			}
+		}
+		
+		String vSpellSchoolValue = (String) vJSONObject.getOrDefault(ESpellHeader.School.mJsonName(), ESpellSchool.Abjuration.mID());
+		ESpellSchool vSpellSchool = ESpellSchool.Abjuration;
+		for(ESpellSchool vSpellScl : ESpellSchool.values())
+		{
+			if (vSpellSchoolValue.trim().equalsIgnoreCase(vSpellScl.mID()))
+			{
+				vSpellSchool = vSpellScl;
+				break;
+			}
+		}
+		
+		boolean vAlwaysPrepared = (boolean) vJSONObject.getOrDefault("alwaysPrepared", false);
+		
+		vResult = new Spell
+		(
+			new Property<String>(ESpellHeader.Name, vSpellName), 
+			new Property<ESpellLevel>(ESpellHeader.Level, vSpellLevel),
+			new Property<ESpellSchool>(ESpellHeader.School, vSpellSchool),
+			new Property<Boolean>(ESpellHeader.AlwaysPrepared, vAlwaysPrepared)
+		);
+		
+		String vSpellTime = (String) vJSONObject.getOrDefault(ESpellHeader.Time.mJsonName(), "");
+		String vSpellRange = (String) vJSONObject.getOrDefault(ESpellHeader.Range.mJsonName(), "");
+		String vSpellDuration = (String) vJSONObject.getOrDefault(ESpellHeader.Duration.mJsonName(), "");
+		boolean vRitualCast = (boolean) vJSONObject.getOrDefault(ESpellHeader.Ritual.mJsonName(), false);
+		boolean vConcentration = (boolean) vJSONObject.getOrDefault(ESpellHeader.Concentration.mJsonName(), false);
+		boolean vSpellComponentV = (boolean) vJSONObject.getOrDefault(ESpellHeader.V.mJsonName(), false);
+		boolean vSpellComponentS = (boolean) vJSONObject.getOrDefault(ESpellHeader.S.mJsonName(), false);
+		boolean vSpellComponentM = (boolean) vJSONObject.getOrDefault(ESpellHeader.M.mJsonName(), false);
+		String vSpellComponenDescription = (String) vJSONObject.getOrDefault(ESpellHeader.ComponentDescription.mJsonName(), "");
+		boolean vMaterialCost = (boolean) vJSONObject.getOrDefault(ESpellHeader.MaterialCost.mJsonName(), false);
+		String vSpellAttackType = (String) vJSONObject.getOrDefault(ESpellHeader.Attack.mJsonName(), "");
+		ESpellAttackType vSpellAttack = ESpellAttackType.None;
+		for(ESpellAttackType vType : ESpellAttackType.values())
+		{
+			if(vSpellAttackType.trim().equalsIgnoreCase(vType.mID()))
+			{
+				vSpellAttack = vType;
+				break;
+			}
+		}
+		String vSpellDamage = (String) vJSONObject.getOrDefault(ESpellHeader.Damage.mJsonName(), "");
+		String vSpellDescription = (String) vJSONObject.getOrDefault(ESpellHeader.Description.mJsonName(), "");
+		
+		vResult.mSpellAttacks().add
+		(
+			new SpellAttack
+			(
+				new Property<String>(ESpellHeader.Time, vSpellTime),
+				new Property<String>(ESpellHeader.Range, vSpellRange),
+				new Property<String>(ESpellHeader.Duration, vSpellDuration),
+				new Property<Boolean>(ESpellHeader.Ritual, vRitualCast),
+				new Property<Boolean>(ESpellHeader.Concentration, vConcentration),
+				new Property<Boolean>(ESpellHeader.V, vSpellComponentV),
+				new Property<Boolean>(ESpellHeader.S, vSpellComponentS),
+				new Property<Boolean>(ESpellHeader.M, vSpellComponentM),
+				new Property<String>(ESpellHeader.ComponentDescription, vSpellComponenDescription),
+				new Property<Boolean>(ESpellHeader.MaterialCost, vMaterialCost),
+				new Property<ESpellAttackType>(ESpellHeader.Attack, vSpellAttack),
+				new Property<String>(ESpellHeader.Damage, vSpellDamage),
+				new Property<String>(ESpellHeader.Description, vSpellDescription)
+			)
+		);
 		return vResult;
 	}
 	
 	public Spell
 	(
 		Property<String> pSpellName, 
-		Property<SpellLevel> pSpellLevel,
-		Property<SpellSchool> pSpellSchool,
+		Property<ESpellLevel> pSpellLevel,
+		Property<ESpellSchool> pSpellSchool,
 		Property<Boolean> pAlwaysPrepared
 	)
 	{
@@ -123,12 +130,12 @@ public class Spell
 		return this.aSpellName;
 	}
 	
-	public Property<SpellLevel> mSpellLevel()
+	public Property<ESpellLevel> mSpellLevel()
 	{
 		return this.aSpellLevel;
 	}
 	
-	public Property<SpellSchool> mSpellSchool()
+	public Property<ESpellSchool> mSpellSchool()
 	{
 		return this.aSpellSchool;
 	}
@@ -152,28 +159,30 @@ public class Spell
 		return vResult;
 	}
 	
-	public String mCSVHeaders()
+	public List<String> mCSVHeaders()
 	{
-		String vResult = this.aSpellName.mName() +	", " +
-			this.aSpellLevel.mName() + ", " +
-			this.aSpellSchool.mName() + ", " +
-			this.aAlwaysPrepared.mName() + ", ";
+		List<String> vResult = new ArrayList<>();
+		vResult.add(this.aSpellName.mName());
+		vResult.add(this.aSpellLevel.mName());
+		vResult.add(this.aSpellSchool.mName());
+		vResult.add(this.aAlwaysPrepared.mName());
 		for(SpellAttack vSpellAttack : this.aSpellAttacks)
 		{
-			vResult += vSpellAttack.mCSVHeaders();
+			vResult.addAll(vSpellAttack.mCSVHeaders());
 		}
 		return vResult;
 	}
 	
-	public String mToCSV()
+	public List<String> mToCSV()
 	{
-		String vResult = this.aSpellName.mToCSV() +	", " +
-			this.aSpellLevel.mToCSV() + ", " +
-			this.aSpellSchool.mToCSV() + ", " +
-			this.aAlwaysPrepared.mToCSV() + ", ";
+		List<String> vResult = new ArrayList<>();
+		vResult.add(this.aSpellName.mToCSV());
+		vResult.add(this.aSpellLevel.mToCSV());
+		vResult.add(this.aSpellSchool.mToCSV());
+		vResult.add(this.aAlwaysPrepared.mToCSV());
 		for(SpellAttack vSpellAttack : this.aSpellAttacks)
 		{
-			vResult += vSpellAttack.mToCSV();
+			vResult.addAll(vSpellAttack.mToCSV());
 		}
 		return vResult;
 	}

@@ -1,6 +1,6 @@
 package DnD.JavaCsvToJson;
 
-public enum SpellSchool 
+public enum ESpellSchool 
 {
 	Abjuration("abjuration"),
 	Conjuration("conjuration"),
@@ -13,7 +13,7 @@ public enum SpellSchool
 	;
 	
 	private String aID;
-	SpellSchool(String pID) 
+	ESpellSchool(String pID) 
 	{
 		this.aID = pID;
 	}

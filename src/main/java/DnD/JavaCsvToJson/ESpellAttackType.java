@@ -1,6 +1,6 @@
 package DnD.JavaCsvToJson;
 
-public enum SpellAttackType
+public enum ESpellAttackType
 {
 	None(""),
 	RangedAttack("ranged"),
@@ -14,7 +14,7 @@ public enum SpellAttackType
 	;
 	
 	private String aID;
-	SpellAttackType(String pID) 
+	ESpellAttackType(String pID) 
 	{
 		this.aID = pID;
 	}
