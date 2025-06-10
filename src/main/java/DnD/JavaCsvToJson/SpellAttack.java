@@ -20,6 +20,7 @@ public class SpellAttack implements IExportable
 	private Property<String> aSpellDamage;
 	//private SpellDamageType aSpellDamageType;
 	private Property<String> aSpellDescription;
+	private Property<Boolean> aSpellLegendary;
 	
 	public SpellAttack
 	(
@@ -35,7 +36,8 @@ public class SpellAttack implements IExportable
 		Property<Boolean> pMaterialCost,
 		Property<ESpellAttackType> pSaveThrow, 
 		Property<String> pSpellDamage, 
-		Property<String> pSpellDescription
+		Property<String> pSpellDescription,
+		Property<Boolean> pSpellLegendary
 	)
 	{
 		this.aSpellTime = pSpellTime;
@@ -53,6 +55,7 @@ public class SpellAttack implements IExportable
 		this.aSpellDamage = pSpellDamage;
 		//this.aSpellDamageType = null;
 		this.aSpellDescription = pSpellDescription;
+		this.aSpellLegendary = pSpellLegendary;
 	}
 	
 	public Property<String> mSpellTime()
@@ -129,6 +132,11 @@ public class SpellAttack implements IExportable
 	}
 	*/
 	
+	public Property<Boolean> mSpellLegendary()
+	{
+		return this.aSpellLegendary;
+	}
+	
 	public Property<String> mSpellDescription()
 	{
 		return this.aSpellDescription;
@@ -189,6 +197,27 @@ public class SpellAttack implements IExportable
 		vResult.add(this.aSaveThrow.mToCSV());
 		vResult.add(this.aSpellDamage.mToCSV());
 		vResult.add(this.aSpellDescription.mToCSV());		
+		return vResult;
+	}
+
+	@Override
+	public List<String> mToBook() 
+	{
+		List<String> vResult = new ArrayList<>();
+		
+		vResult.addAll(this.aSpellTime.mToBook());
+		vResult.addAll(this.aSpellRange.mToBook());
+		vResult.addAll(this.aSpellDuration.mToBook()); 
+		vResult.addAll(this.aRitualCast.mToBook());
+		vResult.addAll(this.aConcentration.mToBook());
+		vResult.addAll(this.aSpellComponentV.mToBook());
+		vResult.addAll(this.aSpellComponentS.mToBook());
+		vResult.addAll(this.aSpellComponentM.mToBook());
+		vResult.addAll(this.aSpellComponentDescription.mToBook());
+		vResult.addAll(this.aSaveThrow.mToBook());
+		vResult.addAll(this.aSpellDamage.mToBook());
+		vResult.addAll(this.aSpellDescription.mToBook());
+		vResult.addAll(this.aSpellLegendary.mToBook());
 		return vResult;
 	}
 }

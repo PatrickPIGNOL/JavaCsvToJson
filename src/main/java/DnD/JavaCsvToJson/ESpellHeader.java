@@ -3,7 +3,8 @@ package DnD.JavaCsvToJson;
 public enum ESpellHeader implements IHeader
 {
 	Name("Name", "spellName", true),
-	Level("Level", "spellLevel", true),
+	Level("Level", "spellLevel", false),
+	RealLevel("Real Level", "spellRealLevel", false),
 	School("School", "spellSchool", true),
 	AlwaysPrepared("Always Prepared","alwaysPrepared", false),
 	Time("Time", "spellTime", true),
@@ -18,7 +19,8 @@ public enum ESpellHeader implements IHeader
 	MaterialCost("Material Cost", "materialCost", false),
 	Attack("Attack", "spellAttack", true),
 	Damage("Damage", "spellDamage", true),
-	Description("Description", "spellDescription", true)	
+	Description("Description", "spellDescription", true),
+	Legendary("Legendary", "legendary", false)
 	;
 
 	private String aName;

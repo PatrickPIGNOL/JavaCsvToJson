@@ -79,4 +79,15 @@ public class AvatarFrame implements IExportable
 		
 		return vResult;
 	}
+
+	@Override
+	public List<String> mToBook() 
+	{
+		List<String> vResult = new ArrayList<>();
+		
+		vResult.addAll(this.aAvatar.mToBook());
+		vResult.addAll(this.aToken.mToBook());
+		
+		return vResult;
+	}
 }

@@ -102,4 +102,18 @@ public class MonsterAvatar implements IExportable
 		vResult.addAll(this.aFrame.mValue().mToCSV());
 		return vResult;
 	}
+
+	@Override
+	public List<String> mToBook()
+	{
+		List<String> vResult = new ArrayList<>();
+		vResult.add(this.aAvatar.mNameJSON());
+		vResult.add(this.aAvatar.mToCSV());
+		vResult.add(this.aToken.mNameJSON());
+		vResult.add(this.aToken.mToCSV());
+		vResult.add("");
+		vResult.add(this.aFrame.mNameJSON());
+		vResult.addAll(this.aFrame.mValue().mToBook());
+		return vResult;
+	}
 }

@@ -2,7 +2,7 @@ package DnD.JavaCsvToJson;
 
 public enum EMonsterHeader implements IHeader
 {
-	Name("Name", "monsterName", true),
+	Name("Name", "monster", true),
 	Alignment("Alignment", "alignment", true),
 	MonsterType("Monster Type", "monsterType", true),
 	Size("Size", "size", true),
@@ -68,5 +68,11 @@ public enum EMonsterHeader implements IHeader
 	public boolean mQuoted() 
 	{
 		return this.aQuoted;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return this.aJsonName;
 	}
 }

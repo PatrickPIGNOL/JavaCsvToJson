@@ -26,4 +26,10 @@ public class SpecialAbility implements IExportable
 		return vResult;
 	}
 
+	@Override
+	public List<String> mToBook() 
+	{
+		return null;
+	}
+
 }

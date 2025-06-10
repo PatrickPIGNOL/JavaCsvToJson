@@ -8,13 +8,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class Spell implements IExportable
-{
-	private Property<String> aSpellName;	
-	private Property<ESpellLevel> aSpellLevel;
-	private Property<ESpellSchool> aSpellSchool;
-	private Property<Boolean> aAlwaysPrepared;	
-	private List<SpellAttack> aSpellAttacks;
-	
+{	
 	public static Spell mFromCsv(String[] pHeaders, String[] pCsv)
 	{
 		Spell vSpell = null;
@@ -33,16 +27,18 @@ public class Spell implements IExportable
 			vSpellName = vTable[0];
 		}
 		
-		String vSpellLevelValue = (String) vJSONObject.getOrDefault(ESpellHeader.Level.mJsonName(), "1");
+		Integer vSpellLevelValue = ((Number)vJSONObject.getOrDefault(ESpellHeader.RealLevel.mJsonName(), 1)).intValue();
+		
 		ESpellLevel vSpellLevel = ESpellLevel.Cantrip;
 		for(ESpellLevel vSpellLvl : ESpellLevel.values())
 		{
-			if (vSpellLevelValue.trim().equalsIgnoreCase(vSpellLvl.mID()))
+			if (vSpellLevelValue == vSpellLvl.mID())
 			{
 				vSpellLevel = vSpellLvl;
 				break;
 			}
 		}
+		Integer vSpellRealLevel = ((Number)vJSONObject.getOrDefault(ESpellHeader.Level.mJsonName(), 1)).intValue();
 		
 		String vSpellSchoolValue = (String) vJSONObject.getOrDefault(ESpellHeader.School.mJsonName(), ESpellSchool.Abjuration.mID());
 		ESpellSchool vSpellSchool = ESpellSchool.Abjuration;
@@ -61,6 +57,7 @@ public class Spell implements IExportable
 		(
 			new Property<String>(ESpellHeader.Name, vSpellName), 
 			new Property<ESpellLevel>(ESpellHeader.Level, vSpellLevel),
+			new Property<Integer>(ESpellHeader.RealLevel, vSpellRealLevel),
 			new Property<ESpellSchool>(ESpellHeader.School, vSpellSchool),
 			new Property<Boolean>(ESpellHeader.AlwaysPrepared, vAlwaysPrepared)
 		);
@@ -87,7 +84,7 @@ public class Spell implements IExportable
 		}
 		String vSpellDamage = (String) vJSONObject.getOrDefault(ESpellHeader.Damage.mJsonName(), "");
 		String vSpellDescription = (String) vJSONObject.getOrDefault(ESpellHeader.Description.mJsonName(), "");
-		
+		boolean vLegendary = (Boolean) vJSONObject.getOrDefault(ESpellHeader.Legendary, false);
 		vResult.mSpellAttacks().add
 		(
 			new SpellAttack
@@ -104,16 +101,25 @@ public class Spell implements IExportable
 				new Property<Boolean>(ESpellHeader.MaterialCost, vMaterialCost),
 				new Property<ESpellAttackType>(ESpellHeader.Attack, vSpellAttack),
 				new Property<String>(ESpellHeader.Damage, vSpellDamage),
-				new Property<String>(ESpellHeader.Description, vSpellDescription)
+				new Property<String>(ESpellHeader.Description, vSpellDescription),
+				new Property<Boolean>(ESpellHeader.Legendary, vLegendary)
 			)
 		);
 		return vResult;
 	}
+
+	private Property<String> aSpellName;	
+	private Property<ESpellLevel> aSpellLevel;
+	private Property<Integer> aSpellRealLevel;
+	private Property<ESpellSchool> aSpellSchool;
+	private Property<Boolean> aAlwaysPrepared;	
+	private List<SpellAttack> aSpellAttacks;
 	
 	public Spell
 	(
 		Property<String> pSpellName, 
 		Property<ESpellLevel> pSpellLevel,
+		Property<Integer> pSpellRealLevel,
 		Property<ESpellSchool> pSpellSchool,
 		Property<Boolean> pAlwaysPrepared
 	)
@@ -121,6 +127,7 @@ public class Spell implements IExportable
 		this.aSpellName = pSpellName;
 		this.aSpellLevel = pSpellLevel;
 		this.aSpellSchool = pSpellSchool;
+		this.aSpellRealLevel = pSpellRealLevel;
 		this.aAlwaysPrepared = pAlwaysPrepared;
 		this.aSpellAttacks = new ArrayList<SpellAttack>();
 	}
@@ -149,6 +156,7 @@ public class Spell implements IExportable
 	{
 		String vResult = "\"{\n " + this.aSpellName.mToJSON() + 
 			",\n " + this.aSpellLevel.mToJSON() + 
+			",\n " + this.aSpellRealLevel.mToJSON() +
 			",\n " + this.aSpellSchool.mToJSON() +
 			",\n " + this.aAlwaysPrepared.mToJSON();
 		for(SpellAttack vSpellAttack : this.aSpellAttacks)
@@ -164,6 +172,7 @@ public class Spell implements IExportable
 		List<String> vResult = new ArrayList<>();
 		vResult.add(this.aSpellName.mName());
 		vResult.add(this.aSpellLevel.mName());
+		vResult.add(this.aSpellRealLevel.mName());
 		vResult.add(this.aSpellSchool.mName());
 		vResult.add(this.aAlwaysPrepared.mName());
 		for(SpellAttack vSpellAttack : this.aSpellAttacks)
@@ -178,6 +187,7 @@ public class Spell implements IExportable
 		List<String> vResult = new ArrayList<>();
 		vResult.add(this.aSpellName.mToCSV());
 		vResult.add(this.aSpellLevel.mToCSV());
+		vResult.add(this.aSpellRealLevel.mToCSV());
 		vResult.add(this.aSpellSchool.mToCSV());
 		vResult.add(this.aAlwaysPrepared.mToCSV());
 		for(SpellAttack vSpellAttack : this.aSpellAttacks)
@@ -185,5 +195,11 @@ public class Spell implements IExportable
 			vResult.addAll(vSpellAttack.mToCSV());
 		}
 		return vResult;
+	}
+
+	@Override
+	public List<String> mToBook() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

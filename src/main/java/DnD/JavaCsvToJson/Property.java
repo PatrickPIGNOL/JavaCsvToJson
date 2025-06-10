@@ -1,5 +1,8 @@
 package DnD.JavaCsvToJson;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Property<T> 
 {
 	private String aName;
@@ -60,6 +63,20 @@ public class Property<T>
 		if(this.aValue != null)
 		{
 			vResult = this.aValue.toString();			
+		}
+		return vResult;
+	}
+	
+	public List<String> mToBook()
+	{
+		List<String> vResult = new ArrayList<>();
+		if(this.aValue != null)
+		{
+			vResult.add(this.aNameJSON);
+			if (!(this.aValue instanceof List<?> ))
+			{
+				vResult.add(this.aValue.toString());
+			}
 		}
 		return vResult;
 	}
