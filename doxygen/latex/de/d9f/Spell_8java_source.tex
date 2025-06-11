@@ -1,0 +1,211 @@
+\doxysection{Spell.\+java}
+\hypertarget{Spell_8java_source}{}\label{Spell_8java_source}\index{src/main/java/DnD/JavaCsvToJson/Spell.java@{src/main/java/DnD/JavaCsvToJson/Spell.java}}
+\mbox{\hyperlink{Spell_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00001}00001\ \textcolor{keyword}{package\ }DnD.JavaCsvToJson;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.json.simple.JSONObject;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.json.simple.parser.JSONParser;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.json.simple.parser.ParseException;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00010}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{Spell}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IExportable}{IExportable}}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00011}00011\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00012}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a7ccfd854d1f9c7de3777b3ac50369bfc}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{Spell}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a7ccfd854d1f9c7de3777b3ac50369bfc}{mFromCsv}}(String[]\ pHeaders,\ String[]\ pCsv)}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{Spell}}\ vSpell\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vSpell;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00017}00017\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00018}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a0a2045c3fe234697b1ff61afabf46c14}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{Spell}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a0a2045c3fe234697b1ff61afabf46c14}{mFromJson}}(String[]\ vTable)\ \textcolor{keywordflow}{throws}\ ParseException}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{Spell}}\ vResult\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ JSONObject\ vJSONObject\ =\ (JSONObject)\ \textcolor{keyword}{new}\ JSONParser().parse(vTable[1]);}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ String\ vSpellName\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a2ce9cc941a57ef5f6cb9e0f679dd74d3}{Name}}.mJsonName(),\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSpellName\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ vSpellName\ =\ vTable[0];}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ Integer\ vSpellLevelValue\ =\ ((Number)vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a30747ba9b27d24a80f0fffe1fb0d45b6}{RealLevel}}.mJsonName(),\ 1)).intValue();}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellLevel}{ESpellLevel}}\ vSpellLevel\ =\ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellLevel}{ESpellLevel}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellLevel_aa5e482900c3bece9e07d77717c5f7dd7}{Cantrip}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellLevel}{ESpellLevel}}\ vSpellLvl\ :\ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellLevel}{ESpellLevel}}.values())}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vSpellLevelValue\ ==\ vSpellLvl.mID())}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellLevel\ =\ vSpellLvl;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ Integer\ vSpellRealLevel\ =\ ((Number)vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a4dfb8b345b140025b38eb12d307d005a}{Level}}.mJsonName(),\ 1)).intValue();}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ String\ vSpellSchoolValue\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a8178df3b06c21b8344459d9b07f1279a}{School}}.mJsonName(),\ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool}{ESpellSchool}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool_a4be4e4caca500a6803b28aca1789c38d}{Abjuration}}.mID());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool}{ESpellSchool}}\ vSpellSchool\ =\ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool}{ESpellSchool}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool_a4be4e4caca500a6803b28aca1789c38d}{Abjuration}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool}{ESpellSchool}}\ vSpellScl\ :\ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool}{ESpellSchool}}.values())}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vSpellSchoolValue.trim().equalsIgnoreCase(vSpellScl.mID()))}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellSchool\ =\ vSpellScl;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vAlwaysPrepared\ =\ (boolean)\ vJSONObject.getOrDefault(\textcolor{stringliteral}{"{}alwaysPrepared"{}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ vResult\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{Spell}}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a2ce9cc941a57ef5f6cb9e0f679dd74d3}{Name}},\ vSpellName),\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellLevel>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a4dfb8b345b140025b38eb12d307d005a}{Level}},\ vSpellLevel),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Integer>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a30747ba9b27d24a80f0fffe1fb0d45b6}{RealLevel}},\ vSpellRealLevel),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellSchool>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a8178df3b06c21b8344459d9b07f1279a}{School}},\ vSpellSchool),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a9cba5dc6e643cd4b61f16d6943d8d5f5}{AlwaysPrepared}},\ vAlwaysPrepared)}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ String\ vSpellTime\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a5edd158fbf6b1a99aec1e76e26c622d8}{Time}}.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ String\ vSpellRange\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a8efa7252ffe74727a7ed5cdb864ec79a}{Range}}.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ String\ vSpellDuration\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_aee8eed9f9a345fa2504405c9de59d959}{Duration}}.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vRitualCast\ =\ (boolean)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_ad3eb5045997b7a03ae4c3f3ad035e538}{Ritual}}.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vConcentration\ =\ (boolean)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a3f052355321e37f07e99b876b77ec334}{Concentration}}.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentV\ =\ (boolean)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a58e129eabf157e2f17ee7b8fd034eac4}{V}}.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentS\ =\ (boolean)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a17cbb0d3af596f783470a692a5f41c05}{S}}.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentM\ =\ (boolean)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_ae4374f533c07548a056e23b6cd81cb5c}{M}}.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ String\ vSpellComponenDescription\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a4082cdefcea2054b157d87a63d3162fa}{ComponentDescription}}.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vMaterialCost\ =\ (boolean)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a337cc26b01c72760c09f63a197c2d70d}{MaterialCost}}.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ String\ vSpellAttackType\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_ad6ea58a31882c37677456365781a46e3}{Attack}}.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType}{ESpellAttackType}}\ vSpellAttack\ =\ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType}{ESpellAttackType}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType_a946e105b354c4d138daf38918ca77113}{None}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType}{ESpellAttackType}}\ vType\ :\ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType}{ESpellAttackType}}.values())}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSpellAttackType.trim().equalsIgnoreCase(vType.mID()))}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellAttack\ =\ vType;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ String\ vSpellDamage\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a4f8270ec7c8a7dc6a40d536f8c89c1d1}{Damage}}.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ String\ vSpellDescription\ =\ (String)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a08d6b2bd892a677f6dd5ee1b61f9e7a8}{Description}}.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vLegendary\ =\ (Boolean)\ vJSONObject.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a3a0f9f19acd880d0c583e063caef6d04}{Legendary}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ vResult.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af1ca22f0ce47cce064df0d59527e4374}{mSpellAttacks}}().add}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{SpellAttack}}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a5edd158fbf6b1a99aec1e76e26c622d8}{Time}},\ vSpellTime),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a8efa7252ffe74727a7ed5cdb864ec79a}{Range}},\ vSpellRange),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_aee8eed9f9a345fa2504405c9de59d959}{Duration}},\ vSpellDuration),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_ad3eb5045997b7a03ae4c3f3ad035e538}{Ritual}},\ vRitualCast),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a3f052355321e37f07e99b876b77ec334}{Concentration}},\ vConcentration),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a58e129eabf157e2f17ee7b8fd034eac4}{V}},\ vSpellComponentV),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a17cbb0d3af596f783470a692a5f41c05}{S}},\ vSpellComponentS),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_ae4374f533c07548a056e23b6cd81cb5c}{M}},\ vSpellComponentM),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a4082cdefcea2054b157d87a63d3162fa}{ComponentDescription}},\ vSpellComponenDescription),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a337cc26b01c72760c09f63a197c2d70d}{MaterialCost}},\ vMaterialCost),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellAttackType>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_ad6ea58a31882c37677456365781a46e3}{Attack}},\ vSpellAttack),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a4f8270ec7c8a7dc6a40d536f8c89c1d1}{Damage}},\ vSpellDamage),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a08d6b2bd892a677f6dd5ee1b61f9e7a8}{Description}},\ vSpellDescription),}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader}{ESpellHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellHeader_a3a0f9f19acd880d0c583e063caef6d04}{Legendary}},\ vLegendary)}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00111}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a512c4d412a7669b4c253c94c33a16e96}{00111}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a512c4d412a7669b4c253c94c33a16e96}{aSpellName}};\ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00112}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a52829e3e0d2039c275dcc6da2e457100}{00112}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellLevel>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a52829e3e0d2039c275dcc6da2e457100}{aSpellLevel}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00113}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a83751390a118bd9549dfc59301f181ce}{00113}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Integer>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a83751390a118bd9549dfc59301f181ce}{aSpellRealLevel}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00114}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a6f7a6ffe08c6a4bbdc965f9d7418458b}{00114}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellSchool>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a6f7a6ffe08c6a4bbdc965f9d7418458b}{aSpellSchool}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00115}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a1e0365a1e2d661174d9964653567d81d}{00115}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a1e0365a1e2d661174d9964653567d81d}{aAlwaysPrepared}};\ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00116}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_aece348f83e332ed45d583db6ea372ebf}{00116}}\ \ \ \ \ \textcolor{keyword}{private}\ List<SpellAttack>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_aece348f83e332ed45d583db6ea372ebf}{aSpellAttacks}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00117}00117\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00118}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{00118}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a595dc2fe023dc53063afc43beda675aa}{Spell}}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00119}00119\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ pSpellName,\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellLevel>}}\ pSpellLevel,}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Integer>}}\ pSpellRealLevel,}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellSchool>}}\ pSpellSchool,}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<Boolean>}}\ pAlwaysPrepared}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00125}00125\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00126}00126\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ this.aSpellName\ =\ pSpellName;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ this.aSpellLevel\ =\ pSpellLevel;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ this.aSpellSchool\ =\ pSpellSchool;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ this.aSpellRealLevel\ =\ pSpellRealLevel;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ this.aAlwaysPrepared\ =\ pAlwaysPrepared;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ this.aSpellAttacks\ =\ \textcolor{keyword}{new}\ ArrayList<SpellAttack>();}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00134}00134\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00135}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a011a19b16fec5c1a35d79ea6a41777ed}{00135}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a011a19b16fec5c1a35d79ea6a41777ed}{mSpellName}}()}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellName;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00139}00139\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00140}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a5d63fa51365ef0e9eeeec25cdb22879f}{00140}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellLevel>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a5d63fa51365ef0e9eeeec25cdb22879f}{mSpellLevel}}()}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00141}00141\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellLevel;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00144}00144\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00145}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af542b10c47766551eb2d3b07758caba2}{00145}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<ESpellSchool>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af542b10c47766551eb2d3b07758caba2}{mSpellSchool}}()}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00146}00146\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellSchool;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00149}00149\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00150}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af1ca22f0ce47cce064df0d59527e4374}{00150}}\ \ \ \ \ \textcolor{keyword}{public}\ List<SpellAttack>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af1ca22f0ce47cce064df0d59527e4374}{mSpellAttacks}}()}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00151}00151\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellAttacks;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00153}00153\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00154}00154\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00155}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a1c7ae34ce34f7198195142dacd38f306}{00155}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a1c7ae34ce34f7198195142dacd38f306}{mToJSON}}()}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00156}00156\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\{\(\backslash\)n\ "{}}\ +\ this.aSpellName.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{mToJSON}}()\ +\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellLevel.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{mToJSON}}()\ +\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellRealLevel.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{mToJSON}}()\ +}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellSchool.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{mToJSON}}()\ +}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aAlwaysPrepared.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{mToJSON}}();}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{SpellAttack}}\ vSpellAttack\ :\ this.aSpellAttacks)}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ +=\ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ vSpellAttack.mToJSON();}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ vResult\ +=\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00169}00169\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00170}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af4d899b0edde3de5ac67888585282065}{00170}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af4d899b0edde3de5ac67888585282065}{mCSVHeaders}}()}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellName.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellLevel.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellRealLevel.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellSchool.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ vResult.add(this.aAlwaysPrepared.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{SpellAttack}}\ vSpellAttack\ :\ this.aSpellAttacks)}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.addAll(vSpellAttack.mCSVHeaders());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00184}00184\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00185}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_ad23181d22942277bf807139bdb88ccc5}{00185}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_ad23181d22942277bf807139bdb88ccc5}{mToCSV}}()}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00186}00186\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellName.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellLevel.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellRealLevel.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellSchool.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ vResult.add(this.aAlwaysPrepared.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{SpellAttack}}\ vSpellAttack\ :\ this.aSpellAttacks)}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.addAll(vSpellAttack.mToCSV());}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00200}00200\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00201}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_aeaac26c0eca0e603d9d6020486ee9f74}{00201}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_aeaac26c0eca0e603d9d6020486ee9f74}{mToBook}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ Auto-\/generated\ method\ stub}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Spell_8java_source_l00205}00205\ \}}
+
+\end{DoxyCode}

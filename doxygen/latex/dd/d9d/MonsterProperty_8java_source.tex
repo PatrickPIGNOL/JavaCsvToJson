@@ -1,0 +1,72 @@
+\doxysection{Monster\+Property.\+java}
+\hypertarget{MonsterProperty_8java_source}{}\label{MonsterProperty_8java_source}\index{src/main/java/DnD/JavaCsvToJson/MonsterProperty.java@{src/main/java/DnD/JavaCsvToJson/MonsterProperty.java}}
+\mbox{\hyperlink{MonsterProperty_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00001}00001\ \textcolor{keyword}{package\ }DnD.JavaCsvToJson;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00006}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a79aec2ac3e84f6679a94c42438b58f90}{MonsterProperty}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IExportable}{IExportable}}}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00008}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_ad818eec4edc987e59d358e10b34c25c1}{00008}}\ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_ad818eec4edc987e59d358e10b34c25c1}{aType}};}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00009}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_ad5f4fc6dca1fde13f843c5e3c5154fd9}{00009}}\ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_ad5f4fc6dca1fde13f843c5e3c5154fd9}{aName}};}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00010}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a9116ad80bdf12615b7f7a86bf19aa46a}{00010}}\ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a9116ad80bdf12615b7f7a86bf19aa46a}{aValue}};}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00011}00011\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00012}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a79aec2ac3e84f6679a94c42438b58f90}{00012}}\ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a79aec2ac3e84f6679a94c42438b58f90}{MonsterProperty}}}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00013}00013\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ pType,}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ pName,}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ pValue}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00017}00017\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ this.aType\ =\ pType;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ this.aName\ =\ pName;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ this.aValue\ =\ pValue;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00024}00024\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00025}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a516f081f45a2252309513355552394da}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a516f081f45a2252309513355552394da}{mToJSON}}()\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00030}00030\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00031}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a52b93f88cb4b9868022d84286861cbb1}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a52b93f88cb4b9868022d84286861cbb1}{mCSVHeaders}}()\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00038}00038\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00039}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a5049625116defa3e68c95c607ef2ab1e}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a5049625116defa3e68c95c607ef2ab1e}{mToCSV}}()\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}Property"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ vResult.add(this.aType.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}());}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}PropertyName"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ vResult.add(this.aName.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}());}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}PropertyValue"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ vResult.add(this.aValue.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}());}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00053}00053\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00054}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a8f52f9ef17866e8ce909dede02f86c4a}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterProperty_a8f52f9ef17866e8ce909dede02f86c4a}{mToBook}}()\ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}Property"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ vResult.add(this.aType.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}());}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}PropertyName"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ vResult.add(this.aName.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}());}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}PropertyValue"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ vResult.add(this.aValue.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}());}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterProperty_8java_source_l00066}00066\ \}}
+
+\end{DoxyCode}

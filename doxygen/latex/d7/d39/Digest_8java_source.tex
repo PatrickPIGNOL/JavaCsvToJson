@@ -1,0 +1,46 @@
+\doxysection{Digest.\+java}
+\hypertarget{Digest_8java_source}{}\label{Digest_8java_source}\index{src/main/java/DnD/JavaCsvToJson/Digest.java@{src/main/java/DnD/JavaCsvToJson/Digest.java}}
+\mbox{\hyperlink{Digest_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00001}00001\ \textcolor{keyword}{package\ }DnD.JavaCsvToJson;}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.math.BigInteger;}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.security.MessageDigest;}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00006}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest}{Digest}}\ }
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00008}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f}{00008}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ BigInteger\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f}{aDigestIndex}}\ =\ BigInteger.valueOf(0);}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00010}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_aeaeb09b6078fc41f680e25fd9d77fc7b}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_aeaeb09b6078fc41f680e25fd9d77fc7b}{mNewDigestIndex}}(\textcolor{keywordtype}{int}\ pLength)}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00012}00012\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00014}00014\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ MessageDigest\ vMessageDigest\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}SHA-\/256"{}});}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ vByteArray\ =\ vMessageDigest.digest(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f}{aDigestIndex}}.toByteArray());}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f}{aDigestIndex}}\ =\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f}{aDigestIndex}}.add(BigInteger.valueOf(1));}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ StringBuilder\ vHexString\ =\ \textcolor{keyword}{new}\ StringBuilder(2\ *\ vByteArray.length);}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{byte}\ vByte\ :\ vByteArray)}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vHex\ =\ Integer.toHexString(0xff\ \&\ vByte);}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vHex.length()\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vHexString.append(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vHexString.append(vHex);}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ =\ vHexString.toString();}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vResult.length()\ >\ pLength)}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ =\ vResult.substring(vResult.length()\ -\/\ pLength);}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Digest_8java_source_l00040}00040\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,89 @@
+\doxysection{Property.\+java}
+\hypertarget{Property_8java_source}{}\label{Property_8java_source}\index{src/main/java/DnD/JavaCsvToJson/Property.java@{src/main/java/DnD/JavaCsvToJson/Property.java}}
+\mbox{\hyperlink{Property_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00001}00001\ \textcolor{keyword}{package\ }DnD.JavaCsvToJson;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00006}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a5b923e06bc659d29aa0119e7dd34f0eb}{Property}}<T>\ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00008}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a936bd5dbcd8276276ee7a19b6fdec37c}{00008}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a936bd5dbcd8276276ee7a19b6fdec37c}{aName}};}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00009}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ad483fadd1c367010f48bd155e6f3fa35}{00009}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ad483fadd1c367010f48bd155e6f3fa35}{aNameJSON}};}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00010}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_abe3e3b8a4303951b3ab4caf6a3f94b99}{00010}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_abe3e3b8a4303951b3ab4caf6a3f94b99}{aQuoted}};\ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00011}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae73b65c855d7e3ee7760b7133aa0b015}{00011}}\ \ \ \ \ \textcolor{keyword}{private}\ T\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae73b65c855d7e3ee7760b7133aa0b015}{aValue}};}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00012}00012\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00013}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a5b923e06bc659d29aa0119e7dd34f0eb}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a5b923e06bc659d29aa0119e7dd34f0eb}{Property}}(Enum<?\ extends\ IHeader>\ pHeader,\ T\ pValue)}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ this.aName\ =\ ((\mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IHeader}{IHeader}})pHeader).\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}();}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00016}00016\ \ \ \ \ \ \ \ \ this.aNameJSON\ =\ ((\mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IHeader}{IHeader}})pHeader).mJsonName();}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00017}00017\ \ \ \ \ \ \ \ \ this.aQuoted\ =\ ((\mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IHeader}{IHeader}})pHeader).\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_aacbd5b21c099c5e074e765140c0b0f4e}{mQuoted}}();}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00018}00018\ \ \ \ \ \ \ \ \ this.aValue\ =\ pValue;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00021}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}()}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aName;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00026}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9}{mNameJSON}}()}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aNameJSON;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00031}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_aacbd5b21c099c5e074e765140c0b0f4e}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_aacbd5b21c099c5e074e765140c0b0f4e}{mQuoted}}()}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aQuoted;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00036}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ T\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}()}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aValue;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00040}00040\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00041}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a6f84cf52951d3ac97aa390720a179c4d}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a6f84cf52951d3ac97aa390720a179c4d}{mValue}}(T\ pValue)}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ this.aValue\ =\ pValue;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00046}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{mToJSON}}()}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!this.aQuoted)}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}"{}}\ +\ this.aNameJSON\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}:\ "{}}\ +\ this.aValue.toString();}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}"{}}\ +\ this.aNameJSON\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}:\ \(\backslash\)"{}\(\backslash\)"{}"{}}\ +\ this.aValue.toString()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}"{}};}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00059}00059\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00060}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{00060}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}()}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this.aValue\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ =\ this.aValue.toString();\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00069}00069\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00070}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a960c4b0c3bc390b45bc6922f5f18b2ac}{00070}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a960c4b0c3bc390b45bc6922f5f18b2ac}{mToBook}}()}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this.aValue\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.add(this.aNameJSON);}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(this.aValue\ instanceof\ List<?>\ ))}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vResult.add(this.aValue.toString());}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Property_8java_source_l00083}00083\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,189 @@
+\doxysection{Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json Class Reference}
+\hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson}{}\label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+Inheritance diagram for Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_aca3e125eea343d6551164e154bb120f8}{start}} (Stage p\+Window)  throws Exception   
+\item 
+List$<$ String\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ad5b9b534db0c003b93f6fadb43d2e950}{m\+Read\+All\+Lines}} (File p\+File)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Stage \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a1966f3ebe64a86d3b567a326f704414e}{a\+Window}}
+\item 
+Label \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a96348d9ad44d64373ddd0763c0f38cbb}{a\+Link\+Label}} = new Label("{}Lien \+: "{})
+\item 
+Text\+Area \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a274e483a1def1c9ffa4280c4e90f4012}{a\+Link\+Text}} = new Text\+Area()
+\item 
+Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5}{a\+Convert\+URLButton}} = new Button("{}URL =$>$ Book"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ad5b9b534db0c003b93f6fadb43d2e950}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!mReadAllLines@{mReadAllLines}}
+\index{mReadAllLines@{mReadAllLines}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{mReadAllLines()}{mReadAllLines()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ad5b9b534db0c003b93f6fadb43d2e950} 
+List$<$ String\mbox{[}$\,$\mbox{]}$>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+m\+Read\+All\+Lines (\begin{DoxyParamCaption}\item[{File}]{p\+File}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ CSVParser\ vParser\ =\ \textcolor{keyword}{new}\ CSVParserBuilder()\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(\textcolor{charliteral}{','})}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withIgnoreQuotations(\textcolor{keyword}{false})}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build();\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Reader\ vReader\ =\ \textcolor{keyword}{new}\ FileReader(pFile))}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (CSVReader\ vCsvReader\ =\ \textcolor{keyword}{new}\ CSVReaderBuilder(vReader).withSkipLines(0).withCSVParser(vParser).build())}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vCsvReader.readAll();}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_aca3e125eea343d6551164e154bb120f8}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!start@{start}}
+\index{start@{start}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_aca3e125eea343d6551164e154bb120f8} 
+void Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+start (\begin{DoxyParamCaption}\item[{Stage}]{p\+Window}{}\end{DoxyParamCaption}) throws Exception}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ this.aWindow\ =\ pWindow;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ this.aConvertURLButton.setOnAction}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Monster>\ vMonsters\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Spell>\ vSpells\ =\ \textcolor{keyword}{new}\ ArrayList<>();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(String\ vStringURL\ :\ this.aLinkText.getText().split(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}))}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vStringURL.trim().contains(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd/monstres.php"{}}))}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vMonsters.add(Monster.mFromURL(vStringURL));}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}L'URL\ :\ \(\backslash\)"{}"{}}\ +\ vStringURL\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ à\ été\ ignorée\ parce\ qu'elle\ ne\ fait\ pas\ partie\ du\ site\ \(\backslash\)"{}aidedd.org/\(\backslash\)"{}."{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FileChooser\ vFileChooser\ =\ \textcolor{keyword}{new}\ FileChooser();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vFileChooser.getExtensionFilters().add(\textcolor{keyword}{new}\ FileChooser.ExtensionFilter(\textcolor{stringliteral}{"{}Fichiers\ Book"{}},\ \textcolor{stringliteral}{"{}*.csv"{}}));}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File\ vSaveFile\ =\ vFileChooser.showSaveDialog(this.aWindow);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSaveFile\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Writer\ vWriter\ =\ \textcolor{keyword}{new}\ FileWriter(vSaveFile))}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(ICSVWriter\ vCSVWriter\ =\ (ICSVWriter)\ \textcolor{keyword}{new}\ CSVWriterBuilder(vWriter)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withEscapeChar(ICSVParser.DEFAULT\_ESCAPE\_CHARACTER)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withLineEnd(ICSVWriter.DEFAULT\_LINE\_END)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withQuoteChar(ICSVParser.DEFAULT\_QUOTE\_CHARACTER)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(ICSVParser.DEFAULT\_SEPARATOR)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build())}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Monster\ vMonster\ :\ vMonsters)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vLine\ =\ vMonster.mToBook().toArray(\textcolor{keyword}{new}\ String[0]);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.writeNext(vLine);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.flush();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ HBox\ vLink\ =\ \textcolor{keyword}{new}\ HBox();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ vLink.getChildren().add(aLinkLabel);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ vLink.getChildren().add(aLinkText);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ vLink.getChildren().add(this.aConvertURLButton);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ VBox\ vRoot\ =\ \textcolor{keyword}{new}\ VBox();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ vRoot.getChildren().add(vLink);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ Scene\ vScene\ =\ \textcolor{keyword}{new}\ Scene(vRoot,\ 800,\ 600);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ this.aWindow.setScene(vScene);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ this.aWindow.setTitle(\textcolor{stringliteral}{"{}Csv\ To\ Json"{}});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ this.aWindow.show();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{l00043}{a\+Link\+Label}}, \mbox{\hyperlink{l00044}{a\+Link\+Text}}, and \mbox{\hyperlink{l00025}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+From\+URL()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aConvertURLButton@{aConvertURLButton}}
+\index{aConvertURLButton@{aConvertURLButton}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aConvertURLButton}{aConvertURLButton}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5} 
+Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Convert\+URLButton = new Button("{}URL =$>$ Book"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a96348d9ad44d64373ddd0763c0f38cbb}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aLinkLabel@{aLinkLabel}}
+\index{aLinkLabel@{aLinkLabel}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aLinkLabel}{aLinkLabel}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a96348d9ad44d64373ddd0763c0f38cbb} 
+Label Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Link\+Label = new Label("{}Lien \+: "{})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00048}{start()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a274e483a1def1c9ffa4280c4e90f4012}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aLinkText@{aLinkText}}
+\index{aLinkText@{aLinkText}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aLinkText}{aLinkText}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a274e483a1def1c9ffa4280c4e90f4012} 
+Text\+Area Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Link\+Text = new Text\+Area()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00048}{start()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a1966f3ebe64a86d3b567a326f704414e}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aWindow@{aWindow}}
+\index{aWindow@{aWindow}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aWindow}{aWindow}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a1966f3ebe64a86d3b567a326f704414e} 
+Stage Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/\+Dn\+D/\+Java\+Csv\+To\+Json/\mbox{\hyperlink{JavaCsvToJson_8java}{Java\+Csv\+To\+Json.\+java}}\end{DoxyCompactItemize}

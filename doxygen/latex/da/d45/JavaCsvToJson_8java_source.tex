@@ -1,0 +1,150 @@
+\doxysection{Java\+Csv\+To\+Json.\+java}
+\hypertarget{JavaCsvToJson_8java_source}{}\label{JavaCsvToJson_8java_source}\index{src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java@{src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java}}
+\mbox{\hyperlink{JavaCsvToJson_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00001}00001\ \textcolor{keyword}{package\ }DnD.JavaCsvToJson;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.io.File;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.io.FileReader;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.io.FileWriter;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.io.Reader;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.io.Writer;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00012}00012\ \textcolor{keyword}{import}\ org.json.simple.JSONObject;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00013}00013\ \textcolor{keyword}{import}\ org.json.simple.parser.JSONParser;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00014}00014\ \textcolor{keyword}{import}\ org.json.simple.parser.ParseException;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00015}00015\ \textcolor{keyword}{import}\ org.jsoup.Jsoup;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00016}00016\ \textcolor{keyword}{import}\ org.jsoup.nodes.Document;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00017}00017\ \textcolor{keyword}{import}\ org.jsoup.nodes.Element;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00018}00018\ \textcolor{keyword}{import}\ org.jsoup.select.Elements;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00020}00020\ \textcolor{keyword}{import}\ com.opencsv.CSVParser;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00021}00021\ \textcolor{keyword}{import}\ com.opencsv.CSVParserBuilder;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00022}00022\ \textcolor{keyword}{import}\ com.opencsv.CSVReader;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00023}00023\ \textcolor{keyword}{import}\ com.opencsv.CSVReaderBuilder;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00024}00024\ \textcolor{keyword}{import}\ com.opencsv.CSVWriterBuilder;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00025}00025\ \textcolor{keyword}{import}\ com.opencsv.ICSVParser;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00026}00026\ \textcolor{keyword}{import}\ com.opencsv.ICSVWriter;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00028}00028\ \textcolor{keyword}{import}\ javafx.application.Application;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00029}00029\ \textcolor{keyword}{import}\ javafx.scene.Scene;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00030}00030\ \textcolor{keyword}{import}\ javafx.scene.control.Button;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00031}00031\ \textcolor{keyword}{import}\ javafx.scene.control.Label;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00032}00032\ \textcolor{keyword}{import}\ javafx.scene.control.TextArea;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00033}00033\ \textcolor{keyword}{import}\ javafx.scene.control.TextField;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00034}00034\ \textcolor{keyword}{import}\ javafx.scene.layout.HBox;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00035}00035\ \textcolor{keyword}{import}\ javafx.scene.layout.VBox;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00036}00036\ \textcolor{keyword}{import}\ javafx.stage.FileChooser;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00037}00037\ \textcolor{keyword}{import}\ javafx.stage.Stage;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00040}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson}{00040}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson}{JavaCsvToJson}}\ \textcolor{keyword}{extends}\ Application\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00042}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a1966f3ebe64a86d3b567a326f704414e}{00042}}\ \ \ \ \ \textcolor{keyword}{private}\ Stage\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a1966f3ebe64a86d3b567a326f704414e}{aWindow}};\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00043}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a96348d9ad44d64373ddd0763c0f38cbb}{00043}}\ \ \ \ \ \textcolor{keyword}{private}\ Label\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a96348d9ad44d64373ddd0763c0f38cbb}{aLinkLabel}}\ =\ \textcolor{keyword}{new}\ Label(\textcolor{stringliteral}{"{}Lien\ :\ "{}});}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00044}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a274e483a1def1c9ffa4280c4e90f4012}{00044}}\ \ \ \ \ \textcolor{keyword}{private}\ TextArea\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a274e483a1def1c9ffa4280c4e90f4012}{aLinkText}}\ =\ \textcolor{keyword}{new}\ TextArea();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00045}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5}{00045}}\ \ \ \ \ \textcolor{keyword}{private}\ Button\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5}{aConvertURLButton}}\ =\ \textcolor{keyword}{new}\ Button(\textcolor{stringliteral}{"{}URL\ =>\ Book"{}});}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00046}00046\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00047}00047\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00048}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_aca3e125eea343d6551164e154bb120f8}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_aca3e125eea343d6551164e154bb120f8}{start}}(Stage\ pWindow)\ \textcolor{keywordflow}{throws}\ Exception\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ this.aWindow\ =\ pWindow;}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ this.aConvertURLButton.setOnAction}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>\ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Monster>\ vMonsters\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Spell>\ vSpells\ =\ \textcolor{keyword}{new}\ ArrayList<>();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(String\ vStringURL\ :\ this.aLinkText.getText().split(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}))}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vStringURL.trim().contains(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd/monstres.php"{}}))}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vMonsters.add(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Monster}{Monster}}.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Monster_a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2}{mFromURL}}(vStringURL));}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}L'URL\ :\ \(\backslash\)"{}"{}}\ +\ vStringURL\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ à\ été\ ignorée\ parce\ qu'elle\ ne\ fait\ pas\ partie\ du\ site\ \(\backslash\)"{}aidedd.org/\(\backslash\)"{}."{}});}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FileChooser\ vFileChooser\ =\ \textcolor{keyword}{new}\ FileChooser();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vFileChooser.getExtensionFilters().add(\textcolor{keyword}{new}\ FileChooser.ExtensionFilter(\textcolor{stringliteral}{"{}Fichiers\ Book"{}},\ \textcolor{stringliteral}{"{}*.csv"{}}));}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File\ vSaveFile\ =\ vFileChooser.showSaveDialog(this.aWindow);}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSaveFile\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Writer\ vWriter\ =\ \textcolor{keyword}{new}\ FileWriter(vSaveFile))}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(ICSVWriter\ vCSVWriter\ =\ (ICSVWriter)\ \textcolor{keyword}{new}\ CSVWriterBuilder(vWriter)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withEscapeChar(ICSVParser.DEFAULT\_ESCAPE\_CHARACTER)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withLineEnd(ICSVWriter.DEFAULT\_LINE\_END)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withQuoteChar(ICSVParser.DEFAULT\_QUOTE\_CHARACTER)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(ICSVParser.DEFAULT\_SEPARATOR)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build())}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Monster}{Monster}}\ vMonster\ :\ vMonsters)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vLine\ =\ vMonster.mToBook().toArray(\textcolor{keyword}{new}\ String[0]);}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.writeNext(vLine);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.flush();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ HBox\ vLink\ =\ \textcolor{keyword}{new}\ HBox();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ vLink.getChildren().add(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a96348d9ad44d64373ddd0763c0f38cbb}{aLinkLabel}});}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ vLink.getChildren().add(\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a274e483a1def1c9ffa4280c4e90f4012}{aLinkText}});}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ vLink.getChildren().add(this.aConvertURLButton);}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ VBox\ vRoot\ =\ \textcolor{keyword}{new}\ VBox();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ vRoot.getChildren().add(vLink);}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ Scene\ vScene\ =\ \textcolor{keyword}{new}\ Scene(vRoot,\ 800,\ 600);}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ this.aWindow.setScene(vScene);}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ this.aWindow.setTitle(\textcolor{stringliteral}{"{}Csv\ To\ Json"{}});}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ this.aWindow.show();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00118}00118\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00119}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ad5b9b534db0c003b93f6fadb43d2e950}{00119}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String[]>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ad5b9b534db0c003b93f6fadb43d2e950}{mReadAllLines}}(File\ pFile)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00120}00120\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ CSVParser\ vParser\ =\ \textcolor{keyword}{new}\ CSVParserBuilder()\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(\textcolor{charliteral}{','})}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withIgnoreQuotations(\textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build();\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Reader\ vReader\ =\ \textcolor{keyword}{new}\ FileReader(pFile))}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (CSVReader\ vCsvReader\ =\ \textcolor{keyword}{new}\ CSVReaderBuilder(vReader).withSkipLines(0).withCSVParser(vParser).build())}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vCsvReader.readAll();}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JavaCsvToJson_8java_source_l00144}00144\ \}}
+
+\end{DoxyCode}

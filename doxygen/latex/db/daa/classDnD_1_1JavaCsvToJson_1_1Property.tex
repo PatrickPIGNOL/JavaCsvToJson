@@ -1,0 +1,250 @@
+\doxysection{Dn\+D.\+Java\+Csv\+To\+Json.\+Property\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classDnD_1_1JavaCsvToJson_1_1Property}{}\label{classDnD_1_1JavaCsvToJson_1_1Property}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a5b923e06bc659d29aa0119e7dd34f0eb}{Property}} (Enum$<$? extends \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IHeader}{IHeader}} $>$ p\+Header, T p\+Value)
+\item 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{m\+Name}} ()
+\item 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9}{m\+Name\+JSON}} ()
+\item 
+boolean \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_aacbd5b21c099c5e074e765140c0b0f4e}{m\+Quoted}} ()
+\item 
+T \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{m\+Value}} ()
+\item 
+void \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a6f84cf52951d3ac97aa390720a179c4d}{m\+Value}} (T p\+Value)
+\item 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}{m\+To\+JSON}} ()
+\item 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{m\+To\+CSV}} ()
+\item 
+List$<$ String $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a960c4b0c3bc390b45bc6922f5f18b2ac}{m\+To\+Book}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a936bd5dbcd8276276ee7a19b6fdec37c}{a\+Name}}
+\item 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ad483fadd1c367010f48bd155e6f3fa35}{a\+Name\+JSON}}
+\item 
+boolean \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_abe3e3b8a4303951b3ab4caf6a3f94b99}{a\+Quoted}}
+\item 
+T \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae73b65c855d7e3ee7760b7133aa0b015}{a\+Value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_a5b923e06bc659d29aa0119e7dd34f0eb}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!Property@{Property}}
+\index{Property@{Property}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Property()}{Property()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_a5b923e06bc659d29aa0119e7dd34f0eb} 
+\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}} (\begin{DoxyParamCaption}\item[{Enum$<$? extends \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IHeader}{IHeader}} $>$}]{p\+Header}{, }\item[{T}]{p\+Value}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ this.aName\ =\ ((IHeader)pHeader).mName();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ this.aNameJSON\ =\ ((IHeader)pHeader).mJsonName();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ this.aQuoted\ =\ ((IHeader)pHeader).mQuoted();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this.aValue\ =\ pValue;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{l00021}{m\+Name()}}, and \mbox{\hyperlink{l00031}{m\+Quoted()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mName@{mName}}
+\index{mName@{mName}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mName()}{mName()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3} 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aName;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00062}{Dn\+D.\+Java\+Csv\+To\+Json.\+Avatar\+Frame.\+m\+CSVHeaders()}}, \mbox{\hyperlink{l00995}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+CSVHeaders()}}, \mbox{\hyperlink{l00084}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Avatar.\+m\+CSVHeaders()}}, \mbox{\hyperlink{l00170}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+CSVHeaders()}}, \mbox{\hyperlink{l00164}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell\+Attack.\+m\+CSVHeaders()}}, and \mbox{\hyperlink{l00013}{Property()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mNameJSON@{mNameJSON}}
+\index{mNameJSON@{mNameJSON}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mNameJSON()}{mNameJSON()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9} 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+Name\+JSON (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aNameJSON;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00107}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Avatar.\+m\+To\+Book()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_aacbd5b21c099c5e074e765140c0b0f4e}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mQuoted@{mQuoted}}
+\index{mQuoted@{mQuoted}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mQuoted()}{mQuoted()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_aacbd5b21c099c5e074e765140c0b0f4e} 
+boolean \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+Quoted (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aQuoted;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00013}{Property()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_a960c4b0c3bc390b45bc6922f5f18b2ac}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mToBook@{mToBook}}
+\index{mToBook@{mToBook}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mToBook()}{mToBook()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_a960c4b0c3bc390b45bc6922f5f18b2ac} 
+List$<$ String $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+To\+Book (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this.aValue\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.add(this.aNameJSON);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(this.aValue\ instanceof\ List<?>\ ))}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vResult.add(this.aValue.toString());}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00084}{Dn\+D.\+Java\+Csv\+To\+Json.\+Avatar\+Frame.\+m\+To\+Book()}}, \mbox{\hyperlink{l01069}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+To\+Book()}}, \mbox{\hyperlink{l00054}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Action.\+m\+To\+Book()}}, and \mbox{\hyperlink{l00204}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell\+Attack.\+m\+To\+Book()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mToCSV@{mToCSV}}
+\index{mToCSV@{mToCSV}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mToCSV()}{mToCSV()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1} 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+To\+CSV (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this.aValue\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ =\ this.aValue.toString();\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00107}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Avatar.\+m\+To\+Book()}}, \mbox{\hyperlink{l00073}{Dn\+D.\+Java\+Csv\+To\+Json.\+Avatar\+Frame.\+m\+To\+CSV()}}, \mbox{\hyperlink{l01032}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+To\+CSV()}}, \mbox{\hyperlink{l00096}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Avatar.\+m\+To\+CSV()}}, \mbox{\hyperlink{l00185}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+To\+CSV()}}, and \mbox{\hyperlink{l00185}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell\+Attack.\+m\+To\+CSV()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mToJSON@{mToJSON}}
+\index{mToJSON@{mToJSON}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mToJSON()}{mToJSON()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_a63faa67806092bbfe7b037b6878b943e} 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+To\+JSON (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!this.aQuoted)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}"{}}\ +\ this.aNameJSON\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}:\ "{}}\ +\ this.aValue.toString();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}"{}}\ +\ this.aNameJSON\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}:\ \(\backslash\)"{}\(\backslash\)"{}"{}}\ +\ this.aValue.toString()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\(\backslash\)"{}"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00155}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+To\+JSON()}}, and \mbox{\hyperlink{l00146}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell\+Attack.\+m\+To\+JSON()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mValue@{mValue}}
+\index{mValue@{mValue}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mValue()}{mValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877} 
+T \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aValue;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00995}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+CSVHeaders()}}, \mbox{\hyperlink{l00084}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Avatar.\+m\+CSVHeaders()}}, \mbox{\hyperlink{l01069}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+To\+Book()}}, \mbox{\hyperlink{l00054}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Action.\+m\+To\+Book()}}, \mbox{\hyperlink{l00107}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Avatar.\+m\+To\+Book()}}, \mbox{\hyperlink{l00054}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Property.\+m\+To\+Book()}}, \mbox{\hyperlink{l01032}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+To\+CSV()}}, \mbox{\hyperlink{l00096}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Avatar.\+m\+To\+CSV()}}, and \mbox{\hyperlink{l00039}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster\+Property.\+m\+To\+CSV()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_a6f84cf52951d3ac97aa390720a179c4d}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!mValue@{mValue}}
+\index{mValue@{mValue}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mValue()}{mValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_a6f84cf52951d3ac97aa390720a179c4d} 
+void \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.m\+Value (\begin{DoxyParamCaption}\item[{T}]{p\+Value}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ this.aValue\ =\ pValue;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_a936bd5dbcd8276276ee7a19b6fdec37c}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!aName@{aName}}
+\index{aName@{aName}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{aName}{aName}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_a936bd5dbcd8276276ee7a19b6fdec37c} 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.a\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_ad483fadd1c367010f48bd155e6f3fa35}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!aNameJSON@{aNameJSON}}
+\index{aNameJSON@{aNameJSON}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{aNameJSON}{aNameJSON}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_ad483fadd1c367010f48bd155e6f3fa35} 
+String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.a\+Name\+JSON\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_abe3e3b8a4303951b3ab4caf6a3f94b99}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!aQuoted@{aQuoted}}
+\index{aQuoted@{aQuoted}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{aQuoted}{aQuoted}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_abe3e3b8a4303951b3ab4caf6a3f94b99} 
+boolean \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.a\+Quoted\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Property_ae73b65c855d7e3ee7760b7133aa0b015}\index{DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}!aValue@{aValue}}
+\index{aValue@{aValue}!DnD.JavaCsvToJson.Property$<$ T $>$@{DnD.JavaCsvToJson.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{aValue}{aValue}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Property_ae73b65c855d7e3ee7760b7133aa0b015} 
+T \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property}}$<$ T $>$.a\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/\+Dn\+D/\+Java\+Csv\+To\+Json/\mbox{\hyperlink{Property_8java}{Property.\+java}}\end{DoxyCompactItemize}

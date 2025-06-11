@@ -1,0 +1,125 @@
+\doxysection{Monster\+Avatar.\+java}
+\hypertarget{MonsterAvatar_8java_source}{}\label{MonsterAvatar_8java_source}\index{src/main/java/DnD/JavaCsvToJson/MonsterAvatar.java@{src/main/java/DnD/JavaCsvToJson/MonsterAvatar.java}}
+\mbox{\hyperlink{MonsterAvatar_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00001}00001\ \textcolor{keyword}{package\ }DnD.JavaCsvToJson;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.json.simple.JSONObject;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00008}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a15381c8b9ccd9d0b2feb3632d9b667d4}{MonsterAvatar}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IExportable}{IExportable}}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00010}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a96b2e10925a9f80d04e765f529311d71}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a15381c8b9ccd9d0b2feb3632d9b667d4}{MonsterAvatar}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a96b2e10925a9f80d04e765f529311d71}{mFromJson}}(JSONObject\ vJson)}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a15381c8b9ccd9d0b2feb3632d9b667d4}{MonsterAvatar}}\ vResult\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00013}00013\ \ \ \ \ \ \ \ \ String\ vAvatar\ =\ (String)\ vJson.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_aa426ae7c809879b6cc4bd59c8bd0b1c2}{Avatar}}.mJsonName(),\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vAvatar\ !=\ \textcolor{keyword}{null}\ \&\&\ vAvatar.equalsIgnoreCase(\textcolor{stringliteral}{"{}null"{}}))}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ vAvatar\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00018}00018\ \ \ \ \ \ \ \ \ String\ vToken\ =\ (String)\ vJson.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_a69a2a0bc4bc0e4000a75b386faaa26d4}{Token}}.mJsonName(),\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vToken\ !=\ \textcolor{keyword}{null}\ \&\&\ vToken.equalsIgnoreCase(\textcolor{stringliteral}{"{}null"{}}))}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ vToken\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ JSONObject\ vJsonFrame\ =\ (JSONObject)\ vJson.getOrDefault(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_a263b49622b4486ec1634c5aab1db71c7}{Frame}}.mJsonName(),\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1AvatarFrame}{AvatarFrame}}\ vAvatarFrame;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vJsonFrame\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ vAvatarFrame\ =\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1AvatarFrame}{AvatarFrame}}.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1AvatarFrame_aead174f9928789ce4f562e44d6db5b66}{mFromJson}}(vJsonFrame);}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ vAvatarFrame\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1AvatarFrame}{AvatarFrame}}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_aa426ae7c809879b6cc4bd59c8bd0b1c2}{Avatar}},\ \textcolor{keyword}{null}),}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_a69a2a0bc4bc0e4000a75b386faaa26d4}{Token}},\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ vResult\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a15381c8b9ccd9d0b2feb3632d9b667d4}{MonsterAvatar}}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_aa426ae7c809879b6cc4bd59c8bd0b1c2}{Avatar}},\ vAvatar),}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_a69a2a0bc4bc0e4000a75b386faaa26d4}{Token}},\ vToken),}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<AvatarFrame>}}(\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader}{EMonsterHeader}}.\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader_a263b49622b4486ec1634c5aab1db71c7}{Frame}},\ vAvatarFrame)}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00046}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a942275b8af4fa599de097b39973a29e9}{00046}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a942275b8af4fa599de097b39973a29e9}{aAvatar}};}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00047}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_adbe33e4382d461cf454d12311de90568}{00047}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_adbe33e4382d461cf454d12311de90568}{aToken}};}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00048}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_aa4f127dd55aa8570e1a22ac8b6fae4b5}{00048}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<AvatarFrame>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_aa4f127dd55aa8570e1a22ac8b6fae4b5}{aFrame}};}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00049}00049\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00050}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a15381c8b9ccd9d0b2feb3632d9b667d4}{00050}}\ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a15381c8b9ccd9d0b2feb3632d9b667d4}{MonsterAvatar}}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00051}00051\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ pAvatar,}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ pToken,}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<AvatarFrame>}}\ pFrame}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00055}00055\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ this.aAvatar\ =\ pAvatar;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ this.aToken\ =\ pToken;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ this.aFrame\ =\ pFrame;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00061}00061\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00062}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_ae7cca5e42c3f679ccdf7457090ddcb38}{00062}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_ae7cca5e42c3f679ccdf7457090ddcb38}{mAvatar}}()}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aAvatar\ ;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00066}00066\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00067}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_aaf779dfd0e7ad01ac5badcadc94430ca}{00067}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<String>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_aaf779dfd0e7ad01ac5badcadc94430ca}{mToken}}()}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aToken;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00070}00070\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00071}00071\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00072}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_abe064b1a7d74beb91ba27fb07ba60153}{00072}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property<AvatarFrame>}}\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_abe064b1a7d74beb91ba27fb07ba60153}{mFrame}}()}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aFrame;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00075}00075\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00077}00077\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00078}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_ab21d0d6c57d9c35446d5a8eb8033aadb}{00078}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_ab21d0d6c57d9c35446d5a8eb8033aadb}{mToJSON}}()\ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00082}00082\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00083}00083\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00084}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a01c9919e87a1191060061d30c046cfa0}{00084}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a01c9919e87a1191060061d30c046cfa0}{mCSVHeaders}}()}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ vResult.add(this.aAvatar.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ vResult.add(this.aToken.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ vResult.add(this.aFrame.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a8e17f66fb324c171bc8d25842aab18a3}{mName}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ vResult.addAll(this.aFrame.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}().mCSVHeaders());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00094}00094\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00095}00095\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00096}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a2cce56dfb01935199db6b7fd464972e6}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a2cce56dfb01935199db6b7fd464972e6}{mToCSV}}()}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ vResult.add(this.aAvatar.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ vResult.add(this.aToken.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ vResult.addAll(this.aFrame.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}().mToCSV());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00106}00106\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00107}\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a4be4b80f8a253c7687ae834e73e152e4}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ List<String>\ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1MonsterAvatar_a4be4b80f8a253c7687ae834e73e152e4}{mToBook}}()}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00108}00108\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ vResult.add(this.aAvatar.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9}{mNameJSON}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ vResult.add(this.aAvatar.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ vResult.add(this.aToken.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9}{mNameJSON}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ vResult.add(this.aToken.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ac5cef9f38b5f347d77910d0b16b53dd1}{mToCSV}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ vResult.add(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ vResult.add(this.aFrame.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_a01556bfcf91ae58facabf1eaaa26b3a9}{mNameJSON}}());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ vResult.addAll(this.aFrame.\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property_ae65ced194fca8f43926943c164881877}{mValue}}().mToBook());}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MonsterAvatar_8java_source_l00119}00119\ \}}
+
+\end{DoxyCode}

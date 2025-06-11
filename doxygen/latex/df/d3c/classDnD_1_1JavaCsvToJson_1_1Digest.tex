@@ -1,0 +1,79 @@
+\doxysection{Dn\+D.\+Java\+Csv\+To\+Json.\+Digest Class Reference}
+\hypertarget{classDnD_1_1JavaCsvToJson_1_1Digest}{}\label{classDnD_1_1JavaCsvToJson_1_1Digest}\index{DnD.JavaCsvToJson.Digest@{DnD.JavaCsvToJson.Digest}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_aeaeb09b6078fc41f680e25fd9d77fc7b}{m\+New\+Digest\+Index}} (int p\+Length)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Big\+Integer \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f}{a\+Digest\+Index}} = Big\+Integer.\+value\+Of(0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Digest_aeaeb09b6078fc41f680e25fd9d77fc7b}\index{DnD.JavaCsvToJson.Digest@{DnD.JavaCsvToJson.Digest}!mNewDigestIndex@{mNewDigestIndex}}
+\index{mNewDigestIndex@{mNewDigestIndex}!DnD.JavaCsvToJson.Digest@{DnD.JavaCsvToJson.Digest}}
+\doxysubsubsection{\texorpdfstring{mNewDigestIndex()}{mNewDigestIndex()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Digest_aeaeb09b6078fc41f680e25fd9d77fc7b} 
+static String Dn\+D.\+Java\+Csv\+To\+Json.\+Digest.\+m\+New\+Digest\+Index (\begin{DoxyParamCaption}\item[{int}]{p\+Length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ MessageDigest\ vMessageDigest\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}SHA-\/256"{}});}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ vByteArray\ =\ vMessageDigest.digest(aDigestIndex.toByteArray());}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ aDigestIndex\ =\ aDigestIndex.add(BigInteger.valueOf(1));}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ StringBuilder\ vHexString\ =\ \textcolor{keyword}{new}\ StringBuilder(2\ *\ vByteArray.length);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{byte}\ vByte\ :\ vByteArray)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vHex\ =\ Integer.toHexString(0xff\ \&\ vByte);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vHex.length()\ ==\ 1)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vHexString.append(\textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vHexString.append(vHex);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ =\ vHexString.toString();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vResult.length()\ >\ pLength)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ =\ vResult.substring(vResult.length()\ -\/\ pLength);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{l00008}{a\+Digest\+Index}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f}\index{DnD.JavaCsvToJson.Digest@{DnD.JavaCsvToJson.Digest}!aDigestIndex@{aDigestIndex}}
+\index{aDigestIndex@{aDigestIndex}!DnD.JavaCsvToJson.Digest@{DnD.JavaCsvToJson.Digest}}
+\doxysubsubsection{\texorpdfstring{aDigestIndex}{aDigestIndex}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Digest_a67383938a12926305f6d9de69044fb3f} 
+Big\+Integer Dn\+D.\+Java\+Csv\+To\+Json.\+Digest.\+a\+Digest\+Index = Big\+Integer.\+value\+Of(0)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00010}{m\+New\+Digest\+Index()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/\+Dn\+D/\+Java\+Csv\+To\+Json/\mbox{\hyperlink{Digest_8java}{Digest.\+java}}\end{DoxyCompactItemize}
