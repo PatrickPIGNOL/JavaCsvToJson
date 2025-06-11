@@ -705,7 +705,7 @@ public class Monster implements IExportable
 				new Property<List<MonsterAction>>(EMonsterHeader.Actions, vMonsterActions)
 			);	
 		} 
-		catch (IOException e) 
+		catch (IOException e)
 		{
 			e.printStackTrace();
 		}		
