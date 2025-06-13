@@ -4,6 +4,7 @@ var enumDnD_1_1JavaCsvToJson_1_1ESpellHeader =
     [ "mJsonName", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a2f14004f1c425ef8946038d4e77e66b5", null ],
     [ "mName", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a6d67b2a418f20bcb542c2e36d2d6b440", null ],
     [ "mQuoted", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#ad4f0a8a20004993affe808463d7638e1", null ],
+    [ "Actions", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a71f5821f5eee3861a0af770c03610985", null ],
     [ "aJsonName", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a5afa44a8d17e7c76a8eaa9c19954d148", null ],
     [ "AlwaysPrepared", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a9cba5dc6e643cd4b61f16d6943d8d5f5", null ],
     [ "aName", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a76f356e00c661d50015f7fd2f2cf8e98", null ],
@@ -23,6 +24,7 @@ var enumDnD_1_1JavaCsvToJson_1_1ESpellHeader =
     [ "RealLevel", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a30747ba9b27d24a80f0fffe1fb0d45b6", null ],
     [ "Ritual", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#ad3eb5045997b7a03ae4c3f3ad035e538", null ],
     [ "S", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a17cbb0d3af596f783470a692a5f41c05", null ],
+    [ "SaveThrow", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a0623ae69980ea124b2142fa74ae07497", null ],
     [ "School", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a8178df3b06c21b8344459d9b07f1279a", null ],
     [ "Time", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a5edd158fbf6b1a99aec1e76e26c622d8", null ],
     [ "V", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a58e129eabf157e2f17ee7b8fd034eac4", null ]

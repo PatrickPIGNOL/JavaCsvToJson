@@ -164,8 +164,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4082cdefcea2054b157d87a63d3162fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a337cc26b01c72760c09f63a197c2d70d" id="r_a337cc26b01c72760c09f63a197c2d70d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a337cc26b01c72760c09f63a197c2d70d">MaterialCost</a> =(&quot;Material Cost&quot;, &quot;materialCost&quot;, false)</td></tr>
 <tr class="separator:a337cc26b01c72760c09f63a197c2d70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f5821f5eee3861a0af770c03610985" id="r_a71f5821f5eee3861a0af770c03610985"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f5821f5eee3861a0af770c03610985">Actions</a> =(&quot;Actions&quot;, &quot;actions&quot;, true)</td></tr>
+<tr class="separator:a71f5821f5eee3861a0af770c03610985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ea58a31882c37677456365781a46e3" id="r_ad6ea58a31882c37677456365781a46e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6ea58a31882c37677456365781a46e3">Attack</a> =(&quot;Attack&quot;, &quot;spellAttack&quot;, true)</td></tr>
 <tr class="separator:ad6ea58a31882c37677456365781a46e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0623ae69980ea124b2142fa74ae07497" id="r_a0623ae69980ea124b2142fa74ae07497"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0623ae69980ea124b2142fa74ae07497">SaveThrow</a> =(&quot;Save Throw&quot;, &quot;saveThrow&quot;, true)</td></tr>
+<tr class="separator:a0623ae69980ea124b2142fa74ae07497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f8270ec7c8a7dc6a40d536f8c89c1d1" id="r_a4f8270ec7c8a7dc6a40d536f8c89c1d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f8270ec7c8a7dc6a40d536f8c89c1d1">Damage</a> =(&quot;Damage&quot;, &quot;spellDamage&quot;, true)</td></tr>
 <tr class="separator:a4f8270ec7c8a7dc6a40d536f8c89c1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08d6b2bd892a677f6dd5ee1b61f9e7a8" id="r_a08d6b2bd892a677f6dd5ee1b61f9e7a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08d6b2bd892a677f6dd5ee1b61f9e7a8">Description</a> =(&quot;Description&quot;, &quot;spellDescription&quot;, true)</td></tr>
@@ -207,11 +211,11 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        this.aName = pName;</div>
-<div class="line"><span class="lineno">   32</span>        this.aJsonName = pJsonName;</div>
-<div class="line"><span class="lineno">   33</span>        this.aQuoted = pQuoted;</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>        this.aName = pName;</div>
+<div class="line"><span class="lineno">   34</span>        this.aJsonName = pJsonName;</div>
+<div class="line"><span class="lineno">   35</span>        this.aQuoted = pQuoted;</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,9 +236,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader.html#af5a83b20ca813c50d1ad9bf748573ec6">DnD.JavaCsvToJson.IHeader</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">return</span> this.aJsonName;</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> this.aJsonName;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -254,9 +258,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader.html#a16fba7d2814d54af415196891259c96b">DnD.JavaCsvToJson.IHeader</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">return</span> this.aName;</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">return</span> this.aName;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,13 +280,29 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="../../db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader.html#a9ab79c4ba41d27f69387c17c64de1746">DnD.JavaCsvToJson.IHeader</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>    {</div>
-<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> this.aQuoted;</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> this.aQuoted;</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a71f5821f5eee3861a0af770c03610985" name="a71f5821f5eee3861a0af770c03610985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f5821f5eee3861a0af770c03610985">&#9670;&#160;</a></span>Actions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DnD.JavaCsvToJson.ESpellHeader.Actions =(&quot;Actions&quot;, &quot;actions&quot;, true)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#l00285">DnD.JavaCsvToJson.Spell.Spell()</a>.</p>
+
+</div>
+</div>
 <a id="a5afa44a8d17e7c76a8eaa9c19954d148" name="a5afa44a8d17e7c76a8eaa9c19954d148"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5afa44a8d17e7c76a8eaa9c19954d148">&#9670;&#160;</a></span>aJsonName</h2>
 
@@ -317,7 +337,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -377,7 +397,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
 
 </div>
 </div>
@@ -393,7 +413,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -409,7 +429,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -425,7 +445,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -441,7 +461,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -457,7 +477,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +493,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -489,7 +509,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -505,7 +525,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -521,7 +541,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -537,7 +557,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -553,7 +573,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -569,7 +589,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -585,7 +605,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -601,7 +621,23 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
+
+</div>
+</div>
+<a id="a0623ae69980ea124b2142fa74ae07497" name="a0623ae69980ea124b2142fa74ae07497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0623ae69980ea124b2142fa74ae07497">&#9670;&#160;</a></span>SaveThrow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DnD.JavaCsvToJson.ESpellHeader.SaveThrow =(&quot;Save Throw&quot;, &quot;saveThrow&quot;, true)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -617,7 +653,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -633,7 +669,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>
@@ -649,7 +685,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00018">DnD.JavaCsvToJson.Spell.mFromJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00184">DnD.JavaCsvToJson.Spell.mFromJson()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>

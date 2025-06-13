@@ -1,9 +1,11 @@
 var enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType =
 [
-    [ "ESpellAttackType", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a5bb0e6533b42dc8585489b96150ab61f", null ],
+    [ "ESpellAttackType", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#acb953f5b4005172fc0a24831b0f72610", null ],
     [ "mID", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#aa69bc469965fe608142340d0ee58bdc9", null ],
+    [ "mNameFR", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a039aa772154f620a955a7b2b691c796f", null ],
     [ "toString", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a76b1ac125d3b685bd663655bd4639e97", null ],
     [ "aID", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#ae760827886db71b66dcfd9617ed12d9b", null ],
+    [ "aNameFR", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a0ef6ea0cd51d78975bdda3ef443d6bd8", null ],
     [ "CharismaSave", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a7dc47064884b810d3244cf5ff49312d2", null ],
     [ "ConstitutionSave", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a2cd722ecb2bf7712b019449e08165ca0", null ],
     [ "DexteritySave", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a353896aaefb57093c8fa9b2c7fb86765", null ],

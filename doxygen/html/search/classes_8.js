@@ -12,6 +12,7 @@ var searchData=
   ['property_3c_20integer_20_3e_9',['Property&lt; Integer &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
   ['property_3c_20list_3c_20dnd_3a_3ajavacsvtojson_3a_3amonsteraction_20_3e_20_3e_10',['Property&lt; List&lt; DnD::JavaCsvToJson::MonsterAction &gt; &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
   ['property_3c_20list_3c_20dnd_3a_3ajavacsvtojson_3a_3amonsterproperty_20_3e_20_3e_11',['Property&lt; List&lt; DnD::JavaCsvToJson::MonsterProperty &gt; &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
-  ['property_3c_20string_20_3e_12',['Property&lt; String &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
-  ['propertyindex_13',['PropertyIndex',['../dd/d20/classDnD_1_1JavaCsvToJson_1_1PropertyIndex.html',1,'DnD::JavaCsvToJson']]]
+  ['property_3c_20list_3c_20dnd_3a_3ajavacsvtojson_3a_3aspellattack_20_3e_20_3e_12',['Property&lt; List&lt; DnD::JavaCsvToJson::SpellAttack &gt; &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
+  ['property_3c_20string_20_3e_13',['Property&lt; String &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
+  ['propertyindex_14',['PropertyIndex',['../dd/d20/classDnD_1_1JavaCsvToJson_1_1PropertyIndex.html',1,'DnD::JavaCsvToJson']]]
 ];

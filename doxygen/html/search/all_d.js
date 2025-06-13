@@ -15,9 +15,10 @@ var searchData=
   ['property_3c_20integer_20_3e_12',['Property&lt; Integer &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
   ['property_3c_20list_3c_20dnd_3a_3ajavacsvtojson_3a_3amonsteraction_20_3e_20_3e_13',['Property&lt; List&lt; DnD::JavaCsvToJson::MonsterAction &gt; &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
   ['property_3c_20list_3c_20dnd_3a_3ajavacsvtojson_3a_3amonsterproperty_20_3e_20_3e_14',['Property&lt; List&lt; DnD::JavaCsvToJson::MonsterProperty &gt; &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
-  ['property_3c_20string_20_3e_15',['Property&lt; String &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
-  ['propertyindex_16',['PropertyIndex',['../dd/d20/classDnD_1_1JavaCsvToJson_1_1PropertyIndex.html',1,'DnD.JavaCsvToJson.PropertyIndex'],['../dd/d20/classDnD_1_1JavaCsvToJson_1_1PropertyIndex.html#af5a2356dcabbc806f57fc76f7bde0a75',1,'DnD.JavaCsvToJson.PropertyIndex.PropertyIndex()']]],
-  ['propertyindex_2ejava_17',['PropertyIndex.java',['../d4/d0f/PropertyIndex_8java.html',1,'']]],
-  ['propertyname_18',['PropertyName',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#a9cf1cb15e83d72d2a6f5688c9e7d96c1',1,'DnD::JavaCsvToJson::EMonsterHeader']]],
-  ['propertyvalue_19',['PropertyValue',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#abc762bd618110291f2c162496e503a59',1,'DnD::JavaCsvToJson::EMonsterHeader']]]
+  ['property_3c_20list_3c_20dnd_3a_3ajavacsvtojson_3a_3aspellattack_20_3e_20_3e_15',['Property&lt; List&lt; DnD::JavaCsvToJson::SpellAttack &gt; &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
+  ['property_3c_20string_20_3e_16',['Property&lt; String &gt;',['../db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html',1,'DnD::JavaCsvToJson']]],
+  ['propertyindex_17',['PropertyIndex',['../dd/d20/classDnD_1_1JavaCsvToJson_1_1PropertyIndex.html',1,'DnD.JavaCsvToJson.PropertyIndex'],['../dd/d20/classDnD_1_1JavaCsvToJson_1_1PropertyIndex.html#af5a2356dcabbc806f57fc76f7bde0a75',1,'DnD.JavaCsvToJson.PropertyIndex.PropertyIndex()']]],
+  ['propertyindex_2ejava_18',['PropertyIndex.java',['../d4/d0f/PropertyIndex_8java.html',1,'']]],
+  ['propertyname_19',['PropertyName',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#a9cf1cb15e83d72d2a6f5688c9e7d96c1',1,'DnD::JavaCsvToJson::EMonsterHeader']]],
+  ['propertyvalue_20',['PropertyValue',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#abc762bd618110291f2c162496e503a59',1,'DnD::JavaCsvToJson::EMonsterHeader']]]
 ];

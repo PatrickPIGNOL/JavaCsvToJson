@@ -26,12 +26,21 @@ import com.opencsv.ICSVParser;
 import com.opencsv.ICSVWriter;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -40,8 +49,11 @@ import javafx.stage.Stage;
 public class JavaCsvToJson extends Application 
 {
 	private Stage aWindow; 
-    private Label aLinkLabel = new Label("Lien : ");
+	private Button aLoadSpell = new Button("Charger les URLs de sorts");
+	private Button aLoadMonster = new Button("Charger les URLs de Monstres");
+    private Label aLinkLabel = new Label("Liens : ");
     private TextArea aLinkText = new TextArea();
+    private ProgressBar aProgressBar = new ProgressBar();
     private Button aConvertURLButton = new Button("URL => Book");
     
 	@Override
@@ -49,71 +61,203 @@ public class JavaCsvToJson extends Application
 	{
 		this.aWindow = pWindow;
 		
-		this.aConvertURLButton.setOnAction
+		this.aLoadSpell.setOnAction
 		(
-			event -> 
+			event ->
 			{
-				List<Monster> vMonsters = new ArrayList<>();
-				List<Spell> vSpells = new ArrayList<>();				
-				
-				for(String vStringURL : this.aLinkText.getText().split("\n"))
-				{
-					if(vStringURL.trim().contains("https://www.aidedd.org/dnd/monstres.php"))
+				aProgressBar.setProgress(-1);
+				Runnable vEventWorker = new Runnable() 
+				{	
+					@Override
+					public void run() 
 					{
-						vMonsters.add(Monster.mFromURL(vStringURL));
-					}
-					else
-					{
-						System.out.println("L'URL : \"" + vStringURL + "\" à été ignorée parce qu'elle ne fait pas partie du site \"aidedd.org/\".");
-					}
-				}
-				FileChooser vFileChooser = new FileChooser();
-				vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers Book", "*.csv"));
-				File vSaveFile = vFileChooser.showSaveDialog(this.aWindow);
-				if(vSaveFile != null)
-				{
-					try(Writer vWriter = new FileWriter(vSaveFile))
-					{
-						try(ICSVWriter vCSVWriter = (ICSVWriter) new CSVWriterBuilder(vWriter)
-								.withEscapeChar(ICSVParser.DEFAULT_ESCAPE_CHARACTER)
-								.withLineEnd(ICSVWriter.DEFAULT_LINE_END)
-								.withQuoteChar(ICSVParser.DEFAULT_QUOTE_CHARACTER)
-								.withSeparator(ICSVParser.DEFAULT_SEPARATOR)
-								.build())
+						try 
 						{
-							for(Monster vMonster : vMonsters)
+							Document vDocument = Jsoup.connect("https://www.aidedd.org/dnd-filters/sorts.php").get();
+							String vList = "";
+							int vSize = vDocument.selectXpath("//table[@id='liste']//td/a").size();
+							int vCount = 0;
+							for(Element vElement : vDocument.selectXpath("//table[@id='liste']//td/a"))		
 							{
-								String[] vLine = vMonster.mToBook().toArray(new String[0]);
-								vCSVWriter.writeNext(vLine);						
+								final double vProgress = ((double)vCount)/((double)vSize);
+								Platform.runLater(() -> aProgressBar.setProgress(vProgress));
+								vList += vElement.attr("href") + "\n";
+								vCount++;
 							}
-							vCSVWriter.flush();
+							final String vResult = vList;
+							Platform.runLater(() -> aLinkText.setText(aLinkText.getText() + vResult));
+							Platform.runLater(() -> aProgressBar.setProgress(0));
 						}
-						catch(Exception e)
+						catch (IOException e)
 						{
 							e.printStackTrace();
 						}
 					}
-					catch(Exception e)
-					{
-						e.printStackTrace();
-					}
-				}
-	        }
+				};
+				new Thread(vEventWorker).start();
+			}
 		);
 		
+		this.aLoadMonster.setOnAction
+		(
+			event ->
+			{
+				aProgressBar.setProgress(-1);
+				Runnable vEventWorker = new Runnable() 
+				{	
+					@Override
+					public void run() 
+					{
+						try 
+						{
+							String vList = "";
+							Document vDocument = Jsoup.connect("https://www.aidedd.org/dnd-filters/monstres.php").get();	
+							int vSize = vDocument.selectXpath("//table[@id='liste']//td/a").size();
+							int vCount = 0;
+							for(Element vElement : vDocument.selectXpath("//table[@id='liste']//td/a"))		
+							{	
+								final double vProgress = ((double)vCount)/((double)vSize);
+								Platform.runLater(() -> aProgressBar.setProgress(vProgress));
+								vList += vElement.attr("href") + "\n";
+								vCount++;
+							}
+							final String vResult = vList;
+							Platform.runLater(() -> aLinkText.setText(aLinkText.getText() + vResult));
+							Platform.runLater(() -> aProgressBar.setProgress(0));
+						}
+						catch (IOException e)
+						{
+							e.printStackTrace();
+						}
+					}
+				};
+				new Thread(vEventWorker).start();
+			}
+		);
 		
-		HBox vLink = new HBox();
-		vLink.getChildren().add(aLinkLabel);
-		vLink.getChildren().add(aLinkText);
-		vLink.getChildren().add(this.aConvertURLButton);
+		this.aConvertURLButton.setOnAction
+		(
+			event -> 
+			{
+				aProgressBar.setProgress(-1);
+				List<Monster> vMonsters = new ArrayList<>();
+				List<Spell> vSpells = new ArrayList<>();	
+				Runnable vEventWorker = new Runnable() 
+				{	
+					@Override
+					public void run() 
+					{
+						int vSize = aLinkText.getText().split("\n").length;
+						int vCount = 0;						
+						for(String vStringURL : aLinkText.getText().split("\n"))
+						{
+							final double vProgress = ((double)vCount)/((double)vSize);
+							Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
+							if(vStringURL.trim().contains("https://www.aidedd.org/dnd/monstres.php?vf"))
+							{
+								vMonsters.add(Monster.mFromURL(vStringURL));
+							}
+							else if(vStringURL.trim().contains("https://www.aidedd.org/dnd/sorts.php?vf"))
+							{
+								vSpells.add(Spell.mFromURL(vStringURL));
+							}
+							else
+							{
+								System.out.println("L'URL : \"" + vStringURL + "\" à été ignorée parce qu'elle ne fait pas partie du site \"aidedd.org/\".");
+							}
+							vCount++;
+						}
+					}
+				};
+				Thread vThread = new Thread(vEventWorker);
+				vThread.start();
+				try 
+				{
+					vThread.join();
+				}
+				catch (InterruptedException e) 
+				{
+					e.printStackTrace();
+				}
+				FileChooser vFileChooser = new FileChooser();
+				vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers Book", "*.csv"));
+				final File vSaveFile = vFileChooser.showSaveDialog(aWindow);
+				vEventWorker = new Runnable() 
+				{	
+					@Override
+					public void run() 
+					{
+						
+						if(vSaveFile != null)
+						{
+							try(Writer vWriter = new FileWriter(vSaveFile))
+							{
+								try(ICSVWriter vCSVWriter = (ICSVWriter) new CSVWriterBuilder(vWriter)
+										.withEscapeChar(ICSVParser.DEFAULT_ESCAPE_CHARACTER)
+										.withLineEnd(ICSVWriter.DEFAULT_LINE_END)
+										.withQuoteChar(ICSVParser.DEFAULT_QUOTE_CHARACTER)
+										.withSeparator(ICSVParser.DEFAULT_SEPARATOR)
+										.build())
+								{
+									int vSize = vMonsters.size() + vSpells.size();
+									int vCount = 0;	
+									for(Monster vMonster : vMonsters)
+									{
+										final double vProgress = ((double)vCount)/((double)vSize);
+										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
+										String[] vLine = vMonster.mToBook().toArray(new String[0]);
+										vCSVWriter.writeNext(vLine);	
+										vCount++;
+									}
+									for(Spell vSpell : vSpells)
+									{
+										final double vProgress = ((double)vCount)/((double)vSize);
+										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
+										String[] vLine = vSpell.mToBook().toArray(new String[0]);
+										vCSVWriter.writeNext(vLine);
+										vCount++;
+									}
+									vCSVWriter.flush();
+									Platform.runLater(() -> aProgressBar.setProgress(0));
+								}
+								catch(Exception e)
+								{
+									e.printStackTrace();
+								}
+							}
+							catch(Exception e)
+							{
+								e.printStackTrace();
+							}	
+						}
+					}
+				};
+				new Thread(vEventWorker).start();
+	        }
+		);
+
+		VBox vTop = new VBox();
+		vTop.getChildren().addAll(this.aLoadSpell, this.aLoadMonster, this.aLinkLabel);
+		VBox vBottom = new VBox();
+		vBottom.getChildren().addAll(this.aConvertURLButton, this.aProgressBar);
 		
-		VBox vRoot = new VBox();
-		vRoot.getChildren().add(vLink);
-		
+		BorderPane vRoot = new BorderPane();
 	    Scene vScene = new Scene(vRoot, 800, 600);
+	    vRoot.setPadding(new Insets(0, 0, 0, 0));  
+		vRoot.setTop(vTop);
+		vRoot.setCenter(aLinkText);
+		vRoot.setBottom(vBottom);
+		this.aProgressBar.setMaxWidth(Double.MAX_VALUE);
+		this.aProgressBar.setProgress(0);
+		this.aLinkLabel.setMaxWidth(Double.MAX_VALUE);
+		this.aLinkLabel.setAlignment(Pos.CENTER);
+		this.aLoadSpell.setMaxWidth(Double.MAX_VALUE);
+		this.aLoadMonster.setMaxWidth(Double.MAX_VALUE);
+		this.aConvertURLButton.setMaxWidth(Double.MAX_VALUE);
 	    this.aWindow.setScene(vScene);
-		this.aWindow.setTitle("Csv To Json");
+		this.aWindow.setTitle("URLs To Book");
 		this.aWindow.show();
+		
 	}
 	
 	public List<String[]> mReadAllLines(File pFile)

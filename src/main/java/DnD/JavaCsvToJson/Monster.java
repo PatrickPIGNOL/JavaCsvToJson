@@ -28,11 +28,25 @@ public class Monster implements IExportable
 		try 
 		{
 			Document vDocument = Jsoup.connect(vURL.trim()).get();
-
 			String vMonsterName = vDocument.selectXpath("//div[@class='jaune']/h1").text(); // name
-		    String vMonsterType = vDocument.selectXpath("//div[@class='jaune']//div[@class='type']").text().trim().split(" ")[0]; // Type
-		    String vMonsterSize = vDocument.selectXpath("//div[@class='jaune']//div[@class='type']").text().trim().split(" ")[3].split(",")[0]; // Size
-		    String vMonsterAlignment = vDocument.selectXpath("//div[@class='jaune']//div[@class='type']").text().trim().split(",")[1]; // Size
+		    String vStrType = vDocument.selectXpath("//div[@class='jaune']//div[@class='type']").text().trim();
+			Pattern vPattern = Pattern.compile("de taille [a-zA-Z]{1,3}");
+		    Matcher vMatcher = vPattern.matcher(vStrType);
+		    String vMonsterType = null;
+		    String vMonsterSize = null;
+		    if(vMatcher.find())
+		    {
+		    	String vTemp = vMatcher.group();
+		    	vMonsterType = vStrType.substring(0, vMatcher.start());
+		    	vMonsterSize = vTemp.replaceAll("de taille", "").trim();
+		    }
+		    String vMonsterAlignment = "";
+		    vPattern = Pattern.compile("((loyal|neutre|chaotique) ?(bon|neutre|mauvais)?)|tout alignement|sans alignement");
+		    vMatcher = vPattern.matcher(vStrType);
+		    if(vMatcher.find())
+		    {
+		    	vMonsterAlignment = vMatcher.group();
+		    }
 		    String vRed = vDocument.selectXpath("//div[@class='jaune']//div[@class='red']").text();
 		    int vIndexCA = vRed.indexOf("Classe d'armure");
 		    int vIndexPV = vRed.indexOf("Points de vie");
@@ -496,34 +510,23 @@ public class Monster implements IExportable
 						String vSenses = vRed.substring(vPropertyIndex.mIndex() + vPropertyIndex.mProperty().length(), vNextIndex.mIndex()).trim();
 						for(String vSens : vSenses.split(","))
 						{
-							Pattern vPattern = Pattern.compile("[0-9]*");
-							Matcher vMatcher = vPattern.matcher(vSens);
-							int vIndexMatch = -1;							
-							while(vMatcher.find())
+							vPattern = Pattern.compile("[0-9]*");
+							vMatcher = vPattern.matcher(vSens);														
+							if(vMatcher.find())
 							{
-								if(!vMatcher.group().isEmpty())
-								{
-									vIndexMatch = vMatcher.start();
-									System.out.println("Group : " + vMatcher.group());
-									System.out.println("Start : " + vMatcher.start());
-									System.out.println("End : " + vMatcher.end());
-									break;
-								}
-							}
-							
-							if(vIndexMatch >= 0)
-							{
+								String vTemp = vMatcher.group();
+								int vIndexMatch = vMatcher.start();
 								vMonsterProperties.add
 								(
 									new MonsterProperty
 									(
 										new Property<String>(EMonsterHeader.Property, "skills"),
 										new Property<String>(EMonsterHeader.PropertyName, vSens.substring(0, vIndexMatch).trim()),
-										new Property<String>(EMonsterHeader.PropertyValue, vSens.substring(vIndexMatch).trim())
+										new Property<String>(EMonsterHeader.PropertyValue, vTemp.trim())
 									)
 								);
 							}
-							else
+							else								
 							{
 								vMonsterProperties.add
 								(
@@ -542,22 +545,12 @@ public class Monster implements IExportable
 						String vLangues = vRed.substring(vPropertyIndex.mIndex() + vPropertyIndex.mProperty().length(), vNextIndex.mIndex());
 						for (String vLangue : vLangues.split(","))
 						{
-							Pattern vPattern = Pattern.compile("[0-9]*");
-							Matcher vMatcher = vPattern.matcher(vLangue);
-							int vIndexMatch = -1;							
-							while(vMatcher.find())
+							vPattern = Pattern.compile("[0-9]*");
+							vMatcher = vPattern.matcher(vLangue);							
+							if(vMatcher.find())
 							{
-								if(!vMatcher.group().isEmpty())
-								{
-									vIndexMatch = vMatcher.start();
-									System.out.println("Group : " + vMatcher.group());
-									System.out.println("Start : " + vMatcher.start());
-									System.out.println("End : " + vMatcher.end());
-									break;
-								}
-							}
-							if(vIndexMatch >= 0)
-							{
+								String vTemp = vMatcher.group();
+								int vIndexMatch = vMatcher.start();
 								vMonsterProperties.add
 								(
 									new MonsterProperty
@@ -567,7 +560,7 @@ public class Monster implements IExportable
 										new Property<String>(EMonsterHeader.PropertyValue, vLangue.substring(vMatcher.start()))
 									)
 								);
-							}
+							}							
 							else
 							{
 								vMonsterProperties.add
@@ -619,33 +612,42 @@ public class Monster implements IExportable
 				else
 				{
 					Integer vHit = null;
-					int vIndexToHit = vDescription.indexOf(" au toucher");
-					if(vIndexToHit >= 0)
+					vPattern = Pattern.compile("\\+\\d+ au toucher");
+					vMatcher = vPattern.matcher(vDescription);
+					if(vMatcher.find())
 					{
-						int vIndexPlus = vDescription.indexOf(" : +", vIndexToHit - 10);
-						if(vIndexPlus >= 0)
-						{
-							vHit = Integer.valueOf(vDescription.substring(vIndexPlus + 4, vIndexToHit).trim());
-						}
+						String vToHit = vMatcher.group();
+						vHit = Integer.valueOf(vToHit.replace("+", "").replace("au toucher", "").trim());
 					}
+										
 					String vDamage = null;
 					String vType = null;
-					int vIndexHit = vDescription.indexOf(". Touché : ");
-					if(vIndexHit >= 0)
+					
+					
+					vPattern = Pattern.compile("\\. Touché : \\d+ \\(\\d+d\\d+(\\s+\\+\\s+\\d+)?\\) dégâts [a-zA-Z]+");
+					vMatcher = vPattern.matcher(vDescription);
+					
+					if(vMatcher.find())
 					{
-						int vIndexPoint = vDescription.indexOf(".", vIndexHit + 1);
-						String vTemp = vDescription.substring(vIndexHit + 11, vIndexPoint);
-						vType = vTemp.split("\\)")[1].trim().split(" ")[1].trim().toLowerCase();
-						vDamage = vTemp.split("\\(")[1].split("\\)")[0].replaceAll("[\r\n\t\f ]", "").trim() + "," + vType;
-					}
-					String vSavingThrow = null;
-					int vIndexJDS = vDescription.indexOf("un jet de sauvegarde de ");
-					if(vIndexJDS >= 0)
-					{					
-						int vIndexDD = vDescription.indexOf("DD", vIndexJDS);
-						vSavingThrow = vDescription.substring(vIndexJDS + 24, vIndexDD).trim().toLowerCase();
+						String vTemp = vMatcher.group();
+						int vIndexDegats = vTemp.indexOf("dégâts");
+						
+						vType = vTemp.substring(vIndexDegats + 6).trim();
+						int vStart = vTemp.indexOf("(");
+						int vEnd = vTemp.indexOf(")");
+						vDamage = vTemp.substring(vStart, vEnd).replaceAll(" ", "") + "," + vType;
 					}
 					
+					String vSavingThrow = null;
+					
+					vPattern = Pattern.compile("jet de sauvegarde de [a-zA-Z]+");
+					vMatcher = vPattern.matcher(vDescription);
+					if(vMatcher.find())
+					{
+						String vTemp = vMatcher.group();
+						vSavingThrow = vTemp.substring(21);
+					}
+
 					vMonsterActions.add
 					(
 						new MonsterAction

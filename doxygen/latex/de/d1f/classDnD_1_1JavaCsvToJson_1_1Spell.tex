@@ -17,7 +17,7 @@ Inheritance diagram for Dn\+D.\+Java\+Csv\+To\+Json.\+Spell\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}}$<$ \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1ESpellSchool}{ESpell\+School}} $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af542b10c47766551eb2d3b07758caba2}{m\+Spell\+School}} ()
 \item 
-List$<$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}} $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_af1ca22f0ce47cce064df0d59527e4374}{m\+Spell\+Attacks}} ()
+\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}}$<$ List$<$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}} $>$ $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a6fc8b0195844293b42549ef532afc535}{m\+Spell\+Attacks}} ()
 \item 
 String \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a1c7ae34ce34f7198195142dacd38f306}{m\+To\+JSON}} ()
 \item 
@@ -29,6 +29,8 @@ List$<$ String $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_aeaac26c0
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}} \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_ab3815826062ff9980f4f4571011a0da4}{m\+From\+URL}} (String v\+URL)
 \item 
 static \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}} \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a7ccfd854d1f9c7de3777b3ac50369bfc}{m\+From\+Csv}} (String\mbox{[}$\,$\mbox{]} p\+Headers, String\mbox{[}$\,$\mbox{]} p\+Csv)
 \item 
@@ -47,7 +49,7 @@ static \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}} \mbox{\hyper
 \item 
 \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}}$<$ Boolean $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_a1e0365a1e2d661174d9964653567d81d}{a\+Always\+Prepared}}
 \item 
-List$<$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}} $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_aece348f83e332ed45d583db6ea372ebf}{a\+Spell\+Attacks}}
+\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}}$<$ List$<$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}} $>$ $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell_afccb630dd92dc621d26da220aaa2408e}{a\+Spell\+Attacks}}
 \end{DoxyCompactItemize}
 
 
@@ -63,19 +65,23 @@ Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+Spell (\begin{DoxyParamCaption}\item[{\mbo
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00126\ \ \ \ \ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ this.aSpellName\ =\ pSpellName;}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ this.aSpellLevel\ =\ pSpellLevel;}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ this.aSpellSchool\ =\ pSpellSchool;}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ this.aSpellRealLevel\ =\ pSpellRealLevel;}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ this.aAlwaysPrepared\ =\ pAlwaysPrepared;}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ this.aSpellAttacks\ =\ \textcolor{keyword}{new}\ ArrayList<SpellAttack>();}
-\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ this.aSpellName\ =\ pSpellName;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ this.aSpellLevel\ =\ pSpellLevel;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ this.aSpellSchool\ =\ pSpellSchool;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ this.aSpellRealLevel\ =\ pSpellRealLevel;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ this.aAlwaysPrepared\ =\ pAlwaysPrepared;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ this.aSpellAttacks\ =\ \textcolor{keyword}{new}\ Property(ESpellHeader.Actions,\ \textcolor{keyword}{new}\ ArrayList<SpellAttack>());}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{l00012}{m\+From\+Csv()}}, and \mbox{\hyperlink{l00018}{m\+From\+Json()}}.
+References \mbox{\hyperlink{l00020}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Actions}}.
+
+
+
+Referenced by \mbox{\hyperlink{l00178}{m\+From\+Csv()}}, \mbox{\hyperlink{l00184}{m\+From\+Json()}}, and \mbox{\hyperlink{l00016}{m\+From\+URL()}}.
 
 
 
@@ -92,24 +98,24 @@ Implements \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IExportable_add3774
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00171\ \ \ \ \ \{}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellName.mName());}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellLevel.mName());}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellRealLevel.mName());}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellSchool.mName());}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ vResult.add(this.aAlwaysPrepared.mName());}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(SpellAttack\ vSpellAttack\ :\ this.aSpellAttacks)}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.addAll(vSpellAttack.mCSVHeaders());}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
-\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00337\ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellName.mName());}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellLevel.mName());}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellRealLevel.mName());}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellSchool.mName());}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ vResult.add(this.aAlwaysPrepared.mName());}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(SpellAttack\ vSpellAttack\ :\ this.aSpellAttacks.mValue())}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.addAll(vSpellAttack.mCSVHeaders());}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00349\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{l00021}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+Name()}}.
+References \mbox{\hyperlink{l00021}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+Name()}}, and \mbox{\hyperlink{l00036}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+Value()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_a7ccfd854d1f9c7de3777b3ac50369bfc}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mFromCsv@{mFromCsv}}
 \index{mFromCsv@{mFromCsv}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
@@ -119,15 +125,15 @@ static \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}} Dn\+D.\+Java
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00013\ \ \ \ \ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Spell\ vSpell\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vSpell;\ \ \ \ \ \ }
-\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ Spell\ vSpell\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vSpell;\ \ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{l00119}{Spell()}}.
+References \mbox{\hyperlink{l00285}{Spell()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_a0a2045c3fe234697b1ff61afabf46c14}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mFromJson@{mFromJson}}
 \index{mFromJson@{mFromJson}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
@@ -137,119 +143,297 @@ static \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}} Dn\+D.\+Java
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ Spell\ vResult\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ JSONObject\ vJSONObject\ =\ (JSONObject)\ \textcolor{keyword}{new}\ JSONParser().parse(vTable[1]);}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ String\ vSpellName\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Name.mJsonName(),\ \textcolor{keyword}{null});}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSpellName\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ vSpellName\ =\ vTable[0];}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Integer\ vSpellLevelValue\ =\ ((Number)vJSONObject.getOrDefault(ESpellHeader.RealLevel.mJsonName(),\ 1)).intValue();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ ESpellLevel\ vSpellLevel\ =\ ESpellLevel.Cantrip;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellLevel\ vSpellLvl\ :\ ESpellLevel.values())}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vSpellLevelValue\ ==\ vSpellLvl.mID())}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellLevel\ =\ vSpellLvl;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Integer\ vSpellRealLevel\ =\ ((Number)vJSONObject.getOrDefault(ESpellHeader.Level.mJsonName(),\ 1)).intValue();}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ String\ vSpellSchoolValue\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.School.mJsonName(),\ ESpellSchool.Abjuration.mID());}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ ESpellSchool\ vSpellSchool\ =\ ESpellSchool.Abjuration;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellSchool\ vSpellScl\ :\ ESpellSchool.values())}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vSpellSchoolValue.trim().equalsIgnoreCase(vSpellScl.mID()))}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellSchool\ =\ vSpellScl;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vAlwaysPrepared\ =\ (boolean)\ vJSONObject.getOrDefault(\textcolor{stringliteral}{"{}alwaysPrepared"{}},\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ vResult\ =\ \textcolor{keyword}{new}\ Spell}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Name,\ vSpellName),\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellLevel>(ESpellHeader.Level,\ vSpellLevel),}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Integer>(ESpellHeader.RealLevel,\ vSpellRealLevel),}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellSchool>(ESpellHeader.School,\ vSpellSchool),}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.AlwaysPrepared,\ vAlwaysPrepared)}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ String\ vSpellTime\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Time.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ String\ vSpellRange\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Range.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ String\ vSpellDuration\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Duration.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vRitualCast\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.Ritual.mJsonName(),\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vConcentration\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.Concentration.mJsonName(),\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentV\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.V.mJsonName(),\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentS\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.S.mJsonName(),\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentM\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.M.mJsonName(),\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ String\ vSpellComponenDescription\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.ComponentDescription.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vMaterialCost\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.MaterialCost.mJsonName(),\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ String\ vSpellAttackType\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Attack.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ ESpellAttackType\ vSpellAttack\ =\ ESpellAttackType.None;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellAttackType\ vType\ :\ ESpellAttackType.values())}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSpellAttackType.trim().equalsIgnoreCase(vType.mID()))}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellAttack\ =\ vType;}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ String\ vSpellDamage\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Damage.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ String\ vSpellDescription\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Description.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vLegendary\ =\ (Boolean)\ vJSONObject.getOrDefault(ESpellHeader.Legendary,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ vResult.mSpellAttacks().add}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ SpellAttack}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Time,\ vSpellTime),}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Range,\ vSpellRange),}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Duration,\ vSpellDuration),}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Ritual,\ vRitualCast),}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Concentration,\ vConcentration),}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.V,\ vSpellComponentV),}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.S,\ vSpellComponentS),}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.M,\ vSpellComponentM),}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.ComponentDescription,\ vSpellComponenDescription),}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.MaterialCost,\ vMaterialCost),}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellAttackType>(ESpellHeader.Attack,\ vSpellAttack),}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Damage,\ vSpellDamage),}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Description,\ vSpellDescription),}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Legendary,\ vLegendary)}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ Spell\ vResult\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ JSONObject\ vJSONObject\ =\ (JSONObject)\ \textcolor{keyword}{new}\ JSONParser().parse(vTable[1]);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ String\ vSpellName\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Name.mJsonName(),\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSpellName\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ vSpellName\ =\ vTable[0];}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ Integer\ vSpellLevelValue\ =\ ((Number)vJSONObject.getOrDefault(ESpellHeader.RealLevel.mJsonName(),\ 1)).intValue();}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ ESpellLevel\ vSpellLevel\ =\ ESpellLevel.Cantrip;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellLevel\ vSpellLvl\ :\ ESpellLevel.values())}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vSpellLevelValue\ ==\ vSpellLvl.mID())}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellLevel\ =\ vSpellLvl;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ Integer\ vSpellRealLevel\ =\ ((Number)vJSONObject.getOrDefault(ESpellHeader.Level.mJsonName(),\ 1)).intValue();}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ String\ vSpellSchoolValue\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.School.mJsonName(),\ ESpellSchool.Abjuration.mID());}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ ESpellSchool\ vSpellSchool\ =\ ESpellSchool.Abjuration;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellSchool\ vSpellScl\ :\ ESpellSchool.values())}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vSpellSchoolValue.trim().equalsIgnoreCase(vSpellScl.mID()))}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellSchool\ =\ vSpellScl;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vAlwaysPrepared\ =\ (boolean)\ vJSONObject.getOrDefault(\textcolor{stringliteral}{"{}alwaysPrepared"{}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ vResult\ =\ \textcolor{keyword}{new}\ Spell}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Name,\ vSpellName),\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellLevel>(ESpellHeader.Level,\ vSpellLevel),}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Integer>(ESpellHeader.RealLevel,\ vSpellRealLevel),}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellSchool>(ESpellHeader.School,\ vSpellSchool),}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.AlwaysPrepared,\ vAlwaysPrepared)}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ String\ vSpellTime\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Time.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ String\ vSpellRange\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Range.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ String\ vSpellDuration\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Duration.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vRitualCast\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.Ritual.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vConcentration\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.Concentration.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentV\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.V.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentS\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.S.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vSpellComponentM\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.M.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ String\ vSpellComponenDescription\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.ComponentDescription.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vMaterialCost\ =\ (boolean)\ vJSONObject.getOrDefault(ESpellHeader.MaterialCost.mJsonName(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ String\ vSpellAttackType\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Attack.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ ESpellAttackType\ vSpellAttack\ =\ ESpellAttackType.None;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellAttackType\ vType\ :\ ESpellAttackType.values())}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSpellAttackType.trim().equalsIgnoreCase(vType.mID()))}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellAttack\ =\ vType;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ String\ vSpellDamage\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Damage.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ String\ vSpellDescription\ =\ (String)\ vJSONObject.getOrDefault(ESpellHeader.Description.mJsonName(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vLegendary\ =\ (Boolean)\ vJSONObject.getOrDefault(ESpellHeader.Legendary,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ vResult.mSpellAttacks().mValue().add}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ SpellAttack}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Time,\ vSpellTime),}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Range,\ vSpellRange),}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Duration,\ vSpellDuration),}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Ritual,\ vRitualCast),}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Concentration,\ vConcentration),}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.V,\ vSpellComponentV),}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.S,\ vSpellComponentS),}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.M,\ vSpellComponentM),}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.ComponentDescription,\ vSpellComponenDescription),}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.MaterialCost,\ vMaterialCost),}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellAttackType>(ESpellHeader.Attack,\ vSpellAttack),}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Damage,\ vSpellDamage),}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Description,\ vSpellDescription),}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Legendary,\ vLegendary)}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+School.\+Abjuration}}, \mbox{\hyperlink{l00009}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Always\+Prepared}}, \mbox{\hyperlink{l00020}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Attack}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Level.\+Cantrip}}, \mbox{\hyperlink{l00018}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Component\+Description}}, \mbox{\hyperlink{l00014}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Concentration}}, \mbox{\hyperlink{l00021}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Damage}}, \mbox{\hyperlink{l00022}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Description}}, \mbox{\hyperlink{l00012}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Duration}}, \mbox{\hyperlink{l00023}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Legendary}}, \mbox{\hyperlink{l00006}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Level}}, \mbox{\hyperlink{l00017}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+M}}, \mbox{\hyperlink{l00019}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Material\+Cost}}, \mbox{\hyperlink{l00150}{m\+Spell\+Attacks()}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Name}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Attack\+Type.\+None}}, \mbox{\hyperlink{l00011}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Range}}, \mbox{\hyperlink{l00007}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Real\+Level}}, \mbox{\hyperlink{l00013}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Ritual}}, \mbox{\hyperlink{l00016}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+S}}, \mbox{\hyperlink{l00008}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+School}}, \mbox{\hyperlink{l00119}{Spell()}}, \mbox{\hyperlink{l00010}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Time}}, and \mbox{\hyperlink{l00015}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+V}}.
+References \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+School.\+Abjuration}}, \mbox{\hyperlink{l00009}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Always\+Prepared}}, \mbox{\hyperlink{l00021}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Attack}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Level.\+Cantrip}}, \mbox{\hyperlink{l00018}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Component\+Description}}, \mbox{\hyperlink{l00014}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Concentration}}, \mbox{\hyperlink{l00023}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Damage}}, \mbox{\hyperlink{l00024}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Description}}, \mbox{\hyperlink{l00012}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Duration}}, \mbox{\hyperlink{l00025}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Legendary}}, \mbox{\hyperlink{l00006}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Level}}, \mbox{\hyperlink{l00017}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+M}}, \mbox{\hyperlink{l00019}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Material\+Cost}}, \mbox{\hyperlink{l00316}{m\+Spell\+Attacks()}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Name}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Attack\+Type.\+None}}, \mbox{\hyperlink{l00011}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Range}}, \mbox{\hyperlink{l00007}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Real\+Level}}, \mbox{\hyperlink{l00013}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Ritual}}, \mbox{\hyperlink{l00016}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+S}}, \mbox{\hyperlink{l00008}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+School}}, \mbox{\hyperlink{l00285}{Spell()}}, \mbox{\hyperlink{l00010}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Time}}, and \mbox{\hyperlink{l00015}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+V}}.
 
-\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_af1ca22f0ce47cce064df0d59527e4374}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mSpellAttacks@{mSpellAttacks}}
-\index{mSpellAttacks@{mSpellAttacks}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
-\doxysubsubsection{\texorpdfstring{mSpellAttacks()}{mSpellAttacks()}}
-{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Spell_af1ca22f0ce47cce064df0d59527e4374} 
-List$<$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}} $>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+Spell\+Attacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_ab3815826062ff9980f4f4571011a0da4}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mFromURL@{mFromURL}}
+\index{mFromURL@{mFromURL}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
+\doxysubsubsection{\texorpdfstring{mFromURL()}{mFromURL()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Spell_ab3815826062ff9980f4f4571011a0da4} 
+static \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}} Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+From\+URL (\begin{DoxyParamCaption}\item[{String}]{v\+URL}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00151\ \ \ \ \ \{}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellAttacks;}
-\DoxyCodeLine{00153\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Spell\ vSpell\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ Document\ vDocument\ =\ Jsoup.connect(vURL.trim()).get();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vSpellName\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']/h1"{}}).text();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vStringLevel\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='ecole']"{}}).text().split(\textcolor{stringliteral}{"{}-\/"{}})[0].trim();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ ESpellLevel\ vSpellLevel\ =\ ESpellLevel.Cantrip;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellLevel\ vLevel\ :\ ESpellLevel.values())}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vStringLevel.trim().equalsIgnoreCase(vLevel.mLevelFR().trim()))}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellLevel\ =\ vLevel;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSpellRealLevel\ =\ vSpellLevel.mID()\ -\/\ 1;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vAlwaysPrepared\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSpellRealLevel\ ==\ 0)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vAlwaysPrepared\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vStringSchool\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='ecole']"{}}).text().split(\textcolor{stringliteral}{"{}-\/"{}})[1].trim();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ ESpellSchool\ vSpellSchool\ =\ ESpellSchool.Abjuration;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellSchool\ vSchool\ :\ ESpellSchool.values())}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vStringSchool.trim().equalsIgnoreCase(vSchool.mSchoolFr()))}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellSchool\ =\ vSchool;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ vSpell\ =\ \textcolor{keyword}{new}\ Spell}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Name,\ vSpellName),\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellLevel>(ESpellHeader.Level,\ vSpellLevel),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Integer>(ESpellHeader.RealLevel,\ vSpellRealLevel),}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellSchool>(ESpellHeader.School,\ vSpellSchool),}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.AlwaysPrepared,\ vAlwaysPrepared)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vTitle\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='t']/strong"{}}).text();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vTempsIncantation\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='t']"{}}).text().substring(vTitle.length()).replaceAll(\textcolor{stringliteral}{"{}:"{}},\textcolor{stringliteral}{"{}"{}}).trim();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ vTitle\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='r']/strong"{}}).text();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vRange\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='r']"{}}).text().substring(vTitle.length()).replaceAll(\textcolor{stringliteral}{"{}:"{}},\textcolor{stringliteral}{"{}"{}}).trim();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ vTitle\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='c']/strong"{}}).text().trim();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vComposantV\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vComposantS\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vComposantM\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vMaterialCost\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vComposantMDescription\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ vTitle\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='c']/strong"{}}).text();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vComposants\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='c']"{}}).text().substring(vTitle.length()).trim().replaceAll(\textcolor{stringliteral}{"{}:"{}},\ \textcolor{stringliteral}{"{}"{}}).trim().split(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(String\ vComposant\ :\ vComposants)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vComposant.trim().contains(\textcolor{stringliteral}{"{}V"{}}))}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vComposantV\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vComposant.trim().contains(\textcolor{stringliteral}{"{}S"{}}))}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vComposantS\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vComposant.trim().contains(\textcolor{stringliteral}{"{}M"{}}))}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vComposantM\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vComposant.trim().contains(\textcolor{stringliteral}{"{}("{}}))}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vComposantMDescription\ =\ vComposant.trim().split(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)("{}})[1].replaceAll(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\))"{}},\textcolor{stringliteral}{"{}"{}}).trim();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vComposantMDescription.contains(\textcolor{stringliteral}{"{}d'une\ valeur\ d'au\ moins"{}}))}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vMaterialCost\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ vTitle\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='d']/strong"{}}).text();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vAttackDuration\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='d']"{}}).text().substring(vTitle.length()).trim().replaceAll(\textcolor{stringliteral}{"{}:"{}},\ \textcolor{stringliteral}{"{}"{}}).trim();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vConcentration\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vRitual\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ vTitle\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='d']/strong"{}}).text();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vAttackDuration.contains(\textcolor{stringliteral}{"{}concentration"{}}))}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vConcentration\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vAttackDuration.contains(\textcolor{stringliteral}{"{}rituel"{}}))}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vRitual\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vAttackDescription\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ vAttackDescription\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//p[@class='resume']"{}}).text();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\ vAttackDescription.isEmpty())}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vAttackDescription\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ vAttackDescription\ +=\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//div[@class='col1']//div[@class='description']"{}}).text();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vSpellDamage\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ Pattern\ vPattern\ =\ Pattern.compile(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)d+d\(\backslash\)\(\backslash\)d+(\(\backslash\)\(\backslash\)s*\(\backslash\)\(\backslash\)+\(\backslash\)\(\backslash\)s*\(\backslash\)\(\backslash\)d+)?\ dégâts\ (de\ [a-\/zA-\/Z]+|[a-\/zA-\/Z]\{3,\})"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ Matcher\ vMatcher\ =\ vPattern.matcher(vAttackDescription);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(vMatcher.find())}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!vMatcher.group().isEmpty())}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vGroup\ =\ vMatcher.group();}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellDamage\ =\ vGroup.replaceAll(\textcolor{stringliteral}{"{}dégâts"{}},\ \textcolor{stringliteral}{"{},"{}}).replaceAll(\textcolor{stringliteral}{"{}de"{}},\ \textcolor{stringliteral}{"{}"{}}).replaceAll(\textcolor{stringliteral}{"{}\ "{}},\ \textcolor{stringliteral}{"{}"{}}).trim();}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ String\ vSaveThrow\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ vPattern\ =\ Pattern.compile(\textcolor{stringliteral}{"{}jet\ de\ sauvegarde\ de\ [a-\/zA-\/Z]+"{}});}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ vMatcher\ =\ vPattern.matcher(vAttackDescription);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(vMatcher.find())}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!vMatcher.group().isEmpty())}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vGroup\ =\ vMatcher.group();}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSaveThrow\ =\ vGroup.substring(21);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ ESpellAttackType\ vSpellSaveThrow\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ESpellAttackType\ vType\ :\ ESpellAttackType.values())}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSaveThrow.trim().equalsIgnoreCase(vType.mNameFR()))}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpellSaveThrow\ =\ vType;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ vLegendaire\ =\ vAttackDescription.contains(\textcolor{stringliteral}{"{}légendaire"{}});}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ vSpell.aSpellAttacks.mValue().add}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ SpellAttack}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Time,\ vTempsIncantation),}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Range,\ vRange),}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Duration,\ vAttackDuration),}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Ritual,\ vRitual),}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Concentration,\ vConcentration),}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.V,\ vComposantV),}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.S,\ vComposantS),}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.M,\ vComposantM),}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.ComponentDescription,\ vComposantMDescription),}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.MaterialCost,\ vMaterialCost),}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<ESpellAttackType>(ESpellHeader.SaveThrow,\ vSpellSaveThrow),}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Damage,\ vSpellDamage),}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<String>(ESpellHeader.Description,\ vAttackDescription),}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Property<Boolean>(ESpellHeader.Legendary,\ vLegendaire)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ e.fillInStackTrace();}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vSpell;}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{l00018}{m\+From\+Json()}}.
+References \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+School.\+Abjuration}}, \mbox{\hyperlink{l00009}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Always\+Prepared}}, \mbox{\hyperlink{l00282}{a\+Spell\+Attacks}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Level.\+Cantrip}}, \mbox{\hyperlink{l00018}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Component\+Description}}, \mbox{\hyperlink{l00014}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Concentration}}, \mbox{\hyperlink{l00023}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Damage}}, \mbox{\hyperlink{l00024}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Description}}, \mbox{\hyperlink{l00012}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Duration}}, \mbox{\hyperlink{l00025}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Legendary}}, \mbox{\hyperlink{l00006}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Level}}, \mbox{\hyperlink{l00017}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+M}}, \mbox{\hyperlink{l00019}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Material\+Cost}}, \mbox{\hyperlink{l00029}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Level.\+m\+ID()}}, \mbox{\hyperlink{l00005}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Name}}, \mbox{\hyperlink{l00011}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Range}}, \mbox{\hyperlink{l00007}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Real\+Level}}, \mbox{\hyperlink{l00013}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Ritual}}, \mbox{\hyperlink{l00016}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+S}}, \mbox{\hyperlink{l00022}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Save\+Throw}}, \mbox{\hyperlink{l00008}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+School}}, \mbox{\hyperlink{l00285}{Spell()}}, \mbox{\hyperlink{l00010}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+Time}}, and \mbox{\hyperlink{l00015}{Dn\+D.\+Java\+Csv\+To\+Json.\+ESpell\+Header.\+V}}.
+
+
+
+Referenced by \mbox{\hyperlink{l00060}{Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+start()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_a6fc8b0195844293b42549ef532afc535}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mSpellAttacks@{mSpellAttacks}}
+\index{mSpellAttacks@{mSpellAttacks}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
+\doxysubsubsection{\texorpdfstring{mSpellAttacks()}{mSpellAttacks()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Spell_a6fc8b0195844293b42549ef532afc535} 
+\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}}$<$ List$<$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}} $>$ $>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+Spell\+Attacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00317\ \ \ \ \ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellAttacks;}
+\DoxyCodeLine{00319\ \ \ \ \ \}\ \ \ }
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00184}{m\+From\+Json()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_a5d63fa51365ef0e9eeeec25cdb22879f}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mSpellLevel@{mSpellLevel}}
 \index{mSpellLevel@{mSpellLevel}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
@@ -259,9 +443,9 @@ Referenced by \mbox{\hyperlink{l00018}{m\+From\+Json()}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00141\ \ \ \ \ \{}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellLevel;}
-\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00307\ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellLevel;}
+\DoxyCodeLine{00309\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_a011a19b16fec5c1a35d79ea6a41777ed}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mSpellName@{mSpellName}}
@@ -272,9 +456,9 @@ Referenced by \mbox{\hyperlink{l00018}{m\+From\+Json()}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00136\ \ \ \ \ \{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellName;}
-\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00302\ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellName;}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_af542b10c47766551eb2d3b07758caba2}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mSpellSchool@{mSpellSchool}}
@@ -285,9 +469,9 @@ Referenced by \mbox{\hyperlink{l00018}{m\+From\+Json()}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00146\ \ \ \ \ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellSchool;}
-\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.aSpellSchool;}
+\DoxyCodeLine{00314\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_aeaac26c0eca0e603d9d6020486ee9f74}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mToBook@{mToBook}}
@@ -302,12 +486,26 @@ Implements \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IExportable_a0c2c4e
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ Auto-\/generated\ method\ stub}}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \{\ \ \ \ \ \ \ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ vResult.addAll(this.aSpellName.mToBook());}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ vResult.addAll(this.aSpellLevel.mToBook());}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ vResult.addAll(this.aSpellRealLevel.mToBook());}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ vResult.addAll(this.aSpellSchool.mToBook());}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ vResult.addAll(this.aAlwaysPrepared.mToBook());}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(SpellAttack\ vSpellAttack\ :\ this.aSpellAttacks.mValue())}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.addAll(vSpellAttack.mToBook());}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00381\ \ \ \ \ \}}
 
 \end{DoxyCode}
+
+
+References \mbox{\hyperlink{l00070}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+To\+Book()}}, and \mbox{\hyperlink{l00036}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+Value()}}.
+
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_ad23181d22942277bf807139bdb88ccc5}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mToCSV@{mToCSV}}
 \index{mToCSV@{mToCSV}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
 \doxysubsubsection{\texorpdfstring{mToCSV()}{mToCSV()}}
@@ -320,24 +518,24 @@ Implements \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IExportable_aeed621
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00186\ \ \ \ \ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellName.mToCSV());}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellLevel.mToCSV());}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellRealLevel.mToCSV());}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellSchool.mToCSV());}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ vResult.add(this.aAlwaysPrepared.mToCSV());}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(SpellAttack\ vSpellAttack\ :\ this.aSpellAttacks)}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.addAll(vSpellAttack.mToCSV());}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
-\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ List<String>\ vResult\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellName.mToCSV());}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellLevel.mToCSV());}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellRealLevel.mToCSV());}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ vResult.add(this.aSpellSchool.mToCSV());}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ vResult.add(this.aAlwaysPrepared.mToCSV());}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(SpellAttack\ vSpellAttack\ :\ this.aSpellAttacks.mValue())}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ vResult.addAll(vSpellAttack.mToCSV());}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00364\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{l00060}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+To\+CSV()}}.
+References \mbox{\hyperlink{l00060}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+To\+CSV()}}, and \mbox{\hyperlink{l00036}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+Value()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_a1c7ae34ce34f7198195142dacd38f306}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!mToJSON@{mToJSON}}
 \index{mToJSON@{mToJSON}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
@@ -351,24 +549,24 @@ Implements \mbox{\hyperlink{interfaceDnD_1_1JavaCsvToJson_1_1IExportable_ac90697
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00156\ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\{\(\backslash\)n\ "{}}\ +\ this.aSpellName.mToJSON()\ +\ }
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellLevel.mToJSON()\ +\ }
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellRealLevel.mToJSON()\ +}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellSchool.mToJSON()\ +}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aAlwaysPrepared.mToJSON();}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(SpellAttack\ vSpellAttack\ :\ this.aSpellAttacks)}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ +=\ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ vSpellAttack.mToJSON();}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ vResult\ +=\ \textcolor{stringliteral}{"{}\}"{}};}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
-\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ String\ vResult\ =\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\{\(\backslash\)n\ "{}}\ +\ this.aSpellName.mToJSON()\ +\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellLevel.mToJSON()\ +\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellRealLevel.mToJSON()\ +}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aSpellSchool.mToJSON()\ +}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ this.aAlwaysPrepared.mToJSON();}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(SpellAttack\ vSpellAttack\ :\ this.aSpellAttacks.mValue())}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ vResult\ +=\ \ \textcolor{stringliteral}{"{},\(\backslash\)n\ "{}}\ +\ vSpellAttack.mToJSON();}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ vResult\ +=\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vResult;}
+\DoxyCodeLine{00334\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{l00046}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+To\+JSON()}}.
+References \mbox{\hyperlink{l00046}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+To\+JSON()}}, and \mbox{\hyperlink{l00036}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T $>$.\+m\+Value()}}.
 
 
 
@@ -379,11 +577,15 @@ References \mbox{\hyperlink{l00046}{Dn\+D.\+Java\+Csv\+To\+Json.\+Property$<$ T 
 {\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Spell_a1e0365a1e2d661174d9964653567d81d} 
 \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}}$<$Boolean$>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+a\+Always\+Prepared\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_aece348f83e332ed45d583db6ea372ebf}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!aSpellAttacks@{aSpellAttacks}}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_afccb630dd92dc621d26da220aaa2408e}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!aSpellAttacks@{aSpellAttacks}}
 \index{aSpellAttacks@{aSpellAttacks}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}
 \doxysubsubsection{\texorpdfstring{aSpellAttacks}{aSpellAttacks}}
-{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Spell_aece348f83e332ed45d583db6ea372ebf} 
-List$<$\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}}$>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+a\+Spell\+Attacks\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1Spell_afccb630dd92dc621d26da220aaa2408e} 
+\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Property}{Property}}$<$List$<$\mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1SpellAttack}{Spell\+Attack}}$>$ $>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+a\+Spell\+Attacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00016}{m\+From\+URL()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1Spell_a52829e3e0d2039c275dcc6da2e457100}\index{DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}!aSpellLevel@{aSpellLevel}}
 \index{aSpellLevel@{aSpellLevel}!DnD.JavaCsvToJson.Spell@{DnD.JavaCsvToJson.Spell}}

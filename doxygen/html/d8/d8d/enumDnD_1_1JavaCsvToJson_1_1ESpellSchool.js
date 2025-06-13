@@ -1,10 +1,12 @@
 var enumDnD_1_1JavaCsvToJson_1_1ESpellSchool =
 [
-    [ "ESpellSchool", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#ad4fbedc8355e526fdca38e7f7620fdf1", null ],
+    [ "ESpellSchool", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#a73deabdbee497b2ee0abae2cbb7d70b4", null ],
     [ "mID", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#aff445f56eaa1b12261eac5727d7262e7", null ],
+    [ "mSchoolFr", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#a2f72bd236977998d4ce6e5cb119b58ca", null ],
     [ "toString", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#a4c987adcf8c56119ca3c68081d57c4da", null ],
     [ "Abjuration", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#a4be4e4caca500a6803b28aca1789c38d", null ],
     [ "aID", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#ac6f15859c2bff54d80b79b8c7deff8cc", null ],
+    [ "aSchoolFR", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#ae3fc03a274959b2d37836df3dfd0711a", null ],
     [ "Conjuration", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#a5edda0888995d3fdcec21a39a7efbf04", null ],
     [ "Divination", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#a0757a0383b890d54ca4b1df029cd98cd", null ],
     [ "Enchantment", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html#a4acab37e035640b57ddc24bd2c2502a9", null ],

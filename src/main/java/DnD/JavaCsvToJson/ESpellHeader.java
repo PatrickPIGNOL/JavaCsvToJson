@@ -17,7 +17,9 @@ public enum ESpellHeader implements IHeader
 	M("M", "spellComponentM", false),
 	ComponentDescription("Component Description", "spellComponentDescription", true),
 	MaterialCost("Material Cost", "materialCost", false),
+	Actions("Actions", "actions", true),
 	Attack("Attack", "spellAttack", true),
+	SaveThrow("Save Throw", "saveThrow", true),
 	Damage("Damage", "spellDamage", true),
 	Description("Description", "spellDescription", true),
 	Legendary("Legendary", "legendary", false)
