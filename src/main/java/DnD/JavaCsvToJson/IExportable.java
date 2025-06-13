@@ -2,8 +2,6 @@ package DnD.JavaCsvToJson;
 
 import java.util.List;
 
-import org.json.simple.JSONObject;
-
 public interface IExportable 
 {
 	public String mToJSON();
