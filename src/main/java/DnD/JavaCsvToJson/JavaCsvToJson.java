@@ -38,6 +38,7 @@ import javafx.stage.Stage;
 public class JavaCsvToJson extends Application 
 {
 	private Stage aWindow; 
+	private Button aLoadObjects = new Button("Charger les URLs d'objets");
 	private Button aLoadSpell = new Button("Charger les URLs de sorts");
 	private Button aLoadMonster = new Button("Charger les URLs de Monstres");
     private Label aLinkLabel = new Label("Liens : ");
@@ -49,6 +50,43 @@ public class JavaCsvToJson extends Application
 	public void start(Stage pWindow) throws Exception 
 	{
 		this.aWindow = pWindow;
+		
+		this.aLoadObjects.setOnAction
+		(
+			event ->
+			{
+				aProgressBar.setProgress(-1);
+				Runnable vEventWorker = new Runnable() 
+				{	
+					@Override
+					public void run() 
+					{
+						try 
+						{
+							Document vDocument = Jsoup.connect("https://www.aidedd.org/dnd-filters/objets-magiques.php").get();
+							String vList = "";
+							int vSize = vDocument.selectXpath("//table[@id='liste']//td/a").size();
+							int vCount = 0;
+							for(Element vElement : vDocument.selectXpath("//table[@id='liste']//td/a"))		
+							{
+								final double vProgress = ((double)vCount)/((double)vSize);
+								Platform.runLater(() -> aProgressBar.setProgress(vProgress));
+								vList += vElement.attr("href") + "\n";
+								vCount++;
+							}
+							final String vResult = vList;
+							Platform.runLater(() -> aLinkText.setText(aLinkText.getText() + vResult));
+							Platform.runLater(() -> aProgressBar.setProgress(0));
+						}
+						catch (IOException e)
+						{
+							e.printStackTrace();
+						}
+					}
+				};
+				new Thread(vEventWorker).start();
+			}
+		);
 		
 		this.aLoadSpell.setOnAction
 		(
@@ -130,7 +168,8 @@ public class JavaCsvToJson extends Application
 			{
 				aProgressBar.setProgress(-1);
 				List<Monster> vMonsters = new ArrayList<>();
-				List<Spell> vSpells = new ArrayList<>();	
+				List<Spell> vSpells = new ArrayList<>();
+				List<Object> vObjects = new ArrayList<>();
 				Runnable vEventWorker = new Runnable() 
 				{	
 					@Override
@@ -149,6 +188,10 @@ public class JavaCsvToJson extends Application
 							else if(vStringURL.trim().contains("https://www.aidedd.org/dnd/sorts.php?vf"))
 							{
 								vSpells.add(Spell.mFromURL(vStringURL));
+							}
+							else if(vStringURL.trim().contains("https://www.aidedd.org/dnd/om.php?vf"))
+							{
+								vObjects.add(Object.mFromURL(vStringURL));
 							}
 							else
 							{
@@ -206,6 +249,14 @@ public class JavaCsvToJson extends Application
 										vCSVWriter.writeNext(vLine);
 										vCount++;
 									}
+									for(Object vObject : vObjects)
+									{
+										final double vProgress = ((double)vCount)/((double)vSize);
+										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
+										String[] vLine = vObject.mToBook().toArray(new String[0]);
+										vCSVWriter.writeNext(vLine);
+										vCount++;
+									}
 									vCSVWriter.flush();
 									Platform.runLater(() -> aProgressBar.setProgress(0));
 								}
@@ -226,7 +277,7 @@ public class JavaCsvToJson extends Application
 		);
 
 		VBox vTop = new VBox();
-		vTop.getChildren().addAll(this.aLoadSpell, this.aLoadMonster, this.aLinkLabel);
+		vTop.getChildren().addAll(this.aLoadObjects, this.aLoadSpell, this.aLoadMonster, this.aLinkLabel);
 		VBox vBottom = new VBox();
 		vBottom.getChildren().addAll(this.aConvertURLButton, this.aProgressBar);
 		
@@ -240,6 +291,7 @@ public class JavaCsvToJson extends Application
 		this.aProgressBar.setProgress(0);
 		this.aLinkLabel.setMaxWidth(Double.MAX_VALUE);
 		this.aLinkLabel.setAlignment(Pos.CENTER);
+		this.aLoadObjects.setMaxWidth(Double.MAX_VALUE);
 		this.aLoadSpell.setMaxWidth(Double.MAX_VALUE);
 		this.aLoadMonster.setMaxWidth(Double.MAX_VALUE);
 		this.aConvertURLButton.setMaxWidth(Double.MAX_VALUE);
