@@ -1,5 +1,6 @@
 package DnD.JavaCsvToJson;
 
+import java.awt.GridLayout;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -7,8 +8,12 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
+import org.apache.commons.collections.functors.IfClosure;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -22,6 +27,8 @@ import com.opencsv.ICSVWriter;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -30,6 +37,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -44,8 +54,16 @@ public class JavaCsvToJson extends Application
     private Label aLinkLabel = new Label("Liens : ");
     private TextArea aLinkText = new TextArea();
     private ProgressBar aProgressBar = new ProgressBar();
-    private Button aConvertURLButton = new Button("URL => Book");
-    
+    private Button aConvertURLButton = new Button("Télécharger les données des URLs");
+    private Button aModifyURLButton = new Button("Modifier les URLs (éfface les données)");
+    private Button aSaveBook = new Button("Enregistrer en fichier Book (csv)");
+
+	private Map<String, Monster> aMonsters = new HashMap<>();
+	private Map<String, Spell> aSpells = new HashMap<>();
+	private Map<String, DnDObject> aObjects = new HashMap<>();
+	
+	private EApplicationStatus aStatus = EApplicationStatus.Setup;
+	
 	@Override
 	public void start(Stage pWindow) throws Exception 
 	{
@@ -55,6 +73,8 @@ public class JavaCsvToJson extends Application
 		(
 			event ->
 			{
+				aStatus = EApplicationStatus.Computing;
+				mEnable();
 				aProgressBar.setProgress(-1);
 				Runnable vEventWorker = new Runnable() 
 				{	
@@ -82,6 +102,14 @@ public class JavaCsvToJson extends Application
 						{
 							e.printStackTrace();
 						}
+						Platform.runLater
+						(
+							() -> 
+							{
+								aStatus = EApplicationStatus.Idle;
+								mEnable();
+							}
+						);
 					}
 				};
 				new Thread(vEventWorker).start();
@@ -92,6 +120,8 @@ public class JavaCsvToJson extends Application
 		(
 			event ->
 			{
+				aStatus = EApplicationStatus.Computing;
+				mEnable();
 				aProgressBar.setProgress(-1);
 				Runnable vEventWorker = new Runnable() 
 				{	
@@ -119,6 +149,14 @@ public class JavaCsvToJson extends Application
 						{
 							e.printStackTrace();
 						}
+						Platform.runLater
+						(
+							() -> 
+							{
+								aStatus = EApplicationStatus.Idle;
+								mEnable();
+							}
+						);
 					}
 				};
 				new Thread(vEventWorker).start();
@@ -129,6 +167,8 @@ public class JavaCsvToJson extends Application
 		(
 			event ->
 			{
+				aStatus = EApplicationStatus.Computing;
+				mEnable();
 				aProgressBar.setProgress(-1);
 				Runnable vEventWorker = new Runnable() 
 				{	
@@ -156,6 +196,14 @@ public class JavaCsvToJson extends Application
 						{
 							e.printStackTrace();
 						}
+						Platform.runLater
+						(
+							() -> 
+							{
+								aStatus = EApplicationStatus.Idle;
+								mEnable();
+							}
+						);
 					}
 				};
 				new Thread(vEventWorker).start();
@@ -166,10 +214,9 @@ public class JavaCsvToJson extends Application
 		(
 			event -> 
 			{
+				aStatus = EApplicationStatus.Computing;
+				mEnable();
 				aProgressBar.setProgress(-1);
-				List<Monster> vMonsters = new ArrayList<>();
-				List<Spell> vSpells = new ArrayList<>();
-				List<Object> vObjects = new ArrayList<>();
 				Runnable vEventWorker = new Runnable() 
 				{	
 					@Override
@@ -180,18 +227,27 @@ public class JavaCsvToJson extends Application
 						for(String vStringURL : aLinkText.getText().split("\n"))
 						{
 							final double vProgress = ((double)vCount)/((double)vSize);
-							Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
+							Platform.runLater(() -> aProgressBar.setProgress(vProgress));
 							if(vStringURL.trim().contains("https://www.aidedd.org/dnd/monstres.php?vf"))
 							{
-								vMonsters.add(Monster.mFromURL(vStringURL));
+								if(!aMonsters.containsKey(vStringURL))
+								{
+									aMonsters.put(vStringURL, Monster.mFromURL(vStringURL));
+								}
 							}
 							else if(vStringURL.trim().contains("https://www.aidedd.org/dnd/sorts.php?vf"))
 							{
-								vSpells.add(Spell.mFromURL(vStringURL));
+								if(!aSpells.containsKey(vStringURL))
+								{
+									aSpells.put(vStringURL, Spell.mFromURL(vStringURL));
+								}
 							}
 							else if(vStringURL.trim().contains("https://www.aidedd.org/dnd/om.php?vf"))
 							{
-								vObjects.add(Object.mFromURL(vStringURL));
+								if(!aObjects.containsKey(vStringURL))
+								{
+									aObjects.put(vStringURL, DnDObject.mFromURL(vStringURL));
+								}								
 							}
 							else
 							{
@@ -199,29 +255,59 @@ public class JavaCsvToJson extends Application
 							}
 							vCount++;
 						}
+						Platform.runLater
+						(
+							() -> 
+							{
+								aStatus = EApplicationStatus.Data;
+								mEnable();
+							}
+						);
 					}
 				};
-				Thread vThread = new Thread(vEventWorker);
-				vThread.start();
-				try 
-				{
-					vThread.join();
-				}
-				catch (InterruptedException e) 
-				{
-					e.printStackTrace();
-				}
+				new Thread(vEventWorker).start();
+	        }
+		);
+		
+		this.aModifyURLButton.setOnAction
+		(
+			event -> 
+			{
+				Platform.runLater
+				(
+					() -> 
+					{
+						aStatus = EApplicationStatus.Computing;
+						mEnable();
+						aProgressBar.setProgress(-1);
+						aMonsters.clear();
+						aSpells.clear();
+						aObjects.clear();
+						aProgressBar.setProgress(0);
+						aStatus = EApplicationStatus.Idle;
+						mEnable();
+					}
+				);
+			}
+		);
+
+		this.aSaveBook.setOnAction
+		(
+			event -> 
+			{
+				aStatus = EApplicationStatus.Computing;
+				mEnable();
 				FileChooser vFileChooser = new FileChooser();
 				vFileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers Book", "*.csv"));
 				final File vSaveFile = vFileChooser.showSaveDialog(aWindow);
-				vEventWorker = new Runnable() 
-				{	
-					@Override
-					public void run() 
-					{
-						
-						if(vSaveFile != null)
-						{
+				if(vSaveFile != null)
+				{
+					aProgressBar.setProgress(-1);
+					Runnable vEventWorker = new Runnable() 
+					{	
+						@Override
+						public void run() 
+						{						
 							try(Writer vWriter = new FileWriter(vSaveFile))
 							{
 								try(ICSVWriter vCSVWriter = (ICSVWriter) new CSVWriterBuilder(vWriter)
@@ -231,29 +317,32 @@ public class JavaCsvToJson extends Application
 										.withSeparator(ICSVParser.DEFAULT_SEPARATOR)
 										.build())
 								{
-									int vSize = vMonsters.size() + vSpells.size();
+									int vSize = aMonsters.size() + aSpells.size();
 									int vCount = 0;	
-									for(Monster vMonster : vMonsters)
+									for(Entry<String, Monster> vMonster : aMonsters.entrySet())
 									{
 										final double vProgress = ((double)vCount)/((double)vSize);
 										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
-										String[] vLine = vMonster.mToBook().toArray(new String[0]);
+										String[] vLine = vMonster.getValue().mToBook().toArray(new String[0]);
 										vCSVWriter.writeNext(vLine);	
 										vCount++;
 									}
-									for(Spell vSpell : vSpells)
+									for(Entry<String, Spell> vSpell : aSpells.entrySet())
 									{
 										final double vProgress = ((double)vCount)/((double)vSize);
 										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
-										String[] vLine = vSpell.mToBook().toArray(new String[0]);
+										String[] vLine = vSpell.getValue().mToBook().toArray(new String[0]);
 										vCSVWriter.writeNext(vLine);
 										vCount++;
 									}
-									for(Object vObject : vObjects)
+									for(Entry<String, DnDObject> vObject : aObjects.entrySet())
 									{
 										final double vProgress = ((double)vCount)/((double)vSize);
-										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
-										String[] vLine = vObject.mToBook().toArray(new String[0]);
+										Platform.runLater(() -> aProgressBar.setProgress(vProgress));
+										List<String> vTemp = new ArrayList<>();
+										vTemp.add(vObject.getKey());
+										vTemp.addAll(vObject.getValue().mToBook());
+										String[] vLine = vTemp.toArray(new String[0]);
 										vCSVWriter.writeNext(vLine);
 										vCount++;
 									}
@@ -268,37 +357,124 @@ public class JavaCsvToJson extends Application
 							catch(Exception e)
 							{
 								e.printStackTrace();
-							}	
+							}							
+							Platform.runLater
+							(
+								() -> 
+								{
+									aStatus = EApplicationStatus.Data;
+									mEnable();
+								}
+							);
 						}
-					}
-				};
-				new Thread(vEventWorker).start();
-	        }
+					};
+					new Thread(vEventWorker).start();
+				}
+			}
 		);
-
-		VBox vTop = new VBox();
-		vTop.getChildren().addAll(this.aLoadObjects, this.aLoadSpell, this.aLoadMonster, this.aLinkLabel);
-		VBox vBottom = new VBox();
-		vBottom.getChildren().addAll(this.aConvertURLButton, this.aProgressBar);
 		
-		BorderPane vRoot = new BorderPane();
-	    Scene vScene = new Scene(vRoot, 800, 600);
-	    vRoot.setPadding(new Insets(0, 0, 0, 0));  
-		vRoot.setTop(vTop);
-		vRoot.setCenter(aLinkText);
-		vRoot.setBottom(vBottom);
+		this.aLinkText.textProperty().addListener
+		(
+			(observable, oldValue, newValue)-> 
+			{
+				if(aStatus == EApplicationStatus.Idle)
+				{
+					mEnable();
+				}
+			}
+		);
+		
+		GridPane vRoot = new GridPane();
+		ColumnConstraints column1 = new ColumnConstraints();
+		column1.setPercentWidth(50);
+		ColumnConstraints column2 = new ColumnConstraints();
+		column2.setPercentWidth(50);
+		vRoot.getColumnConstraints().addAll(column1, column2); // each get 50% of width
+		RowConstraints rowConstraint1 = new RowConstraints();
+		RowConstraints rowConstraint2 = new RowConstraints();
+		rowConstraint2.prefHeightProperty().bind(this.aWindow.heightProperty());
+		vRoot.getRowConstraints().addAll(rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint2,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1);
+		
+		vRoot.add(this.aLoadMonster, 0, 0, 2, 1);
+		vRoot.add(this.aLoadSpell, 0, 1, 2, 1);
+		vRoot.add(this.aLoadObjects, 0, 2, 2, 1);
+		vRoot.add(this.aLinkLabel, 0, 3, 2, 1);
+		vRoot.add(this.aLinkText, 0, 4, 2, 1);
+		vRoot.add(this.aConvertURLButton, 0, 5, 1, 1);
+		vRoot.add(this.aModifyURLButton, 1, 5, 1, 1);
+		vRoot.add(this.aSaveBook, 0, 6, 2, 1);
+		vRoot.add(this.aProgressBar, 0, 7, 2, 1);	
+		
+	    Scene vScene = new Scene(vRoot, 800, 600);  
+	    vRoot.prefWidthProperty().bind(this.aWindow.widthProperty());
+	    vRoot.prefHeightProperty().bind(this.aWindow.widthProperty());
+	    this.aProgressBar.setMinHeight(20);
 		this.aProgressBar.setMaxWidth(Double.MAX_VALUE);
 		this.aProgressBar.setProgress(0);
 		this.aLinkLabel.setMaxWidth(Double.MAX_VALUE);
+		this.aLinkText.setMaxHeight(Double.MAX_VALUE);
 		this.aLinkLabel.setAlignment(Pos.CENTER);
 		this.aLoadObjects.setMaxWidth(Double.MAX_VALUE);
 		this.aLoadSpell.setMaxWidth(Double.MAX_VALUE);
 		this.aLoadMonster.setMaxWidth(Double.MAX_VALUE);
 		this.aConvertURLButton.setMaxWidth(Double.MAX_VALUE);
+		this.aModifyURLButton.setMaxWidth(Double.MAX_VALUE);
+		this.aSaveBook.setMaxWidth(Double.MAX_VALUE);
 	    this.aWindow.setScene(vScene);
+	    
+	    this.aConvertURLButton.setDisable(true);
+	    this.aModifyURLButton.setDisable(true);
+	    this.aSaveBook.setDisable(true);
+	    
 		this.aWindow.setTitle("URLs To Book");
 		this.aWindow.show();
-		
+		this.aStatus = EApplicationStatus.Idle;
+		this.mEnable();
+	}
+	
+	public void mEnable()
+	{
+		switch(this.aStatus)
+		{
+			case Idle:
+			{
+
+				this.aLoadMonster.setDisable(false);
+				this.aLoadSpell.setDisable(false);
+				this.aLoadObjects.setDisable(false);
+				this.aLinkText.setDisable(false);
+				if(this.aLinkText.getText().isEmpty())
+				{
+					this.aConvertURLButton.setDisable(true);
+				}
+				else
+				{
+					this.aConvertURLButton.setDisable(false);
+				}
+				this.aModifyURLButton.setDisable(true);
+				this.aSaveBook.setDisable(true);
+			}break;
+			case Data:
+			{
+				this.aLoadMonster.setDisable(true);
+				this.aLoadSpell.setDisable(true);
+				this.aLoadObjects.setDisable(true);
+				this.aLinkText.setDisable(true);
+				this.aConvertURLButton.setDisable(true);
+				this.aModifyURLButton.setDisable(false);
+				this.aSaveBook.setDisable(false);
+			}break;
+			default:
+			{
+				this.aLoadMonster.setDisable(true);
+				this.aLoadSpell.setDisable(true);
+				this.aLoadObjects.setDisable(true);
+				this.aLinkText.setDisable(true);
+				this.aConvertURLButton.setDisable(true);
+				this.aModifyURLButton.setDisable(true);
+				this.aSaveBook.setDisable(true);
+			}break;
+		};		
 	}
 	
 	public List<String[]> mReadAllLines(File pFile)

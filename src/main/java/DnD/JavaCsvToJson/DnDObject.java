@@ -8,11 +8,11 @@ import java.util.regex.Pattern;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class Object implements IExportable 
+public class DnDObject implements IExportable 
 {
-	public static Object mFromURL(String vURL)
+	public static DnDObject mFromURL(String vURL)
 	{
-		Object vResult = null;
+		DnDObject vResult = null;
 		try 
 		{
 			Document vDocument = Jsoup.connect(vURL.trim()).get();
@@ -46,7 +46,7 @@ public class Object implements IExportable
 			}
 			vDescription += vDocument.selectXpath("//div[@class='col1']//div[@class='description']").text();
 			
-			vResult = new Object
+			vResult = new DnDObject
 			(
 				new Property<String>(EObjectHeader.Name, vObjectName),
 				new Property<String>(EObjectHeader.Type, vObjectType),
@@ -68,7 +68,7 @@ public class Object implements IExportable
 	Property<Boolean> aLink;
 	Property<String> aDescription;
 	
-	public Object
+	public DnDObject
 	(
 		Property<String> pName,
 		Property<String> pType, 
