@@ -6,6 +6,7 @@ var hierarchy =
     ] ],
     [ "DnD.JavaCsvToJson.Digest", "df/d3c/classDnD_1_1JavaCsvToJson_1_1Digest.html", null ],
     [ "DnD.JavaCsvToJson.EAlignment", "d2/d51/enumDnD_1_1JavaCsvToJson_1_1EAlignment.html", null ],
+    [ "DnD.JavaCsvToJson.EApplicationStatus", "dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus.html", null ],
     [ "DnD.JavaCsvToJson.EDices", "d3/d68/enumDnD_1_1JavaCsvToJson_1_1EDices.html", null ],
     [ "DnD.JavaCsvToJson.ESize", "db/d99/enumDnD_1_1JavaCsvToJson_1_1ESize.html", null ],
     [ "DnD.JavaCsvToJson.ESpellAttackType", "d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html", null ],
@@ -14,6 +15,7 @@ var hierarchy =
     [ "DnD.JavaCsvToJson.ESpellSchool", "d8/d8d/enumDnD_1_1JavaCsvToJson_1_1ESpellSchool.html", null ],
     [ "DnD.JavaCsvToJson.IExportable", "d7/d00/interfaceDnD_1_1JavaCsvToJson_1_1IExportable.html", [
       [ "DnD.JavaCsvToJson.AvatarFrame", "dc/d31/classDnD_1_1JavaCsvToJson_1_1AvatarFrame.html", null ],
+      [ "DnD.JavaCsvToJson.DnDObject", "d0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject.html", null ],
       [ "DnD.JavaCsvToJson.Monster", "d4/d81/classDnD_1_1JavaCsvToJson_1_1Monster.html", null ],
       [ "DnD.JavaCsvToJson.MonsterAction", "dd/dbf/classDnD_1_1JavaCsvToJson_1_1MonsterAction.html", null ],
       [ "DnD.JavaCsvToJson.MonsterAvatar", "d9/d1f/classDnD_1_1JavaCsvToJson_1_1MonsterAvatar.html", null ],
@@ -24,10 +26,10 @@ var hierarchy =
     ] ],
     [ "DnD.JavaCsvToJson.IHeader", "db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader.html", [
       [ "DnD.JavaCsvToJson.EMonsterHeader", "da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html", null ],
+      [ "DnD.JavaCsvToJson.EObjectHeader", "db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader.html", null ],
       [ "DnD.JavaCsvToJson.ESpellHeader", "df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html", null ]
     ] ],
     [ "DnD.JavaCsvToJson.NPC", "d8/d2f/classDnD_1_1JavaCsvToJson_1_1NPC.html", null ],
-    [ "DnD.JavaCsvToJson.Object", "d4/d03/classDnD_1_1JavaCsvToJson_1_1Object.html", null ],
     [ "DnD.JavaCsvToJson.Property< T >", "db/daa/classDnD_1_1JavaCsvToJson_1_1Property.html", null ],
     [ "DnD.JavaCsvToJson.PropertyIndex", "dd/d20/classDnD_1_1JavaCsvToJson_1_1PropertyIndex.html", null ],
     [ "DnD.JavaCsvToJson.SpellDamages", "da/dab/classDnD_1_1JavaCsvToJson_1_1SpellDamages.html", null ],

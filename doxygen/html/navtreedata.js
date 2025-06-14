@@ -48,9 +48,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d6/da8/classDnD_1_1JavaCsvToJson_1_1SpellAttack.html#a870c8b3706aefe1c76eabbab9b44f8fe",
-"db/d99/enumDnD_1_1JavaCsvToJson_1_1ESize.html#a4af7c9f7fc493262b57aee63b0b6cf66",
-"df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a0623ae69980ea124b2142fa74ae07497"
+"d6/da8/classDnD_1_1JavaCsvToJson_1_1SpellAttack.html#a34d54c3d1dfb80f5f5d94dd22bf9a0c2",
+"db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader.html#af5a83b20ca813c50d1ad9bf748573ec6",
+"de/d58/classDnD_1_1JavaCsvToJson_1_1MonsterProperty.html#a516f081f45a2252309513355552394da"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

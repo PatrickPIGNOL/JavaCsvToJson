@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['range_0',['Range',['../df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a8efa7252ffe74727a7ed5cdb864ec79a',1,'DnD::JavaCsvToJson::ESpellHeader']]],
-  ['rangedattack_1',['RangedAttack',['../d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a21ef9b4603d6fd740fe10ff610cfcadc',1,'DnD::JavaCsvToJson::ESpellAttackType']]],
-  ['readme_2emd_2',['README.md',['../da/ddd/README_8md.html',1,'']]],
-  ['reallevel_3',['RealLevel',['../df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a30747ba9b27d24a80f0fffe1fb0d45b6',1,'DnD::JavaCsvToJson::ESpellHeader']]],
-  ['ritual_4',['Ritual',['../df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#ad3eb5045997b7a03ae4c3f3ad035e538',1,'DnD::JavaCsvToJson::ESpellHeader']]]
+  ['s_0',['S',['../df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a17cbb0d3af596f783470a692a5f41c05',1,'DnD::JavaCsvToJson::ESpellHeader']]],
+  ['savethrow_1',['SaveThrow',['../df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a0623ae69980ea124b2142fa74ae07497',1,'DnD::JavaCsvToJson::ESpellHeader']]],
+  ['school_2',['School',['../df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader.html#a8178df3b06c21b8344459d9b07f1279a',1,'DnD::JavaCsvToJson::ESpellHeader']]],
+  ['setup_3',['Setup',['../dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus.html#ac4f3668832ab201bd6849945c83a4522',1,'DnD::JavaCsvToJson::EApplicationStatus']]],
+  ['size_4',['Size',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#a3bd4459244c6831e8ba3058e912a9417',1,'DnD::JavaCsvToJson::EMonsterHeader']]],
+  ['skills_5',['Skills',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#ad67be9041c0adf32c1aa2363e8852760',1,'DnD::JavaCsvToJson::EMonsterHeader']]],
+  ['small_6',['Small',['../db/d99/enumDnD_1_1JavaCsvToJson_1_1ESize.html#a3aa80dbc02c42908a80b049705ecfc44',1,'DnD::JavaCsvToJson::ESize']]],
+  ['specialabilities_7',['SpecialAbilities',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#ad3faaafeba52278fb03cb250b6720dcb',1,'DnD::JavaCsvToJson::EMonsterHeader']]],
+  ['specialability_8',['SpecialAbility',['../db/dba/classDnD_1_1JavaCsvToJson_1_1SpecialAbility.html',1,'DnD::JavaCsvToJson']]],
+  ['specialability_2ejava_9',['SpecialAbility.java',['../db/d50/SpecialAbility_8java.html',1,'']]],
+  ['spell_10',['Spell',['../de/d1f/classDnD_1_1JavaCsvToJson_1_1Spell.html',1,'DnD.JavaCsvToJson.Spell'],['../de/d1f/classDnD_1_1JavaCsvToJson_1_1Spell.html#a595dc2fe023dc53063afc43beda675aa',1,'DnD.JavaCsvToJson.Spell.Spell()']]],
+  ['spell_2ejava_11',['Spell.java',['../de/d9f/Spell_8java.html',1,'']]],
+  ['spellattack_12',['SpellAttack',['../d6/da8/classDnD_1_1JavaCsvToJson_1_1SpellAttack.html',1,'DnD.JavaCsvToJson.SpellAttack'],['../d6/da8/classDnD_1_1JavaCsvToJson_1_1SpellAttack.html#a7ada0582ccca976d8e6580885c818ba9',1,'DnD.JavaCsvToJson.SpellAttack.SpellAttack()']]],
+  ['spellattack_2ejava_13',['SpellAttack.java',['../d0/db2/SpellAttack_8java.html',1,'']]],
+  ['spelldamages_14',['SpellDamages',['../da/dab/classDnD_1_1JavaCsvToJson_1_1SpellDamages.html',1,'DnD::JavaCsvToJson']]],
+  ['spelldamages_2ejava_15',['SpellDamages.java',['../da/dda/SpellDamages_8java.html',1,'']]],
+  ['spellreallevel_16',['SpellRealLevel',['../d9/dcf/enumDnD_1_1JavaCsvToJson_1_1SpellRealLevel.html',1,'DnD::JavaCsvToJson']]],
+  ['spellreallevel_2ejava_17',['SpellRealLevel.java',['../d9/d68/SpellRealLevel_8java.html',1,'']]],
+  ['start_18',['start',['../dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson.html#aca3e125eea343d6551164e154bb120f8',1,'DnD::JavaCsvToJson::JavaCsvToJson']]],
+  ['strength_19',['Strength',['../da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader.html#a5e4a57484f6065ac144e781f0cb9d098',1,'DnD::JavaCsvToJson::EMonsterHeader']]],
+  ['strengthsave_20',['StrengthSave',['../d4/dcf/enumDnD_1_1JavaCsvToJson_1_1ESpellAttackType.html#a10ba4b7d66960ad980a05c2b86212f7d',1,'DnD::JavaCsvToJson::ESpellAttackType']]],
+  ['suite_21',['suite',['../d4/df7/classDnD_1_1JavaCsvToJson_1_1AppTest.html#abc9eeb872e2863f8d9650b3d608c0dc4',1,'DnD::JavaCsvToJson::AppTest']]]
 ];

@@ -11,12 +11,16 @@ Inheritance diagram for Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json\+:\beg
 \item 
 void \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_aca3e125eea343d6551164e154bb120f8}{start}} (Stage p\+Window)  throws Exception   
 \item 
+void \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_af994726effb3bba9d49280b9c56e519a}{m\+Enable}} ()
+\item 
 List$<$ String\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ad5b9b534db0c003b93f6fadb43d2e950}{m\+Read\+All\+Lines}} (File p\+File)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Stage \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a1966f3ebe64a86d3b567a326f704414e}{a\+Window}}
+\item 
+Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a5ebabb1a7f0c17bb434238c3d6a47c09}{a\+Load\+Objects}} = new Button("{}Charger les URLs d\textquotesingle{}objets"{})
 \item 
 Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a9a747e0ee01f9dfbc8a9acf75e9b7deb}{a\+Load\+Spell}} = new Button("{}Charger les URLs de sorts"{})
 \item 
@@ -28,7 +32,19 @@ Text\+Area \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a274e483a
 \item 
 Progress\+Bar \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a909b29cfe4d78c6238bca3fdf41871ff}{a\+Progress\+Bar}} = new Progress\+Bar()
 \item 
-Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5}{a\+Convert\+URLButton}} = new Button("{}URL =$>$ Book"{})
+Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5}{a\+Convert\+URLButton}} = new Button("{}Télécharger les données des URLs"{})
+\item 
+Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a5cbce0c0374b5209cd997ac0d960bef6}{a\+Modify\+URLButton}} = new Button("{}Modifier les URLs (éfface les données)"{})
+\item 
+Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_add132357cf75ab36fd3e31a05c4f4abf}{a\+Save\+Book}} = new Button("{}Enregistrer en fichier Book (csv)"{})
+\item 
+Map$<$ String, \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Monster}{Monster}} $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a890a5e20a210063b10228d8d8bee3e93}{a\+Monsters}} = new Hash\+Map$<$$>$()
+\item 
+Map$<$ String, \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}} $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a7760ac9502e348b216caebd149bfea79}{a\+Spells}} = new Hash\+Map$<$$>$()
+\item 
+Map$<$ String, \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1DnDObject}{Dn\+DObject}} $>$ \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a7ad21edfc6045c6f1ddd661fe17cfcd9}{a\+Objects}} = new Hash\+Map$<$$>$()
+\item 
+\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus}{EApplication\+Status}} \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a06fae729f0a0135b4856d0baa704279b}{a\+Status}} = \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus_ac4f3668832ab201bd6849945c83a4522}{EApplication\+Status.\+Setup}}
 \end{DoxyCompactItemize}
 
 
@@ -36,6 +52,63 @@ Button \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_af994726effb3bba9d49280b9c56e519a}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!mEnable@{mEnable}}
+\index{mEnable@{mEnable}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{mEnable()}{mEnable()}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_af994726effb3bba9d49280b9c56e519a} 
+void Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+m\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00436\ \ \ \ \ \{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(this.aStatus)}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Idle:}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadMonster.setDisable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadSpell.setDisable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadObjects.setDisable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLinkText.setDisable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this.aLinkText.getText().isEmpty())}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aConvertURLButton.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aConvertURLButton.setDisable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aModifyURLButton.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aSaveBook.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Data:}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadMonster.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadSpell.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadObjects.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLinkText.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aConvertURLButton.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aModifyURLButton.setDisable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aSaveBook.setDisable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadMonster.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadSpell.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLoadObjects.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aLinkText.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aConvertURLButton.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aModifyURLButton.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.aSaveBook.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \};\ \ \ \ \ \ }
+\DoxyCodeLine{00478\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
+
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ad5b9b534db0c003b93f6fadb43d2e950}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!mReadAllLines@{mReadAllLines}}
 \index{mReadAllLines@{mReadAllLines}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
 \doxysubsubsection{\texorpdfstring{mReadAllLines()}{mReadAllLines()}}
@@ -44,30 +117,30 @@ List$<$ String\mbox{[}$\,$\mbox{]}$>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+T
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00264\ \ \ \ \ \{}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ CSVParser\ vParser\ =\ \textcolor{keyword}{new}\ CSVParserBuilder()\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(\textcolor{charliteral}{','})}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withIgnoreQuotations(\textcolor{keyword}{false})}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build();\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Reader\ vReader\ =\ \textcolor{keyword}{new}\ FileReader(pFile))}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (CSVReader\ vCsvReader\ =\ \textcolor{keyword}{new}\ CSVReaderBuilder(vReader).withSkipLines(0).withCSVParser(vParser).build())}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vCsvReader.readAll();}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00287\ \ \ \ \ \}}
+\DoxyCodeLine{00481\ \ \ \ \ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ CSVParser\ vParser\ =\ \textcolor{keyword}{new}\ CSVParserBuilder()\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(\textcolor{charliteral}{','})}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withIgnoreQuotations(\textcolor{keyword}{false})}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build();\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Reader\ vReader\ =\ \textcolor{keyword}{new}\ FileReader(pFile))}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ (CSVReader\ vCsvReader\ =\ \textcolor{keyword}{new}\ CSVReaderBuilder(vReader).withSkipLines(0).withCSVParser(vParser).build())}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vCsvReader.readAll();}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(e.getStackTrace());}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00504\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_aca3e125eea343d6551164e154bb120f8}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!start@{start}}
@@ -78,212 +151,376 @@ void Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+start (\begin{DoxyParam
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00061\ \ \ \ \ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ this.aWindow\ =\ pWindow;}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ this.aLoadSpell.setOnAction}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Document\ vDocument\ =\ Jsoup.connect(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd-\/filters/sorts.php"{}}).get();}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vList\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}).size();}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Element\ vElement\ :\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}))\ \ \ \ \ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vList\ +=\ vElement.attr(\textcolor{stringliteral}{"{}href"{}})\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ String\ vResult\ =\ vList;}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aLinkText.setText(aLinkText.getText()\ +\ vResult));}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(0));}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (IOException\ e)}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ this.aLoadMonster.setOnAction}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vList\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Document\ vDocument\ =\ Jsoup.connect(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd-\/filters/monstres.php"{}}).get();\ \ \ \ }
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}).size();}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Element\ vElement\ :\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}))\ \ \ \ \ }
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vList\ +=\ vElement.attr(\textcolor{stringliteral}{"{}href"{}})\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ String\ vResult\ =\ vList;}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aLinkText.setText(aLinkText.getText()\ +\ vResult));}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(0));}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (IOException\ e)}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ this.aConvertURLButton.setOnAction}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ (}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>\ }
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Monster>\ vMonsters\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Spell>\ vSpells\ =\ \textcolor{keyword}{new}\ ArrayList<>();\ \ \ \ }
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ aLinkText.getText().split(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}).length;}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(String\ vStringURL\ :\ aLinkText.getText().split(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}))}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vStringURL.trim().contains(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd/monstres.php?vf"{}}))}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vMonsters.add(Monster.mFromURL(vStringURL));}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(vStringURL.trim().contains(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd/sorts.php?vf"{}}))}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vSpells.add(Spell.mFromURL(vStringURL));}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}L'URL\ :\ \(\backslash\)"{}"{}}\ +\ vStringURL\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ à\ été\ ignorée\ parce\ qu'elle\ ne\ fait\ pas\ partie\ du\ site\ \(\backslash\)"{}aidedd.org/\(\backslash\)"{}."{}});}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Thread\ vThread\ =\ \textcolor{keyword}{new}\ Thread(vEventWorker);}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vThread.start();}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vThread.join();}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (InterruptedException\ e)\ }
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FileChooser\ vFileChooser\ =\ \textcolor{keyword}{new}\ FileChooser();}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vFileChooser.getExtensionFilters().add(\textcolor{keyword}{new}\ FileChooser.ExtensionFilter(\textcolor{stringliteral}{"{}Fichiers\ Book"{}},\ \textcolor{stringliteral}{"{}*.csv"{}}));}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ File\ vSaveFile\ =\ vFileChooser.showSaveDialog(aWindow);}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSaveFile\ !=\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Writer\ vWriter\ =\ \textcolor{keyword}{new}\ FileWriter(vSaveFile))}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(ICSVWriter\ vCSVWriter\ =\ (ICSVWriter)\ \textcolor{keyword}{new}\ CSVWriterBuilder(vWriter)}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withEscapeChar(ICSVParser.DEFAULT\_ESCAPE\_CHARACTER)}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withLineEnd(ICSVWriter.DEFAULT\_LINE\_END)}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withQuoteChar(ICSVParser.DEFAULT\_QUOTE\_CHARACTER)}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(ICSVParser.DEFAULT\_SEPARATOR)}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build())}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ vMonsters.size()\ +\ vSpells.size();}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;\ }
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Monster\ vMonster\ :\ vMonsters)}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vLine\ =\ vMonster.mToBook().toArray(\textcolor{keyword}{new}\ String[0]);}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.writeNext(vLine);\ \ \ \ }
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Spell\ vSpell\ :\ vSpells)}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vLine\ =\ vSpell.mToBook().toArray(\textcolor{keyword}{new}\ String[0]);}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.writeNext(vLine);}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.flush();}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(0));}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00238\ }
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ VBox\ vTop\ =\ \textcolor{keyword}{new}\ VBox();}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ vTop.getChildren().addAll(this.aLoadSpell,\ this.aLoadMonster,\ this.aLinkLabel);}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ VBox\ vBottom\ =\ \textcolor{keyword}{new}\ VBox();}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ vBottom.getChildren().addAll(this.aConvertURLButton,\ this.aProgressBar);}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ BorderPane\ vRoot\ =\ \textcolor{keyword}{new}\ BorderPane();}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ Scene\ vScene\ =\ \textcolor{keyword}{new}\ Scene(vRoot,\ 800,\ 600);}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ vRoot.setPadding(\textcolor{keyword}{new}\ Insets(0,\ 0,\ 0,\ 0));\ \ }
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ vRoot.setTop(vTop);}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ vRoot.setCenter(aLinkText);}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ vRoot.setBottom(vBottom);}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ this.aProgressBar.setMaxWidth(Double.MAX\_VALUE);}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ this.aProgressBar.setProgress(0);}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ this.aLinkLabel.setMaxWidth(Double.MAX\_VALUE);}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ this.aLinkLabel.setAlignment(Pos.CENTER);}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ this.aLoadSpell.setMaxWidth(Double.MAX\_VALUE);}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ this.aLoadMonster.setMaxWidth(Double.MAX\_VALUE);}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ this.aConvertURLButton.setMaxWidth(Double.MAX\_VALUE);}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ this.aWindow.setScene(vScene);}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ this.aWindow.setTitle(\textcolor{stringliteral}{"{}URLs\ To\ Book"{}});}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ this.aWindow.show();}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ this.aWindow\ =\ pWindow;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ this.aLoadObjects.setOnAction}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Computing;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Document\ vDocument\ =\ Jsoup.connect(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd-\/filters/objets-\/magiques.php"{}}).get();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vList\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}).size();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Element\ vElement\ :\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}))\ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vList\ +=\ vElement.attr(\textcolor{stringliteral}{"{}href"{}})\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ String\ vResult\ =\ vList;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aLinkText.setText(aLinkText.getText()\ +\ vResult));}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(0));}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (IOException\ e)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ -\/>\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Idle;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ this.aLoadSpell.setOnAction}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Computing;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Document\ vDocument\ =\ Jsoup.connect(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd-\/filters/sorts.php"{}}).get();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vList\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}).size();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Element\ vElement\ :\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}))\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vList\ +=\ vElement.attr(\textcolor{stringliteral}{"{}href"{}})\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ String\ vResult\ =\ vList;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aLinkText.setText(aLinkText.getText()\ +\ vResult));}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(0));}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (IOException\ e)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ -\/>\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Idle;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ this.aLoadMonster.setOnAction}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Computing;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ vList\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Document\ vDocument\ =\ Jsoup.connect(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd-\/filters/monstres.php"{}}).get();\ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}).size();}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Element\ vElement\ :\ vDocument.selectXpath(\textcolor{stringliteral}{"{}//table[@id='liste']//td/a"{}}))\ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vList\ +=\ vElement.attr(\textcolor{stringliteral}{"{}href"{}})\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ String\ vResult\ =\ vList;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aLinkText.setText(aLinkText.getText()\ +\ vResult));}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(0));}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (IOException\ e)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ -\/>\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Idle;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ this.aConvertURLButton.setOnAction}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Computing;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ aLinkText.getText().split(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}).length;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(String\ vStringURL\ :\ aLinkText.getText().split(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}))}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vStringURL.trim().contains(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd/monstres.php?vf"{}}))}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!aMonsters.containsKey(vStringURL))}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aMonsters.put(vStringURL,\ Monster.mFromURL(vStringURL));}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(vStringURL.trim().contains(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd/sorts.php?vf"{}}))}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!aSpells.containsKey(vStringURL))}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aSpells.put(vStringURL,\ Spell.mFromURL(vStringURL));}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(vStringURL.trim().contains(\textcolor{stringliteral}{"{}https://www.aidedd.org/dnd/om.php?vf"{}}))}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!aObjects.containsKey(vStringURL))}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aObjects.put(vStringURL,\ DnDObject.mFromURL(vStringURL));}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}L'URL\ :\ \(\backslash\)"{}"{}}\ +\ vStringURL\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ à\ été\ ignorée\ parce\ qu'elle\ ne\ fait\ pas\ partie\ du\ site\ \(\backslash\)"{}aidedd.org/\(\backslash\)"{}."{}});}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ -\/>\ }
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Data;}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ this.aModifyURLButton.setOnAction}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ -\/>\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Computing;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aMonsters.clear();}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aSpells.clear();}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aObjects.clear();}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(0);}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Idle;}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ this.aSaveBook.setOnAction}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{event}\ -\/>\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Computing;}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FileChooser\ vFileChooser\ =\ \textcolor{keyword}{new}\ FileChooser();}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vFileChooser.getExtensionFilters().add(\textcolor{keyword}{new}\ FileChooser.ExtensionFilter(\textcolor{stringliteral}{"{}Fichiers\ Book"{}},\ \textcolor{stringliteral}{"{}*.csv"{}}));}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ File\ vSaveFile\ =\ vFileChooser.showSaveDialog(aWindow);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vSaveFile\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aProgressBar.setProgress(-\/1);}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Runnable\ vEventWorker\ =\ \textcolor{keyword}{new}\ Runnable()\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(Writer\ vWriter\ =\ \textcolor{keyword}{new}\ FileWriter(vSaveFile))}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}(ICSVWriter\ vCSVWriter\ =\ (ICSVWriter)\ \textcolor{keyword}{new}\ CSVWriterBuilder(vWriter)}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withEscapeChar(ICSVParser.DEFAULT\_ESCAPE\_CHARACTER)}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withLineEnd(ICSVWriter.DEFAULT\_LINE\_END)}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withQuoteChar(ICSVParser.DEFAULT\_QUOTE\_CHARACTER)}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .withSeparator(ICSVParser.DEFAULT\_SEPARATOR)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build())}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vSize\ =\ aMonsters.size()\ +\ aSpells.size();}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vCount\ =\ 0;\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Entry<String,\ Monster>\ vMonster\ :\ aMonsters.entrySet())}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vLine\ =\ vMonster.getValue().mToBook().toArray(\textcolor{keyword}{new}\ String[0]);}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.writeNext(vLine);\ \ \ \ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Entry<String,\ Spell>\ vSpell\ :\ aSpells.entrySet())}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vLine\ =\ vSpell.getValue().mToBook().toArray(\textcolor{keyword}{new}\ String[0]);}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.writeNext(vLine);}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Entry<String,\ DnDObject>\ vObject\ :\ aObjects.entrySet())}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \textcolor{keywordtype}{double}\ vProgress\ =\ ((double)vCount)/((\textcolor{keywordtype}{double})vSize);}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(vProgress));}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<String>\ vTemp\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vTemp.add(vObject.getKey());}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vTemp.addAll(vObject.getValue().mToBook());}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String[]\ vLine\ =\ vTemp.toArray(\textcolor{keyword}{new}\ String[0]);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.writeNext(vLine);}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCount++;}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCSVWriter.flush();}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater(()\ -\/>\ aProgressBar.setProgress(0));}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platform.runLater}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ -\/>\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aStatus\ =\ EApplicationStatus.Data;}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Thread(vEventWorker).start();}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ this.aLinkText.textProperty().addListener}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ (observable,\ oldValue,\ newValue)-\/>\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(aStatus\ ==\ EApplicationStatus.Idle)}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEnable();}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ GridPane\ vRoot\ =\ \textcolor{keyword}{new}\ GridPane();}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ ColumnConstraints\ column1\ =\ \textcolor{keyword}{new}\ ColumnConstraints();}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ column1.setPercentWidth(50);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ ColumnConstraints\ column2\ =\ \textcolor{keyword}{new}\ ColumnConstraints();}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ column2.setPercentWidth(50);}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ vRoot.getColumnConstraints().addAll(column1,\ column2);\ \textcolor{comment}{//\ each\ get\ 50\%\ of\ width}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ RowConstraints\ rowConstraint1\ =\ \textcolor{keyword}{new}\ RowConstraints();}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ RowConstraints\ rowConstraint2\ =\ \textcolor{keyword}{new}\ RowConstraints();}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ rowConstraint2.prefHeightProperty().bind(this.aWindow.heightProperty());}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ vRoot.getRowConstraints().addAll(rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint2,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1);}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ vRoot.add(this.aLoadMonster,\ 0,\ 0,\ 2,\ 1);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ vRoot.add(this.aLoadSpell,\ 0,\ 1,\ 2,\ 1);}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ vRoot.add(this.aLoadObjects,\ 0,\ 2,\ 2,\ 1);}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ vRoot.add(this.aLinkLabel,\ 0,\ 3,\ 2,\ 1);}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ vRoot.add(this.aLinkText,\ 0,\ 4,\ 2,\ 1);}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ vRoot.add(this.aConvertURLButton,\ 0,\ 5,\ 1,\ 1);}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ vRoot.add(this.aModifyURLButton,\ 1,\ 5,\ 1,\ 1);}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ vRoot.add(this.aSaveBook,\ 0,\ 6,\ 2,\ 1);}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ vRoot.add(this.aProgressBar,\ 0,\ 7,\ 2,\ 1);\ \ \ }
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ Scene\ vScene\ =\ \textcolor{keyword}{new}\ Scene(vRoot,\ 800,\ 600);\ \ }
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ vRoot.prefWidthProperty().bind(this.aWindow.widthProperty());}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ vRoot.prefHeightProperty().bind(this.aWindow.widthProperty());}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ this.aProgressBar.setMinHeight(20);}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ this.aProgressBar.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ this.aProgressBar.setProgress(0);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ this.aLinkLabel.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ this.aLinkText.setMaxHeight(Double.MAX\_VALUE);}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ this.aLinkLabel.setAlignment(Pos.CENTER);}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ this.aLoadObjects.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ this.aLoadSpell.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ this.aLoadMonster.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ this.aConvertURLButton.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ this.aModifyURLButton.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ this.aSaveBook.setMaxWidth(Double.MAX\_VALUE);}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ this.aWindow.setScene(vScene);}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ this.aConvertURLButton.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ this.aModifyURLButton.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ this.aSaveBook.setDisable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ this.aWindow.setTitle(\textcolor{stringliteral}{"{}URLs\ To\ Book"{}});}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ this.aWindow.show();}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ this.aStatus\ =\ EApplicationStatus.Idle;}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ this.mEnable();}
+\DoxyCodeLine{00433\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{l00055}{a\+Link\+Text}}, \mbox{\hyperlink{l00056}{a\+Progress\+Bar}}, \mbox{\hyperlink{l00051}{a\+Window}}, \mbox{\hyperlink{l00025}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+From\+URL()}}, and \mbox{\hyperlink{l00016}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+From\+URL()}}.
+References \mbox{\hyperlink{l00055}{a\+Link\+Text}}, \mbox{\hyperlink{l00061}{a\+Monsters}}, \mbox{\hyperlink{l00063}{a\+Objects}}, \mbox{\hyperlink{l00056}{a\+Progress\+Bar}}, \mbox{\hyperlink{l00062}{a\+Spells}}, \mbox{\hyperlink{l00065}{a\+Status}}, \mbox{\hyperlink{l00050}{a\+Window}}, \mbox{\hyperlink{l00008}{Dn\+D.\+Java\+Csv\+To\+Json.\+EApplication\+Status.\+Computing}}, \mbox{\hyperlink{l00007}{Dn\+D.\+Java\+Csv\+To\+Json.\+EApplication\+Status.\+Data}}, \mbox{\hyperlink{l00006}{Dn\+D.\+Java\+Csv\+To\+Json.\+EApplication\+Status.\+Idle}}, \mbox{\hyperlink{l00435}{m\+Enable()}}, \mbox{\hyperlink{l00013}{Dn\+D.\+Java\+Csv\+To\+Json.\+Dn\+DObject.\+m\+From\+URL()}}, \mbox{\hyperlink{l00023}{Dn\+D.\+Java\+Csv\+To\+Json.\+Monster.\+m\+From\+URL()}}, and \mbox{\hyperlink{l00016}{Dn\+D.\+Java\+Csv\+To\+Json.\+Spell.\+m\+From\+URL()}}.
 
 
 
@@ -292,7 +529,7 @@ References \mbox{\hyperlink{l00055}{a\+Link\+Text}}, \mbox{\hyperlink{l00056}{a\
 \index{aConvertURLButton@{aConvertURLButton}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
 \doxysubsubsection{\texorpdfstring{aConvertURLButton}{aConvertURLButton}}
 {\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a2ad26206efeb517b4f87cae2210e88e5} 
-Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Convert\+URLButton = new Button("{}URL =$>$ Book"{})\hspace{0.3cm}{\ttfamily [private]}}
+Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Convert\+URLButton = new Button("{}Télécharger les données des URLs"{})\hspace{0.3cm}{\ttfamily [private]}}
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a96348d9ad44d64373ddd0763c0f38cbb}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aLinkLabel@{aLinkLabel}}
 \index{aLinkLabel@{aLinkLabel}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
@@ -308,7 +545,7 @@ Text\+Area Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Link\+Text = n
 
 
 
-Referenced by \mbox{\hyperlink{l00060}{start()}}.
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ae5cb7ce5466078b3939b39653fc15bd3}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aLoadMonster@{aLoadMonster}}
 \index{aLoadMonster@{aLoadMonster}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
@@ -316,11 +553,43 @@ Referenced by \mbox{\hyperlink{l00060}{start()}}.
 {\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_ae5cb7ce5466078b3939b39653fc15bd3} 
 Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Load\+Monster = new Button("{}Charger les URLs de Monstres"{})\hspace{0.3cm}{\ttfamily [private]}}
 
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a5ebabb1a7f0c17bb434238c3d6a47c09}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aLoadObjects@{aLoadObjects}}
+\index{aLoadObjects@{aLoadObjects}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aLoadObjects}{aLoadObjects}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a5ebabb1a7f0c17bb434238c3d6a47c09} 
+Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Load\+Objects = new Button("{}Charger les URLs d\textquotesingle{}objets"{})\hspace{0.3cm}{\ttfamily [private]}}
+
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a9a747e0ee01f9dfbc8a9acf75e9b7deb}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aLoadSpell@{aLoadSpell}}
 \index{aLoadSpell@{aLoadSpell}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
 \doxysubsubsection{\texorpdfstring{aLoadSpell}{aLoadSpell}}
 {\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a9a747e0ee01f9dfbc8a9acf75e9b7deb} 
 Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Load\+Spell = new Button("{}Charger les URLs de sorts"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a5cbce0c0374b5209cd997ac0d960bef6}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aModifyURLButton@{aModifyURLButton}}
+\index{aModifyURLButton@{aModifyURLButton}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aModifyURLButton}{aModifyURLButton}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a5cbce0c0374b5209cd997ac0d960bef6} 
+Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Modify\+URLButton = new Button("{}Modifier les URLs (éfface les données)"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a890a5e20a210063b10228d8d8bee3e93}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aMonsters@{aMonsters}}
+\index{aMonsters@{aMonsters}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aMonsters}{aMonsters}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a890a5e20a210063b10228d8d8bee3e93} 
+Map$<$String, \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Monster}{Monster}}$>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Monsters = new Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a7ad21edfc6045c6f1ddd661fe17cfcd9}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aObjects@{aObjects}}
+\index{aObjects@{aObjects}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aObjects}{aObjects}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a7ad21edfc6045c6f1ddd661fe17cfcd9} 
+Map$<$String, \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1DnDObject}{Dn\+DObject}}$>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Objects = new Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a909b29cfe4d78c6238bca3fdf41871ff}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aProgressBar@{aProgressBar}}
 \index{aProgressBar@{aProgressBar}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
@@ -330,7 +599,33 @@ Progress\+Bar Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Progress\+B
 
 
 
-Referenced by \mbox{\hyperlink{l00060}{start()}}.
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_add132357cf75ab36fd3e31a05c4f4abf}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aSaveBook@{aSaveBook}}
+\index{aSaveBook@{aSaveBook}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aSaveBook}{aSaveBook}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_add132357cf75ab36fd3e31a05c4f4abf} 
+Button Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Save\+Book = new Button("{}Enregistrer en fichier Book (csv)"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a7760ac9502e348b216caebd149bfea79}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aSpells@{aSpells}}
+\index{aSpells@{aSpells}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aSpells}{aSpells}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a7760ac9502e348b216caebd149bfea79} 
+Map$<$String, \mbox{\hyperlink{classDnD_1_1JavaCsvToJson_1_1Spell}{Spell}}$>$ Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Spells = new Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
+
+\Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a06fae729f0a0135b4856d0baa704279b}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aStatus@{aStatus}}
+\index{aStatus@{aStatus}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
+\doxysubsubsection{\texorpdfstring{aStatus}{aStatus}}
+{\footnotesize\ttfamily \label{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a06fae729f0a0135b4856d0baa704279b} 
+\mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus}{EApplication\+Status}} Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Status = \mbox{\hyperlink{enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus_ac4f3668832ab201bd6849945c83a4522}{EApplication\+Status.\+Setup}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
 
 \Hypertarget{classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_a1966f3ebe64a86d3b567a326f704414e}\index{DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}!aWindow@{aWindow}}
 \index{aWindow@{aWindow}!DnD.JavaCsvToJson.JavaCsvToJson@{DnD.JavaCsvToJson.JavaCsvToJson}}
@@ -340,7 +635,7 @@ Stage Dn\+D.\+Java\+Csv\+To\+Json.\+Java\+Csv\+To\+Json.\+a\+Window\hspace{0.3cm
 
 
 
-Referenced by \mbox{\hyperlink{l00060}{start()}}.
+Referenced by \mbox{\hyperlink{l00068}{start()}}.
 
 
 

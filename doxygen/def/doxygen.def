@@ -58,7 +58,7 @@ class = {
     ref-virt = non-virtual;
   };
   cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
-  cp-fileline  = '49';
+  cp-fileline  = '48';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -607,6 +607,313 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
 }; /* class */
+class = {
+  cp-id     = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject';
+  cp-name   = 'DnD::JavaCsvToJson::DnDObject';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd7/d00/interfaceDnD_1_1JavaCsvToJson_1_1IExportable';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject_1a5b8ede95bccd4fbd6b6ecec870ec10a9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DnDObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Property< String >
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pName';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Property< String >
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pType';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Property< String >
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pRarity';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Property< Boolean >
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pLink';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Property< String >
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pDescription';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+      sec-mem-desc-line = '71';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a2748751249838e6e1c164282de8c4ad4';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mFromURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject_1a469901d18c6c5618d0d65dec29052cd5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+List< String >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mCSVHeaders';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+      sec-mem-desc-line = '87';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject_1ad4d1a999a9c1c4ab27b9395b762c6c67';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+List< String >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mToCSV';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+      sec-mem-desc-line = '94';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject_1ab48daf352ce69273d6cf2ebdb9dec9e2';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mToJSON';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+      sec-mem-desc-line = '102';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject_1a6bef13319a4a818e54b830269a7ca486';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+List< String >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mToBook';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+      sec-mem-desc-line = '108';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'db/d63/Property_8java_1a960c4b0c3bc390b45bc6922f5f18b2ac';
+        sec-mem-ref-line = '70';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.Property< T >::mToBook';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-static-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject_1a2748751249838e6e1c164282de8c4ad4';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static DnDObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mFromURL';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'vURL';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+      sec-mem-desc-line = '13';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1a0142acfa2a02cf3b193a1e1527cae035';
+        sec-mem-ref-line = '9';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::Description';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a5b8ede95bccd4fbd6b6ecec870ec10a9';
+        sec-mem-ref-line = '72';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::DnDObject';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1a1735edd4f00ddf280f4dc7fff037c498';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::Link';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1af3374c7bad58bd867d64f2264010cfb7';
+        sec-mem-ref-line = '5';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::Name';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1a05327f0a4eee815ff9d42907b82e341e';
+        sec-mem-ref-line = '7';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::Rarity';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1afca2e062afb18ec04cdbe9efd8fc94ba';
+        sec-mem-ref-line = '6';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::Type';
+    };
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+  cp-fileline  = '11';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'DnD.JavaCsvToJson.DnDObject';
+        node-link = {
+          node-link-id = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'DnD.JavaCsvToJson.IExportable';
+        node-link = {
+          node-link-id = 'd7/d00/interfaceDnD_1_1JavaCsvToJson_1_1IExportable';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'DnD.JavaCsvToJson.DnDObject';
+        node-link = {
+          node-link-id = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+        node-child = {
+          child-id = '3';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+~aDescription
+~aName
+~aRarity
+~aType
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+        node-child = {
+          child-id = '5';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+~aLink
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'DnD.JavaCsvToJson.IExportable';
+        node-link = {
+          node-link-id = 'd7/d00/interfaceDnD_1_1JavaCsvToJson_1_1IExportable';
+        };
+      }; /* node */
+      node = {
+        node-id    = 4;
+        node-label = 'DnD.JavaCsvToJson.Property< T >';
+        node-link = {
+          node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
+        };
+      }; /* node */
+      node = {
+        node-id    = 5;
+        node-label = 'DnD.JavaCsvToJson.Property< Boolean >';
+        node-link = {
+          node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
+        };
+        node-child = {
+          child-id = '4';
+          relation = template-instance;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+< Boolean >
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 3;
+        node-label = 'DnD.JavaCsvToJson.Property< String >';
+        node-link = {
+          node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
+        };
+        node-child = {
+          child-id = '4';
+          relation = template-instance;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+< String >
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
 enum = {
   cp-id     = 'd2/d51/enumDnD_1_1JavaCsvToJson_1_1EAlignment';
   cp-name   = 'DnD::JavaCsvToJson::EAlignment';
@@ -745,12 +1052,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -965,7 +1272,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
     }; /* sec-member */
@@ -1041,6 +1348,118 @@ _EnD_oF_dEf_TeXt_;
         node-label = 'DnD.JavaCsvToJson.EAlignment';
         node-link = {
           node-link-id = 'd2/d51/enumDnD_1_1JavaCsvToJson_1_1EAlignment';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* enum */
+enum = {
+  cp-id     = 'dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus';
+  cp-name   = 'DnD::JavaCsvToJson::EApplicationStatus';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus_1ac4f3668832ab201bd6849945c83a4522';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Setup';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EApplicationStatus.java';
+      sec-mem-desc-line = '5';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus_1a9e00f6c67e4e6d723b906a69c3ba6e95';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Idle';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EApplicationStatus.java';
+      sec-mem-desc-line = '6';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus_1ae419958d671961f26b1a5ad2002beaaf';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Data';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EApplicationStatus.java';
+      sec-mem-desc-line = '7';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus_1a3e196cee975307ef04a2a8ac392086a1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Computing';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EApplicationStatus.java';
+      sec-mem-desc-line = '8';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EApplicationStatus.java';
+  cp-fileline  = '3';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'DnD.JavaCsvToJson.EApplicationStatus';
+        node-link = {
+          node-link-id = 'dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus';
         };
       }; /* node */
 
@@ -1341,12 +1760,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1372,12 +1791,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1403,12 +1822,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1434,12 +1853,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1465,12 +1884,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1496,12 +1915,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1527,12 +1946,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1558,12 +1977,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1589,12 +2008,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1620,12 +2039,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1651,12 +2070,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1682,12 +2101,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1713,12 +2132,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1744,12 +2163,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1775,12 +2194,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1806,12 +2225,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1837,12 +2256,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1868,12 +2287,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1899,7 +2318,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1925,7 +2344,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1951,7 +2370,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -1998,12 +2417,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2034,7 +2453,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
@@ -2070,7 +2489,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
@@ -2101,7 +2520,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
@@ -2132,12 +2551,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2163,7 +2582,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2210,7 +2629,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2236,7 +2655,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2262,7 +2681,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2288,12 +2707,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2319,7 +2738,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2387,12 +2806,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -2489,6 +2908,372 @@ _EnD_oF_dEf_TeXt_;
         node-label = 'DnD.JavaCsvToJson.EMonsterHeader';
         node-link = {
           node-link-id = 'da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'DnD.JavaCsvToJson.IHeader';
+        node-link = {
+          node-link-id = 'db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* enum */
+enum = {
+  cp-id     = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader';
+  cp-name   = 'DnD::JavaCsvToJson::EObjectHeader';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1ab91f9d0c3fc93fad333541ec38225766';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mName';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '23';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a6911fdae3ca025236eb2dea523ebce8a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mJsonName';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '29';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1a9c6b6f6ea37e1ae0752a97550eb60519';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::aJsonName';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a0034bdf8e49b2e7852e1048202739699';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+boolean
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mQuoted';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1ab57e301296f8d6437d4607c07fbe8977';
+        sec-mem-ref-line = '14';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::aQuoted';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1af3374c7bad58bd867d64f2264010cfb7';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Name';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+=("Name", "objectName", true)
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '5';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a2748751249838e6e1c164282de8c4ad4';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mFromURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1afca2e062afb18ec04cdbe9efd8fc94ba';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Type';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+=("Type", "objectType", true)
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '6';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a2748751249838e6e1c164282de8c4ad4';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mFromURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a05327f0a4eee815ff9d42907b82e341e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Rarity';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+=("Rarity", "objectRarity", true)
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '7';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a2748751249838e6e1c164282de8c4ad4';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mFromURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a1735edd4f00ddf280f4dc7fff037c498';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Link';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+=("Link", "objectLink", true)
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '8';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a2748751249838e6e1c164282de8c4ad4';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mFromURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a0142acfa2a02cf3b193a1e1527cae035';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Description';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+=("Description", "objectDescription", true)
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '10';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a2748751249838e6e1c164282de8c4ad4';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mFromURL';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a955094ca2a0944b72f2f007861367e04';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'EObjectHeader';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pName';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pJsonName';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+boolean
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pQuoted';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '15';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a7e263bfe1b287516ae347d5db6609e91';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aName';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '12';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1a9c6b6f6ea37e1ae0752a97550eb60519';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aJsonName';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '13';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1a6911fdae3ca025236eb2dea523ebce8a';
+        sec-mem-ref-line = '29';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::mJsonName';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader_1ab57e301296f8d6437d4607c07fbe8977';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+boolean
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aQuoted';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+      sec-mem-desc-line = '14';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'd9/dd8/EObjectHeader_8java_1a0034bdf8e49b2e7852e1048202739699';
+        sec-mem-ref-line = '35';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EObjectHeader::mQuoted';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
+  cp-fileline  = '3';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'DnD.JavaCsvToJson.EObjectHeader';
+        node-link = {
+          node-link-id = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'DnD.JavaCsvToJson.IHeader';
+        node-link = {
+          node-link-id = 'db/d49/interfaceDnD_1_1JavaCsvToJson_1_1IHeader';
+        };
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'DnD.JavaCsvToJson.EObjectHeader';
+        node-link = {
+          node-link-id = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader';
         };
         node-child = {
           child-id = '2';
@@ -2643,7 +3428,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
     }; /* sec-member */
@@ -4866,6 +5651,12 @@ interface = {
   };
   cp-ref     = {
     ref-type = derived;
+    ref-id   = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
     ref-id   = 'd4/d81/classDnD_1_1JavaCsvToJson_1_1Monster';
     ref-prot = public;
     ref-virt = non-virtual;
@@ -4918,7 +5709,7 @@ String
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mToJSON';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/IExportable.java';
-      sec-mem-desc-line = '9';
+      sec-mem-desc-line = '7';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -4936,7 +5727,7 @@ List< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mCSVHeaders';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/IExportable.java';
-      sec-mem-desc-line = '10';
+      sec-mem-desc-line = '8';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -4954,7 +5745,7 @@ List< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mToCSV';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/IExportable.java';
-      sec-mem-desc-line = '11';
+      sec-mem-desc-line = '9';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -4972,7 +5763,7 @@ List< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mToBook';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/IExportable.java';
-      sec-mem-desc-line = '12';
+      sec-mem-desc-line = '10';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -4982,7 +5773,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
   cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/IExportable.java';
-  cp-fileline  = '7';
+  cp-fileline  = '5';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5010,6 +5801,17 @@ _EnD_oF_dEf_TeXt_;
       }; /* node */
       node = {
         node-id    = 3;
+        node-label = 'DnD.JavaCsvToJson.DnDObject';
+        node-link = {
+          node-link-id = 'd0/df2/classDnD_1_1JavaCsvToJson_1_1DnDObject';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 4;
         node-label = 'DnD.JavaCsvToJson.Monster';
         node-link = {
           node-link-id = 'd4/d81/classDnD_1_1JavaCsvToJson_1_1Monster';
@@ -5020,7 +5822,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 4;
+        node-id    = 5;
         node-label = 'DnD.JavaCsvToJson.MonsterAction';
         node-link = {
           node-link-id = 'dd/dbf/classDnD_1_1JavaCsvToJson_1_1MonsterAction';
@@ -5031,7 +5833,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 5;
+        node-id    = 6;
         node-label = 'DnD.JavaCsvToJson.MonsterAvatar';
         node-link = {
           node-link-id = 'd9/d1f/classDnD_1_1JavaCsvToJson_1_1MonsterAvatar';
@@ -5042,7 +5844,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 6;
+        node-id    = 7;
         node-label = 'DnD.JavaCsvToJson.MonsterProperty';
         node-link = {
           node-link-id = 'de/d58/classDnD_1_1JavaCsvToJson_1_1MonsterProperty';
@@ -5053,7 +5855,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 7;
+        node-id    = 8;
         node-label = 'DnD.JavaCsvToJson.SpecialAbility';
         node-link = {
           node-link-id = 'db/dba/classDnD_1_1JavaCsvToJson_1_1SpecialAbility';
@@ -5064,7 +5866,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 8;
+        node-id    = 9;
         node-label = 'DnD.JavaCsvToJson.Spell';
         node-link = {
           node-link-id = 'de/d1f/classDnD_1_1JavaCsvToJson_1_1Spell';
@@ -5075,7 +5877,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 9;
+        node-id    = 10;
         node-label = 'DnD.JavaCsvToJson.SpellAttack';
         node-link = {
           node-link-id = 'd6/da8/classDnD_1_1JavaCsvToJson_1_1SpellAttack';
@@ -5104,6 +5906,12 @@ interface = {
   cp-ref     = {
     ref-type = derived;
     ref-id   = 'da/d98/enumDnD_1_1JavaCsvToJson_1_1EMonsterHeader';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader';
     ref-prot = public;
     ref-virt = non-virtual;
   };
@@ -5199,6 +6007,17 @@ _EnD_oF_dEf_TeXt_;
       }; /* node */
       node = {
         node-id    = 3;
+        node-label = 'DnD.JavaCsvToJson.EObjectHeader';
+        node-link = {
+          node-link-id = 'db/db7/enumDnD_1_1JavaCsvToJson_1_1EObjectHeader';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 4;
         node-label = 'DnD.JavaCsvToJson.ESpellHeader';
         node-link = {
           node-link-id = 'df/dd7/enumDnD_1_1JavaCsvToJson_1_1ESpellHeader';
@@ -5248,7 +6067,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'pWindow';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
-      sec-mem-desc-line = '60';
+      sec-mem-desc-line = '68';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5261,24 +6080,92 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::aLinkText';
     };
       sec-mem-referenceto = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1a890a5e20a210063b10228d8d8bee3e93';
+        sec-mem-ref-line = '61';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::aMonsters';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1a7ad21edfc6045c6f1ddd661fe17cfcd9';
+        sec-mem-ref-line = '63';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::aObjects';
+    };
+      sec-mem-referenceto = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1a909b29cfe4d78c6238bca3fdf41871ff';
         sec-mem-ref-line = '56';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::aProgressBar';
     };
       sec-mem-referenceto = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1a7760ac9502e348b216caebd149bfea79';
+        sec-mem-ref-line = '62';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::aSpells';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1a06fae729f0a0135b4856d0baa704279b';
+        sec-mem-ref-line = '65';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::aStatus';
+    };
+      sec-mem-referenceto = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1a1966f3ebe64a86d3b567a326f704414e';
-        sec-mem-ref-line = '51';
+        sec-mem-ref-line = '50';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::aWindow';
     };
       sec-mem-referenceto = {
+        sec-mem-ref-id = 'd3/d98/EApplicationStatus_8java_1a3e196cee975307ef04a2a8ac392086a1';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EApplicationStatus::Computing';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd3/d98/EApplicationStatus_8java_1ae419958d671961f26b1a5ad2002beaaf';
+        sec-mem-ref-line = '7';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EApplicationStatus::Data';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd3/d98/EApplicationStatus_8java_1a9e00f6c67e4e6d723b906a69c3ba6e95';
+        sec-mem-ref-line = '6';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.EApplicationStatus::Idle';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1af994726effb3bba9d49280b9c56e519a';
+        sec-mem-ref-line = '435';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::mEnable';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a2748751249838e6e1c164282de8c4ad4';
+        sec-mem-ref-line = '13';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mFromURL';
+    };
+      sec-mem-referenceto = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'de/d9f/Spell_8java_1ab3815826062ff9980f4f4571011a0da4';
         sec-mem-ref-line = '16';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Spell::mFromURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1af994726effb3bba9d49280b9c56e519a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'mEnable';
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '435';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
     };
     }; /* sec-member */
     sec-member = {
@@ -5297,7 +6184,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'pFile';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
-      sec-mem-desc-line = '263';
+      sec-mem-desc-line = '480';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5318,7 +6205,7 @@ Stage
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'aWindow';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
-      sec-mem-desc-line = '51';
+      sec-mem-desc-line = '50';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5327,9 +6214,30 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
-        sec-mem-ref-line = '60';
+        sec-mem-ref-line = '68';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
     };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1a5ebabb1a7f0c17bb434238c3d6a47c09';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Button
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aLoadObjects';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= new Button("Charger les URLs d'objets")
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '51';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
@@ -5416,7 +6324,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
-        sec-mem-ref-line = '60';
+        sec-mem-ref-line = '68';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
     };
     }; /* sec-member */
@@ -5442,7 +6350,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
-        sec-mem-ref-line = '60';
+        sec-mem-ref-line = '68';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
     };
     }; /* sec-member */
@@ -5456,7 +6364,7 @@ Button
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'aConvertURLButton';
       sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
-= new Button("URL => Book")
+= new Button("Télécharger les données des URLs")
 _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
       sec-mem-desc-line = '57';
@@ -5467,9 +6375,155 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1a5cbce0c0374b5209cd997ac0d960bef6';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Button
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aModifyURLButton';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= new Button("Modifier les URLs (éfface les données)")
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '58';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1add132357cf75ab36fd3e31a05c4f4abf';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Button
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aSaveBook';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= new Button("Enregistrer en fichier Book (csv)")
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '59';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1a890a5e20a210063b10228d8d8bee3e93';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Map< String, Monster >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aMonsters';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= new HashMap<>()
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '61';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1a7760ac9502e348b216caebd149bfea79';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Map< String, Spell >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aSpells';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= new HashMap<>()
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '62';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1a7ad21edfc6045c6f1ddd661fe17cfcd9';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Map< String, DnDObject >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aObjects';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= new HashMap<>()
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '63';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dc/d31/classDnD_1_1JavaCsvToJson_1_1JavaCsvToJson_1a06fae729f0a0135b4856d0baa704279b';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+EApplicationStatus
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'aStatus';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= EApplicationStatus.Setup
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
+      sec-mem-desc-line = '65';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referencedby = {
+        sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
+        sec-mem-ref-line = '68';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
+    };
+    }; /* sec-member */
   }; /* cp-section */
   cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
-  cp-fileline  = '49';
+  cp-fileline  = '48';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5509,6 +6563,20 @@ _EnD_oF_dEf_TeXt_;
           child-id = '2';
           relation = public-inheritance;
         }; /* node-child */
+        node-child = {
+          child-id = '3';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+-aStatus
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 3;
+        node-label = 'DnD.JavaCsvToJson.EApplicationStatus';
+        node-link = {
+          node-link-id = 'dd/dd6/enumDnD_1_1JavaCsvToJson_1_1EApplicationStatus';
+        };
       }; /* node */
 
 _EnD_oF_dEf_TeXt_;
@@ -5660,7 +6728,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'pMonsterActions';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '835';
+      sec-mem-desc-line = '833';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5669,17 +6737,17 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1aea5522500e4874b8c5eaab865416760e';
-        sec-mem-ref-line = '20';
+        sec-mem-ref-line = '18';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromBook';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -5693,7 +6761,7 @@ Property< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mName';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '883';
+      sec-mem-desc-line = '881';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5711,7 +6779,7 @@ Property< EAlignment >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mAlignment';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '888';
+      sec-mem-desc-line = '886';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5729,7 +6797,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mArmorClass';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '893';
+      sec-mem-desc-line = '891';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5747,7 +6815,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mArmorClassInput';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '898';
+      sec-mem-desc-line = '896';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5765,7 +6833,7 @@ Property< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mChalengeRating';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '903';
+      sec-mem-desc-line = '901';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5783,7 +6851,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mCharisma';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '908';
+      sec-mem-desc-line = '906';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5801,7 +6869,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mConstitution';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '913';
+      sec-mem-desc-line = '911';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5819,7 +6887,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mDexterity';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '918';
+      sec-mem-desc-line = '916';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5837,7 +6905,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mHP';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '923';
+      sec-mem-desc-line = '921';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5855,7 +6923,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mHPMax';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '928';
+      sec-mem-desc-line = '926';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5873,7 +6941,7 @@ Property< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mHPMaxRoll';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '933';
+      sec-mem-desc-line = '931';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5891,7 +6959,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mIntelligence';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '938';
+      sec-mem-desc-line = '936';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5909,7 +6977,7 @@ Property< MonsterAvatar >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mMonsterAvatar';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '943';
+      sec-mem-desc-line = '941';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5927,7 +6995,7 @@ Property< ESize >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mMonsterSize';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '948';
+      sec-mem-desc-line = '946';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5945,7 +7013,7 @@ Property< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mMonsterSubtype';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '953';
+      sec-mem-desc-line = '951';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5963,7 +7031,7 @@ Property< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mMonsterType';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '958';
+      sec-mem-desc-line = '956';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5981,7 +7049,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mProeficiencyInput';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '963';
+      sec-mem-desc-line = '961';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -5999,7 +7067,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mStrength';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '968';
+      sec-mem-desc-line = '966';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6017,7 +7085,7 @@ Property< Integer >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mWisdom';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '973';
+      sec-mem-desc-line = '971';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6035,7 +7103,7 @@ Property< List< MonsterAction > >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mMonsterActions';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '978';
+      sec-mem-desc-line = '976';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6053,7 +7121,7 @@ Property< List< MonsterProperty > >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mProperties';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '983';
+      sec-mem-desc-line = '981';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6071,7 +7139,7 @@ String
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mToJSON';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '989';
+      sec-mem-desc-line = '987';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6089,7 +7157,7 @@ List< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mCSVHeaders';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '997';
+      sec-mem-desc-line = '995';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6117,7 +7185,7 @@ List< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mToCSV';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '1034';
+      sec-mem-desc-line = '1032';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6145,7 +7213,7 @@ List< String >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mToBook';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '1071';
+      sec-mem-desc-line = '1069';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6176,7 +7244,7 @@ static Monster
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mFromBook';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '20';
+      sec-mem-desc-line = '18';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6185,7 +7253,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1ace97ff332ad0dd0ec84fe5728ef46387';
-        sec-mem-ref-line = '836';
+        sec-mem-ref-line = '834';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::Monster';
     };
     }; /* sec-member */
@@ -6205,7 +7273,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'vURL';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '25';
+      sec-mem-desc-line = '23';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6314,7 +7382,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1ace97ff332ad0dd0ec84fe5728ef46387';
-        sec-mem-ref-line = '836';
+        sec-mem-ref-line = '834';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::Monster';
     };
       sec-mem-referenceto = {
@@ -6384,7 +7452,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
-        sec-mem-ref-line = '60';
+        sec-mem-ref-line = '68';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
     };
     }; /* sec-member */
@@ -6404,7 +7472,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'vTable';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-      sec-mem-desc-line = '717';
+      sec-mem-desc-line = '715';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6503,7 +7571,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1ace97ff332ad0dd0ec84fe5728ef46387';
-        sec-mem-ref-line = '836';
+        sec-mem-ref-line = '834';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::Monster';
     };
       sec-mem-referenceto = {
@@ -6564,7 +7632,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
   cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Monster.java';
-  cp-fileline  = '18';
+  cp-fileline  = '16';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -7259,7 +8327,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a499bdad4c4f699760f85dd1c6cd321a7';
-        sec-mem-ref-line = '717';
+        sec-mem-ref-line = '715';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromJson';
     };
     }; /* sec-member */
@@ -7677,85 +8745,6 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* class */
 class = {
-  cp-id     = 'd4/d03/classDnD_1_1JavaCsvToJson_1_1Object';
-  cp-name   = 'DnD::JavaCsvToJson::Object';
-  cp-section = {
-    sec-kind = 'public-func';
-    sec-member = {
-      sec-mem-kind = 'function';
-      sec-mem-id   = 'd4/d03/classDnD_1_1JavaCsvToJson_1_1Object_1a1ccce37fbe741ebe0ccb6d692509de58';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'Object';
-      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Object.java';
-      sec-mem-desc-line = '5';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-    sec-member = {
-      sec-mem-kind = 'function';
-      sec-mem-id   = 'd4/d03/classDnD_1_1JavaCsvToJson_1_1Object_1a9a352a4f2433ea8101b4592ea6c38bd4';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-String
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'mCSVHeaders';
-      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Object.java';
-      sec-mem-desc-line = '10';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-    sec-member = {
-      sec-mem-kind = 'function';
-      sec-mem-id   = 'd4/d03/classDnD_1_1JavaCsvToJson_1_1Object_1a812736abbd551c8102e7ac9f214242e4';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-String
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'mToCSV';
-      sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Object.java';
-      sec-mem-desc-line = '15';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-  }; /* cp-section */
-  cp-filename  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Object.java';
-  cp-fileline  = '3';
-  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-  cp-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
-      node = {
-        node-id    = 1;
-        node-label = 'DnD.JavaCsvToJson.Object';
-        node-link = {
-          node-link-id = 'd4/d03/classDnD_1_1JavaCsvToJson_1_1Object';
-        };
-      }; /* node */
-
-_EnD_oF_dEf_TeXt_;
-}; /* class */
-class = {
   cp-id     = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
   cp-name   = 'DnD::JavaCsvToJson::Property';
   cp-section = {
@@ -7824,7 +8813,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a07f0fa84783b0fe4fdc86331cb7226d6';
-        sec-mem-ref-line = '997';
+        sec-mem-ref-line = '995';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mCSVHeaders';
     };
       sec-mem-referencedby = {
@@ -7913,7 +8902,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a07f0fa84783b0fe4fdc86331cb7226d6';
-        sec-mem-ref-line = '997';
+        sec-mem-ref-line = '995';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mCSVHeaders';
     };
       sec-mem-referencedby = {
@@ -7928,7 +8917,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a367e26bbdad73fc66a2f89f1aa1b3962';
-        sec-mem-ref-line = '1071';
+        sec-mem-ref-line = '1069';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mToBook';
     };
       sec-mem-referencedby = {
@@ -7953,7 +8942,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a75a441ccabcee9aa702fed98aaa39ecf';
-        sec-mem-ref-line = '1034';
+        sec-mem-ref-line = '1032';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mToCSV';
     };
       sec-mem-referencedby = {
@@ -8058,7 +9047,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a75a441ccabcee9aa702fed98aaa39ecf';
-        sec-mem-ref-line = '1034';
+        sec-mem-ref-line = '1032';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mToCSV';
     };
       sec-mem-referencedby = {
@@ -8100,8 +9089,13 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'DnD.JavaCsvToJson.AvatarFrame::mToBook';
     };
       sec-mem-referencedby = {
+        sec-mem-ref-id = 'd3/de5/DnDObject_8java_1a6bef13319a4a818e54b830269a7ca486';
+        sec-mem-ref-line = '108';
+        sec-mem-ref-name = 'DnD.JavaCsvToJson.DnDObject::mToBook';
+    };
+      sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a367e26bbdad73fc66a2f89f1aa1b3962';
-        sec-mem-ref-line = '1071';
+        sec-mem-ref-line = '1069';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mToBook';
     };
       sec-mem-referencedby = {
@@ -8213,7 +9207,7 @@ _EnD_oF_dEf_TeXt_;
         };
       }; /* node */
       node = {
-        node-id    = 12;
+        node-id    = 3;
         node-label = 'DnD.JavaCsvToJson.Property< Boolean >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8227,7 +9221,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 9;
+        node-id    = 10;
         node-label = 'DnD.JavaCsvToJson.Property< DnD.JavaCsvToJson.AvatarFrame >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8241,7 +9235,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 3;
+        node-id    = 4;
         node-label = 'DnD.JavaCsvToJson.Property< DnD.JavaCsvToJson.EAlignment >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8255,7 +9249,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 6;
+        node-id    = 7;
         node-label = 'DnD.JavaCsvToJson.Property< DnD.JavaCsvToJson.ESize >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8283,7 +9277,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 10;
+        node-id    = 11;
         node-label = 'DnD.JavaCsvToJson.Property< DnD.JavaCsvToJson.ESpellLevel >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8297,7 +9291,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 11;
+        node-id    = 12;
         node-label = 'DnD.JavaCsvToJson.Property< DnD.JavaCsvToJson.ESpellSchool >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8311,7 +9305,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 5;
+        node-id    = 6;
         node-label = 'DnD.JavaCsvToJson.Property< DnD.JavaCsvToJson.MonsterAvatar >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8325,7 +9319,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 4;
+        node-id    = 5;
         node-label = 'DnD.JavaCsvToJson.Property< Integer >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8339,7 +9333,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 7;
+        node-id    = 8;
         node-label = 'DnD.JavaCsvToJson.Property< List< DnD.JavaCsvToJson.MonsterAction > >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8353,7 +9347,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 8;
+        node-id    = 9;
         node-label = 'DnD.JavaCsvToJson.Property< List< DnD.JavaCsvToJson.MonsterProperty > >';
         node-link = {
           node-link-id = 'db/daa/classDnD_1_1JavaCsvToJson_1_1Property';
@@ -8461,7 +9455,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -8484,7 +9478,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d64/Monster_8java_1a53bdbf47d4a8f1a5a1dc0b5fb25fc0b2';
-        sec-mem-ref-line = '25';
+        sec-mem-ref-line = '23';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.Monster::mFromURL';
     };
     }; /* sec-member */
@@ -9098,7 +10092,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1aca3e125eea343d6551164e154bb120f8';
-        sec-mem-ref-line = '60';
+        sec-mem-ref-line = '68';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::start';
     };
     }; /* sec-member */
@@ -10648,9 +11642,33 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
+  file-id   = 'd3/de5/DnDObject_8java';
+  file-name = 'DnDObject.java';
+  file-full-name  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/DnDObject.java';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
   file-id   = 'df/dfb/EAlignment_8java';
   file-name = 'EAlignment.java';
   file-full-name  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EAlignment.java';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'd3/d98/EApplicationStatus_8java';
+  file-name = 'EApplicationStatus.java';
+  file-full-name  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EApplicationStatus.java';
   file-first-line = '1';
   file-briefdesc  = <<_EnD_oF_dEf_TeXt_
 
@@ -10675,6 +11693,18 @@ file = {
   file-id   = 'dd/d1d/EMonsterHeader_8java';
   file-name = 'EMonsterHeader.java';
   file-full-name  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EMonsterHeader.java';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'd9/dd8/EObjectHeader_8java';
+  file-name = 'EObjectHeader.java';
+  file-full-name  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
   file-first-line = '1';
   file-briefdesc  = <<_EnD_oF_dEf_TeXt_
 
@@ -10843,18 +11873,6 @@ file = {
   file-id   = 'd7/db6/NPC_8java';
   file-name = 'NPC.java';
   file-full-name  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/NPC.java';
-  file-first-line = '1';
-  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-  file-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-}; /* file */
-file = {
-  file-id   = 'd7/dc1/Object_8java';
-  file-name = 'Object.java';
-  file-full-name  = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/Object.java';
   file-first-line = '1';
   file-briefdesc  = <<_EnD_oF_dEf_TeXt_
 

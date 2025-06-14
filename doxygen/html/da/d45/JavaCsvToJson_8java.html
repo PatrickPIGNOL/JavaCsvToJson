@@ -109,21 +109,22 @@ $(function(){initNavTree('da/d45/JavaCsvToJson_8java.html','../../'); initResiza
   <div class="headertitle"><div class="title">JavaCsvToJson.java File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>import java.io.File;</code><br />
+<div class="textblock"><code>import java.awt.GridLayout;</code><br />
+<code>import java.io.File;</code><br />
 <code>import java.io.FileReader;</code><br />
 <code>import java.io.FileWriter;</code><br />
 <code>import java.io.IOException;</code><br />
 <code>import java.io.Reader;</code><br />
 <code>import java.io.Writer;</code><br />
 <code>import java.util.ArrayList;</code><br />
+<code>import java.util.HashMap;</code><br />
 <code>import java.util.List;</code><br />
-<code>import org.json.simple.JSONObject;</code><br />
-<code>import org.json.simple.parser.JSONParser;</code><br />
-<code>import org.json.simple.parser.ParseException;</code><br />
+<code>import java.util.Map;</code><br />
+<code>import java.util.Map.Entry;</code><br />
+<code>import org.apache.commons.collections.functors.IfClosure;</code><br />
 <code>import org.jsoup.Jsoup;</code><br />
 <code>import org.jsoup.nodes.Document;</code><br />
 <code>import org.jsoup.nodes.Element;</code><br />
-<code>import org.jsoup.select.Elements;</code><br />
 <code>import com.opencsv.CSVParser;</code><br />
 <code>import com.opencsv.CSVParserBuilder;</code><br />
 <code>import com.opencsv.CSVReader;</code><br />
@@ -133,8 +134,8 @@ $(function(){initNavTree('da/d45/JavaCsvToJson_8java.html','../../'); initResiza
 <code>import com.opencsv.ICSVWriter;</code><br />
 <code>import javafx.application.Application;</code><br />
 <code>import javafx.application.Platform;</code><br />
-<code>import javafx.event.ActionEvent;</code><br />
-<code>import javafx.event.EventHandler;</code><br />
+<code>import javafx.beans.value.ChangeListener;</code><br />
+<code>import javafx.beans.value.ObservableValue;</code><br />
 <code>import javafx.geometry.Insets;</code><br />
 <code>import javafx.geometry.Pos;</code><br />
 <code>import javafx.scene.Scene;</code><br />
@@ -142,11 +143,10 @@ $(function(){initNavTree('da/d45/JavaCsvToJson_8java.html','../../'); initResiza
 <code>import javafx.scene.control.Label;</code><br />
 <code>import javafx.scene.control.ProgressBar;</code><br />
 <code>import javafx.scene.control.TextArea;</code><br />
-<code>import javafx.scene.control.TextField;</code><br />
-<code>import javafx.scene.layout.AnchorPane;</code><br />
 <code>import javafx.scene.layout.BorderPane;</code><br />
-<code>import javafx.scene.layout.HBox;</code><br />
-<code>import javafx.scene.layout.TilePane;</code><br />
+<code>import javafx.scene.layout.ColumnConstraints;</code><br />
+<code>import javafx.scene.layout.GridPane;</code><br />
+<code>import javafx.scene.layout.RowConstraints;</code><br />
 <code>import javafx.scene.layout.VBox;</code><br />
 <code>import javafx.stage.FileChooser;</code><br />
 <code>import javafx.stage.Stage;</code><br />

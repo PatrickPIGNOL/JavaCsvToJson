@@ -1,5 +1,6 @@
 \doxysection{src/main/java/\+Dn\+D/\+Java\+Csv\+To\+Json/\+Java\+Csv\+To\+Json.java File Reference}
 \hypertarget{JavaCsvToJson_8java}{}\label{JavaCsvToJson_8java}\index{src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java@{src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java}}
+{\ttfamily import java.\+awt.\+Grid\+Layout;}\newline
 {\ttfamily import java.\+io.\+File;}\newline
 {\ttfamily import java.\+io.\+File\+Reader;}\newline
 {\ttfamily import java.\+io.\+File\+Writer;}\newline
@@ -7,14 +8,14 @@
 {\ttfamily import java.\+io.\+Reader;}\newline
 {\ttfamily import java.\+io.\+Writer;}\newline
 {\ttfamily import java.\+util.\+Array\+List;}\newline
+{\ttfamily import java.\+util.\+Hash\+Map;}\newline
 {\ttfamily import java.\+util.\+List;}\newline
-{\ttfamily import org.\+json.\+simple.\+JSONObject;}\newline
-{\ttfamily import org.\+json.\+simple.\+parser.\+JSONParser;}\newline
-{\ttfamily import org.\+json.\+simple.\+parser.\+Parse\+Exception;}\newline
+{\ttfamily import java.\+util.\+Map;}\newline
+{\ttfamily import java.\+util.\+Map.\+Entry;}\newline
+{\ttfamily import org.\+apache.\+commons.\+collections.\+functors.\+If\+Closure;}\newline
 {\ttfamily import org.\+jsoup.\+Jsoup;}\newline
 {\ttfamily import org.\+jsoup.\+nodes.\+Document;}\newline
 {\ttfamily import org.\+jsoup.\+nodes.\+Element;}\newline
-{\ttfamily import org.\+jsoup.\+select.\+Elements;}\newline
 {\ttfamily import com.\+opencsv.\+CSVParser;}\newline
 {\ttfamily import com.\+opencsv.\+CSVParser\+Builder;}\newline
 {\ttfamily import com.\+opencsv.\+CSVReader;}\newline
@@ -24,8 +25,8 @@
 {\ttfamily import com.\+opencsv.\+ICSVWriter;}\newline
 {\ttfamily import javafx.\+application.\+Application;}\newline
 {\ttfamily import javafx.\+application.\+Platform;}\newline
-{\ttfamily import javafx.\+event.\+Action\+Event;}\newline
-{\ttfamily import javafx.\+event.\+Event\+Handler;}\newline
+{\ttfamily import javafx.\+beans.\+value.\+Change\+Listener;}\newline
+{\ttfamily import javafx.\+beans.\+value.\+Observable\+Value;}\newline
 {\ttfamily import javafx.\+geometry.\+Insets;}\newline
 {\ttfamily import javafx.\+geometry.\+Pos;}\newline
 {\ttfamily import javafx.\+scene.\+Scene;}\newline
@@ -33,11 +34,10 @@
 {\ttfamily import javafx.\+scene.\+control.\+Label;}\newline
 {\ttfamily import javafx.\+scene.\+control.\+Progress\+Bar;}\newline
 {\ttfamily import javafx.\+scene.\+control.\+Text\+Area;}\newline
-{\ttfamily import javafx.\+scene.\+control.\+Text\+Field;}\newline
-{\ttfamily import javafx.\+scene.\+layout.\+Anchor\+Pane;}\newline
 {\ttfamily import javafx.\+scene.\+layout.\+Border\+Pane;}\newline
-{\ttfamily import javafx.\+scene.\+layout.\+HBox;}\newline
-{\ttfamily import javafx.\+scene.\+layout.\+Tile\+Pane;}\newline
+{\ttfamily import javafx.\+scene.\+layout.\+Column\+Constraints;}\newline
+{\ttfamily import javafx.\+scene.\+layout.\+Grid\+Pane;}\newline
+{\ttfamily import javafx.\+scene.\+layout.\+Row\+Constraints;}\newline
 {\ttfamily import javafx.\+scene.\+layout.\+VBox;}\newline
 {\ttfamily import javafx.\+stage.\+File\+Chooser;}\newline
 {\ttfamily import javafx.\+stage.\+Stage;}\newline
