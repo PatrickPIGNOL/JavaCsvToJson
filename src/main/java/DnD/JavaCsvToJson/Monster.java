@@ -554,8 +554,8 @@ public class Monster implements IExportable
 									new MonsterProperty
 									(
 										new Property<String>(EMonsterHeader.Property, "language"),
-										new Property<String>(EMonsterHeader.PropertyName, vLangue.substring(0, vMatcher.start())),
-										new Property<String>(EMonsterHeader.PropertyValue, vLangue.substring(vMatcher.start()))
+										new Property<String>(EMonsterHeader.PropertyName, vLangue.substring(0, vMatcher.start()).trim()),
+										new Property<String>(EMonsterHeader.PropertyValue, vLangue.substring(vMatcher.start()).trim())
 									)
 								);
 							}							
@@ -566,7 +566,7 @@ public class Monster implements IExportable
 									new MonsterProperty
 									(
 										new Property<String>(EMonsterHeader.Property, "language"),
-										new Property<String>(EMonsterHeader.PropertyName, vLangue),
+										new Property<String>(EMonsterHeader.PropertyName, vLangue.trim()),
 										new Property<String>(EMonsterHeader.PropertyValue, null)
 									)
 								);
