@@ -633,7 +633,7 @@ public class Monster implements IExportable
 						vType = vTemp.substring(vIndexDegats + 6).trim();
 						int vStart = vTemp.indexOf("(");
 						int vEnd = vTemp.indexOf(")");
-						vDamage = vTemp.substring(vStart, vEnd).replaceAll(" ", "") + "," + vType;
+						vDamage = vTemp.substring(vStart + 1, vEnd).replaceAll(" ", "") + "," + vType;
 					}
 					
 					String vSavingThrow = null;
