@@ -2,7 +2,7 @@ package DnD.JavaCsvToJson;
 
 public enum EObjectHeader implements IHeader 
 {
-	Name("Name", "objectName", true),
+	Name("Name", "object", true),
 	Type("Type", "objectType", true),
 	Rarity("Rarity", "objectRarity", true),
 	Link("Link", "objectLink", true),

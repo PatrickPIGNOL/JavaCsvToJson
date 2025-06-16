@@ -322,7 +322,10 @@ public class JavaCsvToJson extends Application
 									for(Entry<String, Monster> vMonster : aMonsters.entrySet())
 									{
 										final double vProgress = ((double)vCount)/((double)vSize);
-										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
+										Platform.runLater(() -> aProgressBar.setProgress(vProgress));
+										List<String> vTemp = new ArrayList<>();
+										vTemp.add(vMonster.getKey());
+										vTemp.addAll(vMonster.getValue().mToBook());
 										String[] vLine = vMonster.getValue().mToBook().toArray(new String[0]);
 										vCSVWriter.writeNext(vLine);	
 										vCount++;
@@ -330,7 +333,10 @@ public class JavaCsvToJson extends Application
 									for(Entry<String, Spell> vSpell : aSpells.entrySet())
 									{
 										final double vProgress = ((double)vCount)/((double)vSize);
-										Platform.runLater(() -> aProgressBar.setProgress(vProgress));														
+										Platform.runLater(() -> aProgressBar.setProgress(vProgress));	
+										List<String> vTemp = new ArrayList<>();
+										vTemp.add(vSpell.getKey());
+										vTemp.addAll(vSpell.getValue().mToBook());
 										String[] vLine = vSpell.getValue().mToBook().toArray(new String[0]);
 										vCSVWriter.writeNext(vLine);
 										vCount++;
