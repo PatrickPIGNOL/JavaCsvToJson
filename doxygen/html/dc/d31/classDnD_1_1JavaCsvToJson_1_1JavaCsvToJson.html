@@ -173,49 +173,49 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  436</span>    {</div>
-<div class="line"><span class="lineno">  437</span>        <span class="keywordflow">switch</span>(this.aStatus)</div>
-<div class="line"><span class="lineno">  438</span>        {</div>
-<div class="line"><span class="lineno">  439</span>            <span class="keywordflow">case</span> Idle:</div>
-<div class="line"><span class="lineno">  440</span>            {</div>
-<div class="line"><span class="lineno">  441</span> </div>
-<div class="line"><span class="lineno">  442</span>                this.aLoadMonster.setDisable(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  443</span>                this.aLoadSpell.setDisable(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  444</span>                this.aLoadObjects.setDisable(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  445</span>                this.aLinkText.setDisable(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  446</span>                <span class="keywordflow">if</span>(this.aLinkText.getText().isEmpty())</div>
-<div class="line"><span class="lineno">  447</span>                {</div>
-<div class="line"><span class="lineno">  448</span>                    this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  449</span>                }</div>
-<div class="line"><span class="lineno">  450</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  451</span>                {</div>
-<div class="line"><span class="lineno">  452</span>                    this.aConvertURLButton.setDisable(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  453</span>                }</div>
-<div class="line"><span class="lineno">  454</span>                this.aModifyURLButton.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  455</span>                this.aSaveBook.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  456</span>            }<span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  457</span>            <span class="keywordflow">case</span> Data:</div>
-<div class="line"><span class="lineno">  458</span>            {</div>
-<div class="line"><span class="lineno">  459</span>                this.aLoadMonster.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  460</span>                this.aLoadSpell.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  461</span>                this.aLoadObjects.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  462</span>                this.aLinkText.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  463</span>                this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  464</span>                this.aModifyURLButton.setDisable(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  465</span>                this.aSaveBook.setDisable(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  466</span>            }<span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  467</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  468</span>            {</div>
-<div class="line"><span class="lineno">  469</span>                this.aLoadMonster.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  470</span>                this.aLoadSpell.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  471</span>                this.aLoadObjects.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  472</span>                this.aLinkText.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  473</span>                this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  474</span>                this.aModifyURLButton.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  475</span>                this.aSaveBook.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  476</span>            }<span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  477</span>        };      </div>
-<div class="line"><span class="lineno">  478</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  442</span>    {</div>
+<div class="line"><span class="lineno">  443</span>        <span class="keywordflow">switch</span>(this.aStatus)</div>
+<div class="line"><span class="lineno">  444</span>        {</div>
+<div class="line"><span class="lineno">  445</span>            <span class="keywordflow">case</span> Idle:</div>
+<div class="line"><span class="lineno">  446</span>            {</div>
+<div class="line"><span class="lineno">  447</span> </div>
+<div class="line"><span class="lineno">  448</span>                this.aLoadMonster.setDisable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  449</span>                this.aLoadSpell.setDisable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  450</span>                this.aLoadObjects.setDisable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  451</span>                this.aLinkText.setDisable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  452</span>                <span class="keywordflow">if</span>(this.aLinkText.getText().isEmpty())</div>
+<div class="line"><span class="lineno">  453</span>                {</div>
+<div class="line"><span class="lineno">  454</span>                    this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  455</span>                }</div>
+<div class="line"><span class="lineno">  456</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  457</span>                {</div>
+<div class="line"><span class="lineno">  458</span>                    this.aConvertURLButton.setDisable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  459</span>                }</div>
+<div class="line"><span class="lineno">  460</span>                this.aModifyURLButton.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  461</span>                this.aSaveBook.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  462</span>            }<span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  463</span>            <span class="keywordflow">case</span> Data:</div>
+<div class="line"><span class="lineno">  464</span>            {</div>
+<div class="line"><span class="lineno">  465</span>                this.aLoadMonster.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  466</span>                this.aLoadSpell.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  467</span>                this.aLoadObjects.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  468</span>                this.aLinkText.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  469</span>                this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  470</span>                this.aModifyURLButton.setDisable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  471</span>                this.aSaveBook.setDisable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  472</span>            }<span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  473</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  474</span>            {</div>
+<div class="line"><span class="lineno">  475</span>                this.aLoadMonster.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  476</span>                this.aLoadSpell.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  477</span>                this.aLoadObjects.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  478</span>                this.aLinkText.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  479</span>                this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  480</span>                this.aModifyURLButton.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  481</span>                this.aSaveBook.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  482</span>            }<span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  483</span>        };      </div>
+<div class="line"><span class="lineno">  484</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="#l00068">start()</a>.</p>
 
@@ -235,30 +235,30 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  481</span>    {</div>
-<div class="line"><span class="lineno">  482</span>        CSVParser vParser = <span class="keyword">new</span> CSVParserBuilder()              </div>
-<div class="line"><span class="lineno">  483</span>                .withSeparator(<span class="charliteral">&#39;,&#39;</span>)</div>
-<div class="line"><span class="lineno">  484</span>                .withIgnoreQuotations(<span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">  485</span>                .build();           </div>
-<div class="line"><span class="lineno">  486</span>        </div>
-<div class="line"><span class="lineno">  487</span>        <span class="keywordflow">try</span>(Reader vReader = <span class="keyword">new</span> FileReader(pFile))</div>
-<div class="line"><span class="lineno">  488</span>        {</div>
-<div class="line"><span class="lineno">  489</span>            <span class="keywordflow">try</span> (CSVReader vCsvReader = <span class="keyword">new</span> CSVReaderBuilder(vReader).withSkipLines(0).withCSVParser(vParser).build())</div>
-<div class="line"><span class="lineno">  490</span>            {               </div>
-<div class="line"><span class="lineno">  491</span>                <span class="keywordflow">return</span> vCsvReader.readAll();</div>
-<div class="line"><span class="lineno">  492</span>            }</div>
-<div class="line"><span class="lineno">  493</span>            <span class="keywordflow">catch</span>(Exception e)</div>
-<div class="line"><span class="lineno">  494</span>            {</div>
-<div class="line"><span class="lineno">  495</span>                System.out.println(e.getStackTrace());</div>
-<div class="line"><span class="lineno">  496</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  497</span>            }</div>
-<div class="line"><span class="lineno">  498</span>        }</div>
-<div class="line"><span class="lineno">  499</span>        <span class="keywordflow">catch</span>(Exception e)</div>
-<div class="line"><span class="lineno">  500</span>        {</div>
-<div class="line"><span class="lineno">  501</span>            System.out.println(e.getStackTrace());</div>
-<div class="line"><span class="lineno">  502</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  503</span>        }</div>
-<div class="line"><span class="lineno">  504</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  487</span>    {</div>
+<div class="line"><span class="lineno">  488</span>        CSVParser vParser = <span class="keyword">new</span> CSVParserBuilder()              </div>
+<div class="line"><span class="lineno">  489</span>                .withSeparator(<span class="charliteral">&#39;,&#39;</span>)</div>
+<div class="line"><span class="lineno">  490</span>                .withIgnoreQuotations(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  491</span>                .build();           </div>
+<div class="line"><span class="lineno">  492</span>        </div>
+<div class="line"><span class="lineno">  493</span>        <span class="keywordflow">try</span>(Reader vReader = <span class="keyword">new</span> FileReader(pFile))</div>
+<div class="line"><span class="lineno">  494</span>        {</div>
+<div class="line"><span class="lineno">  495</span>            <span class="keywordflow">try</span> (CSVReader vCsvReader = <span class="keyword">new</span> CSVReaderBuilder(vReader).withSkipLines(0).withCSVParser(vParser).build())</div>
+<div class="line"><span class="lineno">  496</span>            {               </div>
+<div class="line"><span class="lineno">  497</span>                <span class="keywordflow">return</span> vCsvReader.readAll();</div>
+<div class="line"><span class="lineno">  498</span>            }</div>
+<div class="line"><span class="lineno">  499</span>            <span class="keywordflow">catch</span>(Exception e)</div>
+<div class="line"><span class="lineno">  500</span>            {</div>
+<div class="line"><span class="lineno">  501</span>                System.out.println(e.getStackTrace());</div>
+<div class="line"><span class="lineno">  502</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  503</span>            }</div>
+<div class="line"><span class="lineno">  504</span>        }</div>
+<div class="line"><span class="lineno">  505</span>        <span class="keywordflow">catch</span>(Exception e)</div>
+<div class="line"><span class="lineno">  506</span>        {</div>
+<div class="line"><span class="lineno">  507</span>            System.out.println(e.getStackTrace());</div>
+<div class="line"><span class="lineno">  508</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  509</span>        }</div>
+<div class="line"><span class="lineno">  510</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,117 +532,123 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  322</span>                                    <span class="keywordflow">for</span>(Entry&lt;String, Monster&gt; vMonster : aMonsters.entrySet())</div>
 <div class="line"><span class="lineno">  323</span>                                    {</div>
 <div class="line"><span class="lineno">  324</span>                                        <span class="keyword">final</span> <span class="keywordtype">double</span> vProgress = ((double)vCount)/((<span class="keywordtype">double</span>)vSize);</div>
-<div class="line"><span class="lineno">  325</span>                                        Platform.runLater(() -&gt; aProgressBar.setProgress(vProgress));                                                       </div>
-<div class="line"><span class="lineno">  326</span>                                        String[] vLine = vMonster.getValue().mToBook().toArray(<span class="keyword">new</span> String[0]);</div>
-<div class="line"><span class="lineno">  327</span>                                        vCSVWriter.writeNext(vLine);    </div>
-<div class="line"><span class="lineno">  328</span>                                        vCount++;</div>
-<div class="line"><span class="lineno">  329</span>                                    }</div>
-<div class="line"><span class="lineno">  330</span>                                    <span class="keywordflow">for</span>(Entry&lt;String, Spell&gt; vSpell : aSpells.entrySet())</div>
-<div class="line"><span class="lineno">  331</span>                                    {</div>
-<div class="line"><span class="lineno">  332</span>                                        <span class="keyword">final</span> <span class="keywordtype">double</span> vProgress = ((double)vCount)/((<span class="keywordtype">double</span>)vSize);</div>
-<div class="line"><span class="lineno">  333</span>                                        Platform.runLater(() -&gt; aProgressBar.setProgress(vProgress));                                                       </div>
-<div class="line"><span class="lineno">  334</span>                                        String[] vLine = vSpell.getValue().mToBook().toArray(<span class="keyword">new</span> String[0]);</div>
-<div class="line"><span class="lineno">  335</span>                                        vCSVWriter.writeNext(vLine);</div>
-<div class="line"><span class="lineno">  336</span>                                        vCount++;</div>
-<div class="line"><span class="lineno">  337</span>                                    }</div>
-<div class="line"><span class="lineno">  338</span>                                    <span class="keywordflow">for</span>(Entry&lt;String, DnDObject&gt; vObject : aObjects.entrySet())</div>
-<div class="line"><span class="lineno">  339</span>                                    {</div>
-<div class="line"><span class="lineno">  340</span>                                        <span class="keyword">final</span> <span class="keywordtype">double</span> vProgress = ((double)vCount)/((<span class="keywordtype">double</span>)vSize);</div>
-<div class="line"><span class="lineno">  341</span>                                        Platform.runLater(() -&gt; aProgressBar.setProgress(vProgress));</div>
-<div class="line"><span class="lineno">  342</span>                                        List&lt;String&gt; vTemp = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
-<div class="line"><span class="lineno">  343</span>                                        vTemp.add(vObject.getKey());</div>
-<div class="line"><span class="lineno">  344</span>                                        vTemp.addAll(vObject.getValue().mToBook());</div>
-<div class="line"><span class="lineno">  345</span>                                        String[] vLine = vTemp.toArray(<span class="keyword">new</span> String[0]);</div>
-<div class="line"><span class="lineno">  346</span>                                        vCSVWriter.writeNext(vLine);</div>
-<div class="line"><span class="lineno">  347</span>                                        vCount++;</div>
-<div class="line"><span class="lineno">  348</span>                                    }</div>
-<div class="line"><span class="lineno">  349</span>                                    vCSVWriter.flush();</div>
-<div class="line"><span class="lineno">  350</span>                                    Platform.runLater(() -&gt; aProgressBar.setProgress(0));</div>
-<div class="line"><span class="lineno">  351</span>                                }</div>
-<div class="line"><span class="lineno">  352</span>                                <span class="keywordflow">catch</span>(Exception e)</div>
-<div class="line"><span class="lineno">  353</span>                                {</div>
-<div class="line"><span class="lineno">  354</span>                                    e.printStackTrace();</div>
-<div class="line"><span class="lineno">  355</span>                                }</div>
-<div class="line"><span class="lineno">  356</span>                            }</div>
-<div class="line"><span class="lineno">  357</span>                            <span class="keywordflow">catch</span>(Exception e)</div>
-<div class="line"><span class="lineno">  358</span>                            {</div>
-<div class="line"><span class="lineno">  359</span>                                e.printStackTrace();</div>
-<div class="line"><span class="lineno">  360</span>                            }                           </div>
-<div class="line"><span class="lineno">  361</span>                            Platform.runLater</div>
-<div class="line"><span class="lineno">  362</span>                            (</div>
-<div class="line"><span class="lineno">  363</span>                                () -&gt; </div>
-<div class="line"><span class="lineno">  364</span>                                {</div>
-<div class="line"><span class="lineno">  365</span>                                    aStatus = EApplicationStatus.Data;</div>
-<div class="line"><span class="lineno">  366</span>                                    mEnable();</div>
-<div class="line"><span class="lineno">  367</span>                                }</div>
-<div class="line"><span class="lineno">  368</span>                            );</div>
-<div class="line"><span class="lineno">  369</span>                        }</div>
-<div class="line"><span class="lineno">  370</span>                    };</div>
-<div class="line"><span class="lineno">  371</span>                    <span class="keyword">new</span> Thread(vEventWorker).start();</div>
-<div class="line"><span class="lineno">  372</span>                }</div>
-<div class="line"><span class="lineno">  373</span>            }</div>
-<div class="line"><span class="lineno">  374</span>        );</div>
-<div class="line"><span class="lineno">  375</span>        </div>
-<div class="line"><span class="lineno">  376</span>        this.aLinkText.textProperty().addListener</div>
-<div class="line"><span class="lineno">  377</span>        (</div>
-<div class="line"><span class="lineno">  378</span>            (observable, oldValue, newValue)-&gt; </div>
-<div class="line"><span class="lineno">  379</span>            {</div>
-<div class="line"><span class="lineno">  380</span>                <span class="keywordflow">if</span>(aStatus == EApplicationStatus.Idle)</div>
-<div class="line"><span class="lineno">  381</span>                {</div>
-<div class="line"><span class="lineno">  382</span>                    mEnable();</div>
-<div class="line"><span class="lineno">  383</span>                }</div>
-<div class="line"><span class="lineno">  384</span>            }</div>
-<div class="line"><span class="lineno">  385</span>        );</div>
-<div class="line"><span class="lineno">  386</span>        </div>
-<div class="line"><span class="lineno">  387</span>        GridPane vRoot = <span class="keyword">new</span> GridPane();</div>
-<div class="line"><span class="lineno">  388</span>        ColumnConstraints column1 = <span class="keyword">new</span> ColumnConstraints();</div>
-<div class="line"><span class="lineno">  389</span>        column1.setPercentWidth(50);</div>
-<div class="line"><span class="lineno">  390</span>        ColumnConstraints column2 = <span class="keyword">new</span> ColumnConstraints();</div>
-<div class="line"><span class="lineno">  391</span>        column2.setPercentWidth(50);</div>
-<div class="line"><span class="lineno">  392</span>        vRoot.getColumnConstraints().addAll(column1, column2); <span class="comment">// each get 50% of width</span></div>
-<div class="line"><span class="lineno">  393</span>        RowConstraints rowConstraint1 = <span class="keyword">new</span> RowConstraints();</div>
-<div class="line"><span class="lineno">  394</span>        RowConstraints rowConstraint2 = <span class="keyword">new</span> RowConstraints();</div>
-<div class="line"><span class="lineno">  395</span>        rowConstraint2.prefHeightProperty().bind(this.aWindow.heightProperty());</div>
-<div class="line"><span class="lineno">  396</span>        vRoot.getRowConstraints().addAll(rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint2,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1);</div>
-<div class="line"><span class="lineno">  397</span>        </div>
-<div class="line"><span class="lineno">  398</span>        vRoot.add(this.aLoadMonster, 0, 0, 2, 1);</div>
-<div class="line"><span class="lineno">  399</span>        vRoot.add(this.aLoadSpell, 0, 1, 2, 1);</div>
-<div class="line"><span class="lineno">  400</span>        vRoot.add(this.aLoadObjects, 0, 2, 2, 1);</div>
-<div class="line"><span class="lineno">  401</span>        vRoot.add(this.aLinkLabel, 0, 3, 2, 1);</div>
-<div class="line"><span class="lineno">  402</span>        vRoot.add(this.aLinkText, 0, 4, 2, 1);</div>
-<div class="line"><span class="lineno">  403</span>        vRoot.add(this.aConvertURLButton, 0, 5, 1, 1);</div>
-<div class="line"><span class="lineno">  404</span>        vRoot.add(this.aModifyURLButton, 1, 5, 1, 1);</div>
-<div class="line"><span class="lineno">  405</span>        vRoot.add(this.aSaveBook, 0, 6, 2, 1);</div>
-<div class="line"><span class="lineno">  406</span>        vRoot.add(this.aProgressBar, 0, 7, 2, 1);   </div>
-<div class="line"><span class="lineno">  407</span>        </div>
-<div class="line"><span class="lineno">  408</span>        Scene vScene = <span class="keyword">new</span> Scene(vRoot, 800, 600);  </div>
-<div class="line"><span class="lineno">  409</span>        vRoot.prefWidthProperty().bind(this.aWindow.widthProperty());</div>
-<div class="line"><span class="lineno">  410</span>        vRoot.prefHeightProperty().bind(this.aWindow.widthProperty());</div>
-<div class="line"><span class="lineno">  411</span>        this.aProgressBar.setMinHeight(20);</div>
-<div class="line"><span class="lineno">  412</span>        this.aProgressBar.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  413</span>        this.aProgressBar.setProgress(0);</div>
-<div class="line"><span class="lineno">  414</span>        this.aLinkLabel.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  415</span>        this.aLinkText.setMaxHeight(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  416</span>        this.aLinkLabel.setAlignment(Pos.CENTER);</div>
-<div class="line"><span class="lineno">  417</span>        this.aLoadObjects.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  418</span>        this.aLoadSpell.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  419</span>        this.aLoadMonster.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  420</span>        this.aConvertURLButton.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  421</span>        this.aModifyURLButton.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  422</span>        this.aSaveBook.setMaxWidth(Double.MAX_VALUE);</div>
-<div class="line"><span class="lineno">  423</span>        this.aWindow.setScene(vScene);</div>
-<div class="line"><span class="lineno">  424</span>        </div>
-<div class="line"><span class="lineno">  425</span>        this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  426</span>        this.aModifyURLButton.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  427</span>        this.aSaveBook.setDisable(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  428</span>        </div>
-<div class="line"><span class="lineno">  429</span>        this.aWindow.setTitle(<span class="stringliteral">&quot;URLs To Book&quot;</span>);</div>
-<div class="line"><span class="lineno">  430</span>        this.aWindow.show();</div>
-<div class="line"><span class="lineno">  431</span>        this.aStatus = EApplicationStatus.Idle;</div>
-<div class="line"><span class="lineno">  432</span>        this.mEnable();</div>
-<div class="line"><span class="lineno">  433</span>    }</div>
+<div class="line"><span class="lineno">  325</span>                                        Platform.runLater(() -&gt; aProgressBar.setProgress(vProgress));</div>
+<div class="line"><span class="lineno">  326</span>                                        List&lt;String&gt; vTemp = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><span class="lineno">  327</span>                                        vTemp.add(vMonster.getKey());</div>
+<div class="line"><span class="lineno">  328</span>                                        vTemp.addAll(vMonster.getValue().mToBook());</div>
+<div class="line"><span class="lineno">  329</span>                                        String[] vLine = vMonster.getValue().mToBook().toArray(<span class="keyword">new</span> String[0]);</div>
+<div class="line"><span class="lineno">  330</span>                                        vCSVWriter.writeNext(vLine);    </div>
+<div class="line"><span class="lineno">  331</span>                                        vCount++;</div>
+<div class="line"><span class="lineno">  332</span>                                    }</div>
+<div class="line"><span class="lineno">  333</span>                                    <span class="keywordflow">for</span>(Entry&lt;String, Spell&gt; vSpell : aSpells.entrySet())</div>
+<div class="line"><span class="lineno">  334</span>                                    {</div>
+<div class="line"><span class="lineno">  335</span>                                        <span class="keyword">final</span> <span class="keywordtype">double</span> vProgress = ((double)vCount)/((<span class="keywordtype">double</span>)vSize);</div>
+<div class="line"><span class="lineno">  336</span>                                        Platform.runLater(() -&gt; aProgressBar.setProgress(vProgress));   </div>
+<div class="line"><span class="lineno">  337</span>                                        List&lt;String&gt; vTemp = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><span class="lineno">  338</span>                                        vTemp.add(vSpell.getKey());</div>
+<div class="line"><span class="lineno">  339</span>                                        vTemp.addAll(vSpell.getValue().mToBook());</div>
+<div class="line"><span class="lineno">  340</span>                                        String[] vLine = vSpell.getValue().mToBook().toArray(<span class="keyword">new</span> String[0]);</div>
+<div class="line"><span class="lineno">  341</span>                                        vCSVWriter.writeNext(vLine);</div>
+<div class="line"><span class="lineno">  342</span>                                        vCount++;</div>
+<div class="line"><span class="lineno">  343</span>                                    }</div>
+<div class="line"><span class="lineno">  344</span>                                    <span class="keywordflow">for</span>(Entry&lt;String, DnDObject&gt; vObject : aObjects.entrySet())</div>
+<div class="line"><span class="lineno">  345</span>                                    {</div>
+<div class="line"><span class="lineno">  346</span>                                        <span class="keyword">final</span> <span class="keywordtype">double</span> vProgress = ((double)vCount)/((<span class="keywordtype">double</span>)vSize);</div>
+<div class="line"><span class="lineno">  347</span>                                        Platform.runLater(() -&gt; aProgressBar.setProgress(vProgress));</div>
+<div class="line"><span class="lineno">  348</span>                                        List&lt;String&gt; vTemp = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><span class="lineno">  349</span>                                        vTemp.add(vObject.getKey());</div>
+<div class="line"><span class="lineno">  350</span>                                        vTemp.addAll(vObject.getValue().mToBook());</div>
+<div class="line"><span class="lineno">  351</span>                                        String[] vLine = vTemp.toArray(<span class="keyword">new</span> String[0]);</div>
+<div class="line"><span class="lineno">  352</span>                                        vCSVWriter.writeNext(vLine);</div>
+<div class="line"><span class="lineno">  353</span>                                        vCount++;</div>
+<div class="line"><span class="lineno">  354</span>                                    }</div>
+<div class="line"><span class="lineno">  355</span>                                    vCSVWriter.flush();</div>
+<div class="line"><span class="lineno">  356</span>                                    Platform.runLater(() -&gt; aProgressBar.setProgress(0));</div>
+<div class="line"><span class="lineno">  357</span>                                }</div>
+<div class="line"><span class="lineno">  358</span>                                <span class="keywordflow">catch</span>(Exception e)</div>
+<div class="line"><span class="lineno">  359</span>                                {</div>
+<div class="line"><span class="lineno">  360</span>                                    e.printStackTrace();</div>
+<div class="line"><span class="lineno">  361</span>                                }</div>
+<div class="line"><span class="lineno">  362</span>                            }</div>
+<div class="line"><span class="lineno">  363</span>                            <span class="keywordflow">catch</span>(Exception e)</div>
+<div class="line"><span class="lineno">  364</span>                            {</div>
+<div class="line"><span class="lineno">  365</span>                                e.printStackTrace();</div>
+<div class="line"><span class="lineno">  366</span>                            }                           </div>
+<div class="line"><span class="lineno">  367</span>                            Platform.runLater</div>
+<div class="line"><span class="lineno">  368</span>                            (</div>
+<div class="line"><span class="lineno">  369</span>                                () -&gt; </div>
+<div class="line"><span class="lineno">  370</span>                                {</div>
+<div class="line"><span class="lineno">  371</span>                                    aStatus = EApplicationStatus.Data;</div>
+<div class="line"><span class="lineno">  372</span>                                    mEnable();</div>
+<div class="line"><span class="lineno">  373</span>                                }</div>
+<div class="line"><span class="lineno">  374</span>                            );</div>
+<div class="line"><span class="lineno">  375</span>                        }</div>
+<div class="line"><span class="lineno">  376</span>                    };</div>
+<div class="line"><span class="lineno">  377</span>                    <span class="keyword">new</span> Thread(vEventWorker).start();</div>
+<div class="line"><span class="lineno">  378</span>                }</div>
+<div class="line"><span class="lineno">  379</span>            }</div>
+<div class="line"><span class="lineno">  380</span>        );</div>
+<div class="line"><span class="lineno">  381</span>        </div>
+<div class="line"><span class="lineno">  382</span>        this.aLinkText.textProperty().addListener</div>
+<div class="line"><span class="lineno">  383</span>        (</div>
+<div class="line"><span class="lineno">  384</span>            (observable, oldValue, newValue)-&gt; </div>
+<div class="line"><span class="lineno">  385</span>            {</div>
+<div class="line"><span class="lineno">  386</span>                <span class="keywordflow">if</span>(aStatus == EApplicationStatus.Idle)</div>
+<div class="line"><span class="lineno">  387</span>                {</div>
+<div class="line"><span class="lineno">  388</span>                    mEnable();</div>
+<div class="line"><span class="lineno">  389</span>                }</div>
+<div class="line"><span class="lineno">  390</span>            }</div>
+<div class="line"><span class="lineno">  391</span>        );</div>
+<div class="line"><span class="lineno">  392</span>        </div>
+<div class="line"><span class="lineno">  393</span>        GridPane vRoot = <span class="keyword">new</span> GridPane();</div>
+<div class="line"><span class="lineno">  394</span>        ColumnConstraints column1 = <span class="keyword">new</span> ColumnConstraints();</div>
+<div class="line"><span class="lineno">  395</span>        column1.setPercentWidth(50);</div>
+<div class="line"><span class="lineno">  396</span>        ColumnConstraints column2 = <span class="keyword">new</span> ColumnConstraints();</div>
+<div class="line"><span class="lineno">  397</span>        column2.setPercentWidth(50);</div>
+<div class="line"><span class="lineno">  398</span>        vRoot.getColumnConstraints().addAll(column1, column2); <span class="comment">// each get 50% of width</span></div>
+<div class="line"><span class="lineno">  399</span>        RowConstraints rowConstraint1 = <span class="keyword">new</span> RowConstraints();</div>
+<div class="line"><span class="lineno">  400</span>        RowConstraints rowConstraint2 = <span class="keyword">new</span> RowConstraints();</div>
+<div class="line"><span class="lineno">  401</span>        rowConstraint2.prefHeightProperty().bind(this.aWindow.heightProperty());</div>
+<div class="line"><span class="lineno">  402</span>        vRoot.getRowConstraints().addAll(rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint2,rowConstraint1,rowConstraint1,rowConstraint1,rowConstraint1);</div>
+<div class="line"><span class="lineno">  403</span>        </div>
+<div class="line"><span class="lineno">  404</span>        vRoot.add(this.aLoadMonster, 0, 0, 2, 1);</div>
+<div class="line"><span class="lineno">  405</span>        vRoot.add(this.aLoadSpell, 0, 1, 2, 1);</div>
+<div class="line"><span class="lineno">  406</span>        vRoot.add(this.aLoadObjects, 0, 2, 2, 1);</div>
+<div class="line"><span class="lineno">  407</span>        vRoot.add(this.aLinkLabel, 0, 3, 2, 1);</div>
+<div class="line"><span class="lineno">  408</span>        vRoot.add(this.aLinkText, 0, 4, 2, 1);</div>
+<div class="line"><span class="lineno">  409</span>        vRoot.add(this.aConvertURLButton, 0, 5, 1, 1);</div>
+<div class="line"><span class="lineno">  410</span>        vRoot.add(this.aModifyURLButton, 1, 5, 1, 1);</div>
+<div class="line"><span class="lineno">  411</span>        vRoot.add(this.aSaveBook, 0, 6, 2, 1);</div>
+<div class="line"><span class="lineno">  412</span>        vRoot.add(this.aProgressBar, 0, 7, 2, 1);   </div>
+<div class="line"><span class="lineno">  413</span>        </div>
+<div class="line"><span class="lineno">  414</span>        Scene vScene = <span class="keyword">new</span> Scene(vRoot, 800, 600);  </div>
+<div class="line"><span class="lineno">  415</span>        vRoot.prefWidthProperty().bind(this.aWindow.widthProperty());</div>
+<div class="line"><span class="lineno">  416</span>        vRoot.prefHeightProperty().bind(this.aWindow.widthProperty());</div>
+<div class="line"><span class="lineno">  417</span>        this.aProgressBar.setMinHeight(20);</div>
+<div class="line"><span class="lineno">  418</span>        this.aProgressBar.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  419</span>        this.aProgressBar.setProgress(0);</div>
+<div class="line"><span class="lineno">  420</span>        this.aLinkLabel.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  421</span>        this.aLinkText.setMaxHeight(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  422</span>        this.aLinkLabel.setAlignment(Pos.CENTER);</div>
+<div class="line"><span class="lineno">  423</span>        this.aLoadObjects.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  424</span>        this.aLoadSpell.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  425</span>        this.aLoadMonster.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  426</span>        this.aConvertURLButton.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  427</span>        this.aModifyURLButton.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  428</span>        this.aSaveBook.setMaxWidth(Double.MAX_VALUE);</div>
+<div class="line"><span class="lineno">  429</span>        this.aWindow.setScene(vScene);</div>
+<div class="line"><span class="lineno">  430</span>        </div>
+<div class="line"><span class="lineno">  431</span>        this.aConvertURLButton.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  432</span>        this.aModifyURLButton.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  433</span>        this.aSaveBook.setDisable(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  434</span>        </div>
+<div class="line"><span class="lineno">  435</span>        this.aWindow.setTitle(<span class="stringliteral">&quot;URLs To Book&quot;</span>);</div>
+<div class="line"><span class="lineno">  436</span>        this.aWindow.show();</div>
+<div class="line"><span class="lineno">  437</span>        this.aStatus = EApplicationStatus.Idle;</div>
+<div class="line"><span class="lineno">  438</span>        this.mEnable();</div>
+<div class="line"><span class="lineno">  439</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="#l00055">aLinkText</a>, <a class="el" href="#l00061">aMonsters</a>, <a class="el" href="#l00063">aObjects</a>, <a class="el" href="#l00056">aProgressBar</a>, <a class="el" href="#l00062">aSpells</a>, <a class="el" href="#l00065">aStatus</a>, <a class="el" href="#l00050">aWindow</a>, <a class="el" href="#l00008">DnD.JavaCsvToJson.EApplicationStatus.Computing</a>, <a class="el" href="#l00007">DnD.JavaCsvToJson.EApplicationStatus.Data</a>, <a class="el" href="#l00006">DnD.JavaCsvToJson.EApplicationStatus.Idle</a>, <a class="el" href="#l00435">mEnable()</a>, <a class="el" href="#l00013">DnD.JavaCsvToJson.DnDObject.mFromURL()</a>, <a class="el" href="#l00023">DnD.JavaCsvToJson.Monster.mFromURL()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
+<p class="reference">References <a class="el" href="#l00055">aLinkText</a>, <a class="el" href="#l00061">aMonsters</a>, <a class="el" href="#l00063">aObjects</a>, <a class="el" href="#l00056">aProgressBar</a>, <a class="el" href="#l00062">aSpells</a>, <a class="el" href="#l00065">aStatus</a>, <a class="el" href="#l00050">aWindow</a>, <a class="el" href="#l00008">DnD.JavaCsvToJson.EApplicationStatus.Computing</a>, <a class="el" href="#l00007">DnD.JavaCsvToJson.EApplicationStatus.Data</a>, <a class="el" href="#l00006">DnD.JavaCsvToJson.EApplicationStatus.Idle</a>, <a class="el" href="#l00441">mEnable()</a>, <a class="el" href="#l00013">DnD.JavaCsvToJson.DnDObject.mFromURL()</a>, <a class="el" href="#l00023">DnD.JavaCsvToJson.Monster.mFromURL()</a>, and <a class="el" href="#l00016">DnD.JavaCsvToJson.Spell.mFromURL()</a>.</p>
 
 </div>
 </div>

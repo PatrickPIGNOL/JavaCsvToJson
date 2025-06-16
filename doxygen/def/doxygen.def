@@ -3012,7 +3012,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Name';
       sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
-=("Name", "objectName", true)
+=("Name", "object", true)
 _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/EObjectHeader.java';
       sec-mem-desc-line = '5';
@@ -4116,7 +4116,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Name';
       sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
-=("Name", "spellName", true)
+=("Name", "spell", true)
 _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/ESpellHeader.java';
       sec-mem-desc-line = '5';
@@ -6126,7 +6126,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'da/d45/JavaCsvToJson_8java_1af994726effb3bba9d49280b9c56e519a';
-        sec-mem-ref-line = '435';
+        sec-mem-ref-line = '441';
         sec-mem-ref-name = 'DnD.JavaCsvToJson.JavaCsvToJson::mEnable';
     };
       sec-mem-referenceto = {
@@ -6155,7 +6155,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mEnable';
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
-      sec-mem-desc-line = '435';
+      sec-mem-desc-line = '441';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -6184,7 +6184,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'pFile';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/run/media/2To/projects/JavaCsvToJson/src/main/java/DnD/JavaCsvToJson/JavaCsvToJson.java';
-      sec-mem-desc-line = '480';
+      sec-mem-desc-line = '486';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
