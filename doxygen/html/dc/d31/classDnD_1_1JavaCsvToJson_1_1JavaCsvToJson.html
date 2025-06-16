@@ -536,7 +536,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  326</span>                                        List&lt;String&gt; vTemp = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
 <div class="line"><span class="lineno">  327</span>                                        vTemp.add(vMonster.getKey());</div>
 <div class="line"><span class="lineno">  328</span>                                        vTemp.addAll(vMonster.getValue().mToBook());</div>
-<div class="line"><span class="lineno">  329</span>                                        String[] vLine = vMonster.getValue().mToBook().toArray(<span class="keyword">new</span> String[0]);</div>
+<div class="line"><span class="lineno">  329</span>                                        String[] vLine = vTemp.toArray(<span class="keyword">new</span> String[0]);</div>
 <div class="line"><span class="lineno">  330</span>                                        vCSVWriter.writeNext(vLine);    </div>
 <div class="line"><span class="lineno">  331</span>                                        vCount++;</div>
 <div class="line"><span class="lineno">  332</span>                                    }</div>
@@ -547,7 +547,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  337</span>                                        List&lt;String&gt; vTemp = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
 <div class="line"><span class="lineno">  338</span>                                        vTemp.add(vSpell.getKey());</div>
 <div class="line"><span class="lineno">  339</span>                                        vTemp.addAll(vSpell.getValue().mToBook());</div>
-<div class="line"><span class="lineno">  340</span>                                        String[] vLine = vSpell.getValue().mToBook().toArray(<span class="keyword">new</span> String[0]);</div>
+<div class="line"><span class="lineno">  340</span>                                        String[] vLine = vTemp.toArray(<span class="keyword">new</span> String[0]);</div>
 <div class="line"><span class="lineno">  341</span>                                        vCSVWriter.writeNext(vLine);</div>
 <div class="line"><span class="lineno">  342</span>                                        vCount++;</div>
 <div class="line"><span class="lineno">  343</span>                                    }</div>

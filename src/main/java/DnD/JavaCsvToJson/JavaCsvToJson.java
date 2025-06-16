@@ -326,7 +326,7 @@ public class JavaCsvToJson extends Application
 										List<String> vTemp = new ArrayList<>();
 										vTemp.add(vMonster.getKey());
 										vTemp.addAll(vMonster.getValue().mToBook());
-										String[] vLine = vMonster.getValue().mToBook().toArray(new String[0]);
+										String[] vLine = vTemp.toArray(new String[0]);
 										vCSVWriter.writeNext(vLine);	
 										vCount++;
 									}
@@ -337,7 +337,7 @@ public class JavaCsvToJson extends Application
 										List<String> vTemp = new ArrayList<>();
 										vTemp.add(vSpell.getKey());
 										vTemp.addAll(vSpell.getValue().mToBook());
-										String[] vLine = vSpell.getValue().mToBook().toArray(new String[0]);
+										String[] vLine = vTemp.toArray(new String[0]);
 										vCSVWriter.writeNext(vLine);
 										vCount++;
 									}

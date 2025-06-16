@@ -1228,12 +1228,12 @@ Package Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  508</span>                        String vSenses = vRed.substring(vPropertyIndex.mIndex() + vPropertyIndex.mProperty().length(), vNextIndex.mIndex()).trim();</div>
 <div class="line"><span class="lineno">  509</span>                        <span class="keywordflow">for</span>(String vSens : vSenses.split(<span class="stringliteral">&quot;,&quot;</span>))</div>
 <div class="line"><span class="lineno">  510</span>                        {</div>
-<div class="line"><span class="lineno">  511</span>                            vPattern = Pattern.compile(<span class="stringliteral">&quot;[0-9]*&quot;</span>);</div>
+<div class="line"><span class="lineno">  511</span>                            vPattern = Pattern.compile(<span class="stringliteral">&quot;[0-9]+&quot;</span>);</div>
 <div class="line"><span class="lineno">  512</span>                            vMatcher = vPattern.matcher(vSens);                                                     </div>
 <div class="line"><span class="lineno">  513</span>                            <span class="keywordflow">if</span>(vMatcher.find())</div>
 <div class="line"><span class="lineno">  514</span>                            {</div>
 <div class="line"><span class="lineno">  515</span>                                String vTemp = vMatcher.group();</div>
-<div class="line"><span class="lineno">  516</span>                                <span class="keywordtype">int</span> vIndexMatch = vMatcher.start();</div>
+<div class="line"><span class="lineno">  516</span>                                <span class="keywordtype">int</span> vIndexMatch = vMatcher.start();                             </div>
 <div class="line"><span class="lineno">  517</span>                                vMonsterProperties.add</div>
 <div class="line"><span class="lineno">  518</span>                                (</div>
 <div class="line"><span class="lineno">  519</span>                                    <span class="keyword">new</span> MonsterProperty</div>
@@ -1263,7 +1263,7 @@ Package Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  543</span>                        String vLangues = vRed.substring(vPropertyIndex.mIndex() + vPropertyIndex.mProperty().length(), vNextIndex.mIndex());</div>
 <div class="line"><span class="lineno">  544</span>                        <span class="keywordflow">for</span> (String vLangue : vLangues.split(<span class="stringliteral">&quot;,&quot;</span>))</div>
 <div class="line"><span class="lineno">  545</span>                        {</div>
-<div class="line"><span class="lineno">  546</span>                            vPattern = Pattern.compile(<span class="stringliteral">&quot;[0-9]*&quot;</span>);</div>
+<div class="line"><span class="lineno">  546</span>                            vPattern = Pattern.compile(<span class="stringliteral">&quot;[0-9]+&quot;</span>);</div>
 <div class="line"><span class="lineno">  547</span>                            vMatcher = vPattern.matcher(vLangue);                           </div>
 <div class="line"><span class="lineno">  548</span>                            <span class="keywordflow">if</span>(vMatcher.find())</div>
 <div class="line"><span class="lineno">  549</span>                            {</div>

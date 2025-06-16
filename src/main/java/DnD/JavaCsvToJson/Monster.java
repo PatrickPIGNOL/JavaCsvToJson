@@ -508,12 +508,12 @@ public class Monster implements IExportable
 						String vSenses = vRed.substring(vPropertyIndex.mIndex() + vPropertyIndex.mProperty().length(), vNextIndex.mIndex()).trim();
 						for(String vSens : vSenses.split(","))
 						{
-							vPattern = Pattern.compile("[0-9]*");
+							vPattern = Pattern.compile("[0-9]+");
 							vMatcher = vPattern.matcher(vSens);														
 							if(vMatcher.find())
 							{
 								String vTemp = vMatcher.group();
-								int vIndexMatch = vMatcher.start();
+								int vIndexMatch = vMatcher.start();								
 								vMonsterProperties.add
 								(
 									new MonsterProperty
@@ -543,7 +543,7 @@ public class Monster implements IExportable
 						String vLangues = vRed.substring(vPropertyIndex.mIndex() + vPropertyIndex.mProperty().length(), vNextIndex.mIndex());
 						for (String vLangue : vLangues.split(","))
 						{
-							vPattern = Pattern.compile("[0-9]*");
+							vPattern = Pattern.compile("[0-9]+");
 							vMatcher = vPattern.matcher(vLangue);							
 							if(vMatcher.find())
 							{
